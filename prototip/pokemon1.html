@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title class="pokeman-name">BULBASAUR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pokedex.css">
+
+    <script src="https://kit.fontawesome.com/225aeb8e22.js" crossorigin="anonymous">
+    </script>
+
+
+  </head>
+
+  <body>
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    	<div class="container">
+    		<div class="navbar-header">
+    			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav" aria-expended="false">
+    				<span class="sr-only">Toggle navigation</span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    			</button>
+    			<a href="index.html" class="navbar-brand">
+    				Pokemania
+    			</a>
+    		</div>
+    		<div class="collapse navbar-collapse" id="bs-nav">
+    			<ul class="nav navbar-nav">
+    				<li ><a href="index.html">Home</a></li>
+    				<li class="active"><a href="pokedex.html">Pokedex</a></li>
+    				<li><a href="quiz.html">Quiz</a></li>
+    			</ul>
+    			<ul class="nav navbar-nav navbar-right">
+    				<li><a href="signup">
+    					Signup
+    					<i class="fas fa-user-plus"></i>
+    				</a></li>
+    				<li><a href="login.html">
+    					Login
+    					<i class="fas fa-user"></i>
+    				</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    </nav>
+
+    <div class="row">
+      		<div class="col-lg-6 col-sm-6">
+
+            <div class= "pokemon-image column is-two-thirds">
+              <img height="300" width="300" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" />
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-sm-6">
+            <div class="thumbnail" style="margin-top: 100px;">
+              <div class="caption">
+                <h2 class="">Bulbasaur</h2>
+                <p>Weight: 6.9 kg</p>
+                <p>Height: 0.7 m</p>
+                <p>
+                  Type(s):
+                  <span class = "type poison"> poison </span>
+                  <span class = "type grass"> grass </span>
+                </p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+<div class="col-lg-2 col-sm-2 ">
+  <div class = "container">
+    <h3 class = "moves-title title">MOVES</h3>
+  </div>
+  </div>
+
+  <div class = "row">
+
+
+          <div class="col-lg-12 col-sm-12">
+            <div class = "moves container">
+              <div class="thumbnail">
+                <div class="caption">
+                  <p class="move-name"> RAZOR-WIND
+                    <span class="fas fa-bolt"></span>
+                  </p>
+                  <p class = " move-power"> <b>Power :</b> 80 </p>
+                  <p class = " move-accuracy"><b>Acc:</b> 100 %
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                        <span class="sr-only">100% Complete</span>
+                      </div>
+                    </div>
+                  </p>
+                  <p class = " move-pp"> <b>PP:</b> 10 </p>
+                  <p class = "move-damage-class"></p>
+                  <p class = " move-type">
+                      <span class = "type normal"> NORMAL </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+  </div>
+
+        <div class="container">
+          <a class="btn btn-primary" href="./pokedex.html">Back</a>
+          <a class="btn btn-primary" onclick="alert('To be implemented...')">Next</a>
+        </div>
+
+  </body>
+</html>
