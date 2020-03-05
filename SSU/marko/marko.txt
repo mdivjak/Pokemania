@@ -1,8 +1,0 @@
-marko pravi
-	pregled profila
-	hranjenje pokemona
-	pustanje pokemona u divljinu
-
-	kreiranje turnira
-	odobravanje / odbijanje ucesnika na turniru
-	
