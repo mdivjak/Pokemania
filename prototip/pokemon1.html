@@ -1,0 +1,204 @@
+<!-- Created by Natalija Mitic 2017/0085 -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title class="pokeman-name">BULBASAUR</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pokedex.css">
+
+  <script src="https://kit.fontawesome.com/225aeb8e22.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav" aria-expended="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">
+          Pokemania
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="pokedex.html">Pokedex</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="signup.html">
+              Signup
+              <i class="fas fa-user-plus"></i>
+            </a></li>
+          <li><a href="login.html">
+              Login
+              <i class="fas fa-user"></i>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="row">
+    <div class="col-lg-4 col-sm-6">
+      <div class="card" style="width: 50rem; height: 20rem; margin-left: 30rem;">
+        <img class="card-img-top pokemon-image column is-two-thirds" height="300" width="300" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Card image cap">
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6">
+      <div class="card" style="width: 50rem; height: 20rem; margin-top: 10rem; margin-left: 30rem;">
+        <div class="card-body">
+          <h2 class="card-title">Bulbasaur</h2>
+          <p class="card-text">Weight: 6.9 kg</p>
+          <p class="card-text">Height: 0.7 m</p>
+          <p class="card-text">
+            Type(s):
+            <span class="type poison"> poison </span>
+            <span class="type grass"> grass </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="col-lg-2 col-sm-2 ">
+    <div class="container">
+      <h3 class="moves-title title">MOVES</h3>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 10rem;">
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="moves container">
+        <div class="thumbnail" style="width: 20rem; height: 24rem;">
+          <div class="caption">
+            <p class="move-name"> RAZOR-WIND
+              <span class="fas fa-bolt"></span>
+            </p>
+            <p class=" move-power"> <b>Power :</b> 80 </p>
+            <p class=" move-accuracy"><b>Acc:</b> 100 %
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                  <span class="sr-only">100% Complete</span>
+                </div>
+              </div>
+            </p>
+            <p class=" move-pp"> <b>PP:</b> 10 </p>
+            <p class="move-damage-class"></p>
+            <p class=" move-type">
+              <span class="type normal"> NORMAL </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="moves container">
+        <div class="thumbnail" style="width: 20rem; height: 24rem;">
+          <div class="caption">
+            <p class="move-name"> CUT
+              <span class="fas fa-bahai"></span>
+            </p>
+            <p class=" move-power"> <b>Power :</b> 50 </p>
+            <p class=" move-accuracy"><b>Acc:</b> 95 %
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+                  <span class="sr-only">95% Complete</span>
+                </div>
+              </div>
+            </p>
+            <p class=" move-pp"> <b>PP:</b> 30 </p>
+            <p class="move-damage-class"></p>
+            <p class=" move-type">
+              <span class="type normal"> NORMAL </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="moves container">
+        <div class="thumbnail" style="width: 20rem; height: 24rem;">
+          <div class="caption">
+            <p class="move-name"> BIND
+              <span class="fas fa-bahai"></span>
+            </p>
+            <p class=" move-power"> <b>Power :</b> 15 </p>
+            <p class=" move-accuracy"><b>Acc:</b> 85 %
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+                  <span class="sr-only">85% Complete</span>
+                </div>
+              </div>
+            </p>
+            <p class=" move-pp"> <b>PP:</b> 20 </p>
+            <p class="move-damage-class"></p>
+            <p class=" move-type">
+              <span class="type normal"> NORMAL </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <div class="moves container">
+        <div class="thumbnail" style="width: 20rem; height: 24rem;">
+          <div class="caption">
+            <p class="move-name"> VINE-WHIP
+              <span class="fas fa-bahai"></span>
+            </p>
+            <p class=" move-power"> <b>Power :</b> 45 </p>
+            <p class=" move-accuracy"><b>Acc:</b> 100 %
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                  <span class="sr-only">100% Complete</span>
+                </div>
+              </div>
+            </p>
+            <p class=" move-pp"> <b>PP:</b> 25 </p>
+            <p class="move-damage-class"></p>
+            <p class=" move-type">
+              <span class="type grass"> GRASS </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <a class="btn btn-primary" href="./pokedex.html">Back</a>
+    <a class="btn btn-primary" onclick="alert('To be implemented...')">Next</a>
+  </div>
+
+</body>
+
+</html>
