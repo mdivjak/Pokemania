@@ -1,4 +1,4 @@
-# SSU - Borba sa divljim pokemonima i njihovo hvatanje
+# 1. SSU - Borba sa divljim pokemonima i njihovo hvatanje
 
 borba-divlji.php (klikom sa korisnik.html)
 borba-divlji.html
@@ -42,7 +42,7 @@ index.html (prikazuje se greska)
 
 index.html (ostaje na istoj, salje mu se mejl)
 
-# SSU - Borba na turniru
+# 3. SSU - Borba na turniru
 
 borba-turnir.php (klikom sa korisnik.html)
 borba-turnir.html
@@ -73,7 +73,7 @@ korisnik.php (prikazuje se poruka da je izasao sa turnira)
 korisnik.html
 
 
-# SSU - Brisanje turnira
+# 4. SSU - Brisanje turnira
 
 admin.php (dolazi sa index.html kad se uloguje)
 amdin.html
@@ -83,7 +83,7 @@ amdin.html
 admin.php (najboljem igracu se dodeljuje nagrada ako ima bar jednu pobedu, svi igraci dobijaju poruku da je turnir zavrsen i obavestenje o njihovom rangu)
 admin.html
 
-# SSU - Hranjenje pokemona
+# 5. SSU - Hranjenje pokemona
 
 korisnik.php (dolazi sa index.html kad se uloguje)
 korisnik.html
@@ -103,7 +103,7 @@ korinik.html
 korisnik.php (ostaje rangiran na turniru, niko ne moze da se bori protiv njegovih pokemona)
 korisnik.html
 
-# SSU - Igra prepoznavanja pokemona
+# 6. SSU - Igra prepoznavanja pokemona
 
 pogadjanje.php (dolazi sa index.html)
 pogadjanje.html
@@ -128,7 +128,7 @@ pogadjanje.html
 pogadjanje.php (dobija poruku da nije pogodio i moze ponovo da pokusa)
 pogadjanje.html
 
-# SSU - Koriscenje pokedeksa
+# 7. SSU - Koriscenje pokedeksa
 
 pokedex.php (dolazi sa index.html)
 pokedex.html
@@ -160,7 +160,7 @@ pokedex-pokemon.php (bio je na ovoj i ostaje na njoj, vrsi se novi upit ka bazi 
 pokedex-pokemon.html
 
 
-# SSU - Kreiranje turnira
+# 8. SSU - Kreiranje turnira
 
 admin.php (nakon logovanje sa index.html)
 admin.html
@@ -171,7 +171,7 @@ turnirForm
 admin.php (unosi sve podatke na formi)
 admin.html
 
-# SSU - Kupovina u prodavnici
+# 9. SSU - Kupovina u prodavnici
 
 korisnik.php (dolazi sa index.html)
 korisnik.html
@@ -191,7 +191,7 @@ korisnik.html
 korisnik.php (prikazuje se poruka da nema dovoljno pokekesa)
 korisnik.html
 
-# SSU - Pregled profila
+# 10. SSU - Pregled profila
 
 korisnik.php (sa index.html)
 korisnik.html
@@ -211,7 +211,7 @@ korisnik.html
 korisnik.php (pritiskom na dugme pocinje SSU - Pustanje pokemona u divljinu)
 korisnik.html
 
-# SSU - Pregledanje prijava za turnir
+# 11. SSU - Pregledanje prijava za turnir
 
 admin.php (sa index.html)
 admin.html
@@ -231,7 +231,7 @@ admin-pregled.html
 admin-pregled.php (odbija se prijava, treneru se vraca novac, trener dobija obavestenje da nije prihvacen na turnir)
 admin-pregled.html
 
-# SSU - Pustanje pokemona u divljinu
+# 12. SSU - Pustanje pokemona u divljinu
 
 korisnik.php (sa index.html)
 korisnik.html
@@ -246,7 +246,7 @@ korisnik.html
 korisnik.php (vise ne moze da igra na tom turniru, ostaje rangiran, niko vise ne moze da se bori protiv njegovih pokemona)
 korisnik.html
 
-# SSU - Registracija korisnika
+# 13. SSU - Registracija korisnika
 
 index.html
 
@@ -267,7 +267,7 @@ index.html (dobija odgovarajucu poruku)
 
 index.html (dobija odgovarajucu poruku)
 
-# SSU - Ucestvovanje na turniru
+# 14. SSU - Ucestvovanje na turniru
 
 pregled-svih-turnira.php (dolazi sa korisnik.html)
 pregled-svih-turnira.html
