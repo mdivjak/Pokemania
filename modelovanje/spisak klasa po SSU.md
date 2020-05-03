@@ -32,7 +32,7 @@ DataAccessLayer (komunikacija sa bazom)\
 admin.php (u zavisnosti od role)\
 admin.html\
 korisnik.php\
-korisnik.html\
+korisnik.html
 
 ### 3. pogresni podaci
 
@@ -218,18 +218,18 @@ admin.html
 
 ### 1. admin klikne na pregled prijava
 
-admin-pregled.php (otvara se spisak prijava za taj turnir)\
-admin-pregled.html
+turnir-pregled.php (otvara se spisak prijava za taj turnir)\
+turnir-pregled.html
 
 ### 2. admin klikne na dugme za prihvatanje prijave
 
-admin-pregled.php (belezi se da je prijavljen na turnir, ucesnik dobija obavestenje da mu je prihvacena prijava)\
-admin-pregled.html
+turnir-pregled.php (belezi se da je prijavljen na turnir, ucesnik dobija obavestenje da mu je prihvacena prijava)\
+turnir-pregled.html
 
 ### 3. admin odbija prijavu
 
-admin-pregled.php (odbija se prijava, treneru se vraca novac, trener dobija obavestenje da nije prihvacen na turnir)\
-admin-pregled.html
+turnir-pregled.php (odbija se prijava, treneru se vraca novac, trener dobija obavestenje da nije prihvacen na turnir)\
+turnir-pregled.html
 
 # 12. SSU - Pustanje pokemona u divljinu
 
