@@ -6,26 +6,26 @@ borba-divlji.html
 ### 1. korisnik pobedjuje
 
 korisnik.php (dodaje mu se pokekes i XP pokemonu)\
-- update User, owns\
+	update User, owns\
 korisnik.html
 
 ### 2. korisnik gubi
 
 korisnik.php (gubi pokekes, koliko?)\
-- update User\
+	update User\
 korisnik.html
 
 ### 3. korisnik hvata pokemona
 
 korisnik.php\
-- update User (gubi pokeloptu)\
-- insert owns (kog je nivoa i xpa uhvaceni pokemon)?\
+	update User (gubi pokeloptu)\
+	insert owns (kog je nivoa i xpa uhvaceni pokemon)?\
 korisnik.html
 
 ### 4. korisnik ne uspeva da uhvati pokemona
 
 korisnik.php\
-- update User\
+	update User\
 korisnik.html
 
 # 2. SSU - Autorizacija korisnika
@@ -39,7 +39,7 @@ index.html (prikazuje se forma)
 ### 2. uspesno logovanje
 
 login.php\
-- select User\
+	select User\
 admin.php (u zavisnosti od role)\
 admin.html\
 korisnik.php\
@@ -48,55 +48,55 @@ korisnik.html
 ### 3. pogresni podaci
 
 login.php\
-- select User\
+	select User\
 index.html (prikazuje se greska)
 
 ### 4. uspesno resetuje lozinku
 
 login.php\
-- select User\
+	select User\
 index.html (ostaje na istoj, salje mu se mejl)
 
 ### 5. korisnik unosi pogresan e-mail pri resetovanju
 
 login.php\
-- select User\
+	select User\
 index.html (prikazuje se poruka)
 
 # 3. SSU - Borba na turniru
 
 borba-turnir.php (klikom sa korisnik.html)\
-- select Tournament, User, registered, owns (da se provere da li moze da se bori)\
+	select Tournament, User, registered, owns (da se provere da li moze da se bori)\
 borba-turnir.html
 
 ### 1. korisnik pobedjuje na turniru
 
 korisnik.php (dodaju se poeni za turnir i pokekes, pokemoni dobijaju XP)\
-- update participates, User, owns
+	update participates, User, owns
 korisnik.html
 
 ### 2. korisnik gubi na turniru
 
 korisnik.php (gubi odredjene poene na turniru)\
-- update participates
+	update participates
 korisnik.html
 
 ### 3. korisnik ne moze da se bori jer je isteklo vreme trajanja turnira
 
 korisnik.php (prikazuje se poruka o isteku turnira)\
-- select Tournament, User\
+	select Tournament, User\
 korisnik.html
 
 ### 4. ne ispunjava uslove
 
 korisnik.php (ispisuje se poruka da ne ispunjava uslove)\
-- select Tournament, User, registered\
+	select Tournament, User, registered\
 korisnik.html
 
 ### 5. bira opciju za izlazak sa turnira
 
 korisnik.php (prikazuje se poruka da je izasao sa turnira)\
-- delete registered\
+	delete registered\
 korisnik.html
 
 
@@ -108,7 +108,7 @@ amdin.html
 ### 1. admin pritiska dugme za brisanje
 
 admin.php (najboljem igracu se dodeljuje nagrada ako ima bar jednu pobedu, svi igraci dobijaju poruku da je turnir zavrsen i obavestenje o njihovom rangu)\
-- delete Tournament, registered, participates\
+	delete Tournament, registered, participates\
 admin.html
 
 # 5. SSU - Hranjenje pokemona
@@ -119,13 +119,13 @@ korisnik.html
 ### 1. korisnik pritiska dugme za hranjenje
 
 korisnik.php (pokemonu se dodaje XP, korisnik gubi vockicu)\
-- update User, owns\
+	update User, owns\
 korisnik.html
 
 ### 2. pokemon prelazi na sledeci nivo
 
 korisnik.php (povecava se HP, nivo, broj XP za sledeci nivo)\
-- update owns
+	update owns
 korinik.html
 
 ### 3. korisnik nema tri pokemona za borbu na turniru na koji je prijavljen
@@ -151,7 +151,7 @@ pogadjanje.html
 ### 3. korisnik pogadja
 
 pogadjanje.php (sve kao za gosta samo sto dobija i pokekes)\
-- update User
+	update User
 pogadjanje.html
 
 ### 4. korisnik / gost ne pogadja pokemona
@@ -199,7 +199,7 @@ admin.html
 
 turnirForm\
 admin.php (unosi sve podatke na formi)\
-- insert Tournament\
+	insert Tournament\
 admin.html
 
 # 9. SSU - Kupovina u prodavnici
@@ -210,15 +210,15 @@ korisnik.html
 ### 1. uspesna kupovina pokelopte
 
 korisnik.php (korisniku se skida 50 pokekesa)\
-- select User\
-- update User\
+	select User\
+	update User\
 korisnik.html
 
 ### 2. uspesna kupovina vockice
 
 korisnik.php (korisniku se skida 10 pokekes)\
-- select User\
-- update User\
+	select User\
+	update User\
 korisnik.html
 
 ### 3. nema dovoljno pokekesa
@@ -234,21 +234,21 @@ korisnik.html
 ### 1. nema dovoljno vockica
 
 korisnik.php (dugme za hranjenje je onemoguceno pri ucitavanju)\
-- select User\
+	select User\
 korisnik.html
 
 ### 2. korisnik hrani pokemona
 
 korisnik.php (dugme je omoguceno pri ucitavanju, klikom hrani pokemona)\
-- select User\
-- update User\
+	select User\
+	update User\
 korisnik.html
 
 ### 3. pusta pokemona u divljinu
 
 korisnik.php (pritiskom na dugme pocinje SSU - Pustanje pokemona u divljinu)\
-- update User\
-- delete owns\
+	update User\
+	delete owns\
 korisnik.html
 
 # 11. SSU - Pregledanje prijava za turnir
@@ -259,20 +259,20 @@ admin.html
 ### 1. admin klikne na pregled prijava
 
 turnir-pregled.php (otvara se spisak prijava za taj turnir)\
-- select registered\
+	select registered\
 turnir-pregled.html
 
 ### 2. admin klikne na dugme za prihvatanje prijave
 
 turnir-pregled.php (belezi se da je prijavljen na turnir, ucesnik dobija obavestenje da mu je prihvacena prijava)\
-- delete registered\
-- update participates\
+	delete registered\
+	update participates\
 turnir-pregled.html
 
 ### 3. admin odbija prijavu
 
 turnir-pregled.php (odbija se prijava, treneru se vraca novac, trener dobija obavestenje da nije prihvacen na turnir)\
-- delete registered\
+	delete registered\
 turnir-pregled.html
 
 # 12. SSU - Pustanje pokemona u divljinu
@@ -283,8 +283,8 @@ korisnik.html
 ### 1. pritiska dugme za pustanje u divljinu
 
 korisnik.php (pokemon se brise sa profila, trener dobija nazad jednu pokeloptu)\
-- update User\
-- delete owns\
+	update User\
+	delete owns\
 korisnik.html
 
 ### 2. nema vise dovoljno pokemona za ucesce na nekom turniru
@@ -309,39 +309,39 @@ korisnik.html
 ### 3. korisnik unosi nepostojeci e-mail
 
 index.html (dobija odgovarajucu poruku)\
-- select User
+	select User
 
 ### 4. unosi vec registrovani e-mail
 
 index.html (dobija odgovarajucu poruku)\
-- select User
+	select User
 
 # 14. SSU - Ucestvovanje na turniru
 
 pregled-svih-turnira.php (dolazi sa korisnik.html)\
-- select Tournament\
+	select Tournament\
 pregled-svih-turnira.html
 
 ### 1. korisnik se uspesno prijavljuje
 
 pregled-korisnika-turnira.php (prikazuje se spisak svih korisnika turnira)\
-- select participates\
+	select participates\
 pregled-korisnika-turnira.html
 
 ### 2. ne ispunjava zahteve turnira
 
 pregled-svih-turnira.php (prikazuje se poruka)\
-- select Tournament, User, owns\
+	select Tournament, User, owns\
 pregled-svih-turnira.html
 
 ### 3. nema dovoljno pokekesa za prijavu
 
 pregled-svih-turnira.php (prikazuje se poruka)\
-- select User\
+	select User\
 pregled-svih-turnira.html
 
 ### 4. korisnik ima manje od tri pokemona
 
 pregled-svih-turnira.php (prikazuje se poruka da nema dovoljno pokemona)\
-- select User, owns\
+	select User, owns\
 pregled-svih-turnira.html
