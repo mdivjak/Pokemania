@@ -1,3 +1,18 @@
+# Spisak svih stranica
+- index
+- login
+- register
+- admin
+- trener
+- borba-divlji
+- borba-turnir
+- pogadjanje
+- pokedex
+- pokedex-pokemon
+- pregled-prijava
+- pregled-svih-turnira
+- pregled-korisnika-turnira
+
 # 1. SSU - Borba sa divljim pokemonima i njihovo hvatanje
 
 borba-divlji.php (klikom sa korisnik.html)\
@@ -258,22 +273,22 @@ admin.html
 
 ### 1. admin klikne na pregled prijava
 
-turnir-pregled.php (otvara se spisak prijava za taj turnir)\
+pregled-prijava.php (otvara se spisak prijava za taj turnir)\
 	select registered\
-turnir-pregled.html
+pregled-prijava.html
 
 ### 2. admin klikne na dugme za prihvatanje prijave
 
-turnir-pregled.php (belezi se da je prijavljen na turnir, ucesnik dobija obavestenje da mu je prihvacena prijava)\
+pregled-prijava.php (belezi se da je prijavljen na turnir, ucesnik dobija obavestenje da mu je prihvacena prijava)\
 	delete registered\
 	update participates\
-turnir-pregled.html
+pregled-prijava.html
 
 ### 3. admin odbija prijavu
 
-turnir-pregled.php (odbija se prijava, treneru se vraca novac, trener dobija obavestenje da nije prihvacen na turnir)\
+pregled-prijava.php (odbija se prijava, treneru se vraca novac, trener dobija obavestenje da nije prihvacen na turnir)\
 	delete registered\
-turnir-pregled.html
+pregled-prijava.html
 
 # 12. SSU - Pustanje pokemona u divljinu
 
