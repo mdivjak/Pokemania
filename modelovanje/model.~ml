@@ -16988,7 +16988,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[66]" type="UMLPackage" guid="6Z8U5rmvS0GqikNHmBi1ywAA">
-<XPD:ATTR name="Name" type="string">Pustanje pokemona u divljinu - realizaciju</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Pustanje pokemona u divljinu - realizacija</XPD:ATTR>
 <XPD:REF name="Namespace">FvSjiVGqpUCou3pfJLyVowAA</XPD:REF>
 <XPD:ATTR name="#OwnedCollaborationInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[0]" type="UMLCollaborationInstanceSet" guid="QqWTlfPs1UuvZ4sW1h/G7wAA">
@@ -17675,7 +17675,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[67]" type="UMLPackage" guid="NDNYqNd71E+ad9KV0JRAKAAA">
-<XPD:ATTR name="Name" type="string">Ucestvovanje na turniru - realizaciju</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Ucestvovanje na turniru - realizacija</XPD:ATTR>
 <XPD:REF name="Namespace">FvSjiVGqpUCou3pfJLyVowAA</XPD:REF>
 <XPD:ATTR name="#OwnedCollaborationInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[0]" type="UMLCollaborationInstanceSet" guid="cUdPw9DiLUysWRISIml5WAAA">
