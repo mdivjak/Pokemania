@@ -1,3 +1,18 @@
+# Spisak svih stranica
+- index
+- login
+- register
+- admin
+- korisnik
+- borba-divlji
+- borba-turnir
+- pogadjanje
+- pokedex
+- pokedex-pokemon
+- turnir-pregled
+- pregled-svih-turnira
+- pregled-korisnika-turnira
+
 # 1. SSU - Borba sa divljim pokemonima i njihovo hvatanje
 
 borba-divlji.php (klikom sa korisnik.html)\
