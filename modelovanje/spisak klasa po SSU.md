@@ -3,7 +3,7 @@
 - login
 - register
 - admin
-- korisnik
+- trener
 - borba-divlji
 - borba-turnir
 - pogadjanje
