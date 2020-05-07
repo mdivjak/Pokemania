@@ -1,86 +1,117 @@
-CREATE TABLE Owns
-(
-	idU                  INTEGER NOT NULL,
-	idO                  INTEGER NOT NULL,
-	idP                  INTEGER NOT NULL,
-	xp                   INTEGER NOT NULL,
-	level                INTEGER NOT NULL
-);
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3308
+-- Generation Time: Apr 12, 2020 at 04:05 PM
+-- Server version: 8.0.18
+-- PHP Version: 7.3.12
 
-ALTER TABLE Owns
-ADD CONSTRAINT XPKOwns PRIMARY KEY (idO);
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-CREATE TABLE Participates
-(
-	cntWin               INTEGER NOT NULL DEFAULT 0,
-	idU                  INTEGER NOT NULL,
-	idT                  INTEGER NOT NULL
-);
 
-ALTER TABLE Participates
-ADD CONSTRAINT XPKParticipates PRIMARY KEY (idU,idT);
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-CREATE TABLE Registered
-(
-	idU                  INTEGER NOT NULL,
-	idT                  INTEGER NOT NULL
-);
+--
+-- Database: `pokemania`
+--
+CREATE DATABASE IF NOT EXISTS `pokemania` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `pokemania`;
 
-ALTER TABLE Registered
-ADD CONSTRAINT XPKRegistered PRIMARY KEY (idU,idT);
+-- --------------------------------------------------------
 
-CREATE TABLE Tournament
-(
-	idT                  INTEGER NOT NULL,
-	name                 VARCHAR(40) NOT NULL,
-	prize                INTEGER NOT NULL,
-	minLevel             INTEGER NOT NULL,
-	maxLevel             INTEGER NOT NULL,
-	endDate              TIMESTAMP NOT NULL,
-	entryFee             INTEGER NOT NULL
-);
+--
+-- Table structure for table `owns`
+--
 
-ALTER TABLE Tournament
-ADD CONSTRAINT XPKTournament PRIMARY KEY (idT);
+DROP TABLE IF EXISTS `owns`;
+CREATE TABLE IF NOT EXISTS `owns` (
+  `idO` int(11) NOT NULL,
+  `idU` int(11) NOT NULL,
+  `idP` int(11) NOT NULL,
+  `xp` int(11) NOT NULL,
+  `level` int(11) NOT NULL,
+  PRIMARY KEY (`idO`),
+  KEY `owns_fk0` (`idU`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE UNIQUE INDEX uniqueName ON Tournament
-(
-	name ASC
-);
+-- --------------------------------------------------------
 
-CREATE TABLE User
-(
-	idU                  INTEGER NOT NULL,
-	email                VARCHAR(64) NOT NULL,
-	nickname             VARCHAR(64) NOT NULL,
-	password             VARCHAR(64) NOT NULL,
-	bAdmin               boolean NOT NULL DEFAULT 0,
-	cntPokemons          INTEGER NOT NULL DEFAULT 1,
-	cntCash              INTEGER NOT NULL DEFAULT 500,
-	cntBalls             INTEGER NOT NULL DEFAULT 3,
-	cntFruits            INTEGER NOT NULL DEFAULT 0,
-	trainer              INTEGER NOT NULL DEFAULT 1
-);
+--
+-- Table structure for table `participates`
+--
 
-ALTER TABLE User
-ADD CONSTRAINT XPKUser PRIMARY KEY (idU);
+DROP TABLE IF EXISTS `participates`;
+CREATE TABLE IF NOT EXISTS `participates` (
+  `idT` int(11) NOT NULL,
+  `idU` int(11) NOT NULL,
+  `cntWin` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idT`,`idU`),
+  KEY `participates_fk1` (`idU`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE UNIQUE INDEX uniqueEmail ON User
-(
-	email ASC
-);
+-- --------------------------------------------------------
 
-ALTER TABLE Owns
-ADD CONSTRAINT R_5 FOREIGN KEY (idU) REFERENCES User (idU);
+--
+-- Table structure for table `registered`
+--
 
-ALTER TABLE Participates
-ADD CONSTRAINT R_1 FOREIGN KEY (idU) REFERENCES User (idU);
+DROP TABLE IF EXISTS `registered`;
+CREATE TABLE IF NOT EXISTS `registered` (
+  `idT` int(11) NOT NULL,
+  `idU` int(11) NOT NULL,
+  PRIMARY KEY (`idT`,`idU`),
+  KEY `registered_fk1` (`idU`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-ALTER TABLE Participates
-ADD CONSTRAINT R_2 FOREIGN KEY (idT) REFERENCES Tournament (idT);
+-- --------------------------------------------------------
 
-ALTER TABLE Registered
-ADD CONSTRAINT R_3 FOREIGN KEY (idU) REFERENCES User (idU);
+--
+-- Table structure for table `tournament`
+--
 
-ALTER TABLE Registered
-ADD CONSTRAINT R_4 FOREIGN KEY (idT) REFERENCES Tournament (idT);
+DROP TABLE IF EXISTS `tournament`;
+CREATE TABLE IF NOT EXISTS `tournament` (
+  `idT` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) NOT NULL,
+  `prize` int(11) NOT NULL,
+  `minLevel` int(11) NOT NULL,
+  `maxLevel` int(11) NOT NULL,
+  `entryFee` int(11) NOT NULL,
+  `endDate` datetime NOT NULL,
+  PRIMARY KEY (`idT`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `idU` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `nickname` varchar(64) NOT NULL,
+  `bAdmin` tinyint(1) NOT NULL DEFAULT '0',
+  `cntBalls` int(11) NOT NULL DEFAULT '3',
+  `cntCash` int(11) NOT NULL DEFAULT '500',
+  `cntFruits` int(11) NOT NULL DEFAULT '0',
+  `cntPokemons` int(11) NOT NULL DEFAULT '1',
+  `trainer` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idU`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
