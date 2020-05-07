@@ -19,17 +19,13 @@ function search() {
 var mybutton, display;
 
 $(document).ready(() => {
-
     mybutton = document.getElementById("myBtn")
-
     display = document.getElementById("pokedexDisplay")
-    
     display.onscroll = () => scrollFunction()
-    
-    
-
+    $('input[type=search]').on('search', function () {
+      search();
+    });
 });
-
 
 function scrollFunction() {
   if (display.scrollTop > 20) {
@@ -39,7 +35,6 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
     $("#pokedexDisplay").animate({ scrollTop: 0 }, "fast");
 }

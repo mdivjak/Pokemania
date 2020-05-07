@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
 
     public function pokedex() {
-        $content = file_get_contents("https://pokeapi.co/api/v2/pokemon/?limit=251");
+        $content = file_get_contents("https://pokeapi.co/api/v2/pokemon/?limit=" . env('MAX_POKEMONS'));
         $result  = json_decode($content);
         $data = $result->results;
         $pokeCnt = count($data);
