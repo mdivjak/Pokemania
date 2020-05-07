@@ -28,10 +28,9 @@ class TournamentController extends Controller
         if ($user->cntCash < $tournament->entryFee) {
             return redirect()->back()->with('message', "You don't have enough money for registration!");
         }
-        if ($user->cntPokemons < 3) {
-            return redirect()->back()->with('message', "You don't have enough pokemons for registration!");
+        if (!$user->hasEnoughPokemons($tournament)) {
+            return redirect()->back()->with('message', "You don't have enough pokemons for this tournament!");
         }
-        // provera za min i max level
 
         DB::table('registered')->insert(
             ['user_id' => $user->id, 'tournament_id' => $tournament->id]

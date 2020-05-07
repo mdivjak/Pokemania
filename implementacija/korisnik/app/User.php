@@ -76,5 +76,22 @@ class User extends Authenticatable
 
         if ($participates != null) return true;
         return false;
+    }    
+
+    public function hasEnoughPokemons(Tournament $tournament)
+    {   
+        $cnt = 0;
+        foreach($this->pokemons as $pokemon) {
+            $pokemon_level = DB::table('owns')->where([
+                                ['user_id', $this->id], 
+                                ['pokemon_id', $pokemon->id],
+                            ])->first()->level;
+
+            if ($pokemon_level >= $tournament->minLevel && $pokemon_level <= $tournament->maxLevel)
+                $cnt++;
+            if ($cnt == 3) return true;
+        }
+        return false;
     }
+
 }

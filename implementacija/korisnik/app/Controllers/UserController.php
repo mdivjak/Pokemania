@@ -71,12 +71,6 @@ class UserController extends Controller
                 ['pokemon_id', request('pokemon')],
             ])->delete();
 
-        if ($user->cntPokemons < 3) {
-            foreach($user->tournaments as $tournament) {
-                // postaviti da ne moze vise da se bori
-            } 
-        }  
-
         return redirect()->back()->with('message', 'You have released your Pokemon!');
     }
 
@@ -110,5 +104,4 @@ class UserController extends Controller
 
         return redirect()->back()->with('message', 'You have successfully completed your purchase!');
     }
-
 }

@@ -51,12 +51,20 @@
         <div class="row">
             <div clas="col-sm-12">
                 <div class='form-buttons'>
+                    
+                    @if (App\User::find(1)->hasEnoughPokemons($tournament))
                     <form method='POST' action='' style='display: inline-block'>
                         @csrf
+                         <!-- Auth::user() -->
                         <button type="submit" class="btn btn-default btn-lg" style='margin: 1em'>
                             <img src="/images/boxing.png" height="65" />
                         </button>
                     </form>
+                    @else 
+                        <button class="btn btn-default btn-lg disabled" style='margin: 1em'>
+                            <img src="/images/boxing.png" height="65" />
+                        </button>
+                    @endif
 
                     <form method='POST' action='{{ route("tournament.delete", $tournament->id) }}' style='display: inline-block'>
                         @csrf
