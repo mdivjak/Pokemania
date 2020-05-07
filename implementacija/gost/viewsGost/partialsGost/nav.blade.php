@@ -13,9 +13,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-nav">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="{{route('home.index')}}">Home</a></li>
-					<li><a href="{{route('home.pokedex')}}">Pokedex</a></li>
-					<li><a href="{{route('home.quiz')}}">Quiz</a></li>
+					<li class="{{ Request::is('/') ? 'active' : null }}"><a href="{{route('home.index')}}">Home</a></li>
+					<li class="{{ Request::segment(1) === 'pokedex' ? 'active' : (Request::segment(1) === 'pokemon' ? 'active' : null) }}"><a href="{{route('home.pokedex')}}">Pokedex</a></li>
+					<li class="{{ Request::segment(1) === 'quiz' ? 'active' : null }}"><a href="{{route('home.quiz')}}">Quiz</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
                 <li><a href="profile.html">

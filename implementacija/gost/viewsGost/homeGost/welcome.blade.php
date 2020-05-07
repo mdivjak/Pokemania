@@ -7,7 +7,7 @@
 @section('content')
     <div class="row">
         <div clas="col-lg-12">
-            <div id="content">
+            <div id="homeContent">
                 <h1>Pokemania</h1>
                 <h3>Made with ❤️ by Disciplinovani</h3>
                 <hr>

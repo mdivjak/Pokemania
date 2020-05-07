@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+
+use DB;
 
 class HomeController extends Controller
 {
     public function show() {
-        return view("home.welcome");
+        
+       return view("home.welcome");
     }
 
     public function pokedex() {
@@ -34,9 +38,14 @@ class HomeController extends Controller
         $quizAnswer = $request->session()->pull('quizAnswer');
         
         
-        if ( $quizAnswer == $request->input("quizGuess"))
+        if ( $quizAnswer == $request->input("quizGuess")) {
+            //ako je ulogovan
+            /*
+                $user = User::where('nickname', 'klokar')->first(); //ovo izmeniti
+                $user->addPokeCash(100);
+            */
             return redirect()->route('home.quiz')->with('success', ['Correct answer!', session()->pull('quizAnswerImg')]);
-    
+        }
         else
             return redirect()->route('home.quiz')->with('wrong', 'Wrong answer! Try again');
         

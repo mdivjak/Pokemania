@@ -1,0 +1,176 @@
+.container {
+  margin: auto;
+  text-align: center;
+}
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 70px;
+  background: url('../images/pokebg.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: #f8f8f8;
+  background-color: #56baed;
+}
+
+a {
+  color: #92badd;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+h2.login {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 40px 8px 10px 8px;
+  color: #cccccc;
+}
+
+
+
+hr {
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+hr.styled {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+
+
+
+/* Navigation */
+
+.navbar {
+  width: 100vw;
+}
+
+.nav img {
+  filter: invert(46%) sepia(15%) saturate(0%) hue-rotate(225deg) brightness(99%) contrast(96%);
+}
+
+.nav li a.alignPerfect {
+  padding-bottom: 16px;
+  padding-top: 13px;
+}
+
+.nav img:hover {
+  filter: none;
+}
+
+.nav li a {
+  font-size: 15px;
+}
+
+
+/*Home Page*/
+
+#homeContent {
+  padding-top: 120px;
+  text-align: center;
+  text-shadow: 0 4px 3px rgba(0, 0, 0, 0.4), 0 8px 13px rgba(0, 0, 0, 0.1), 0 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+#homeContent h1 {
+  font-weight: bold;
+  font-size: 5em;
+}
+
+#homeContent .btn {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 500px) {
+  #homeContent h1 {
+    font-size: 4em;
+  }
+  #homeContent h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 350px) {
+  #homeContent h1 {
+    font-size: 3em;
+  }
+  #homeContent h3 {
+    font-size: 15px;
+  }
+  #homeContent .btn {
+    font-size: 15px;
+  }
+}
+
+
+/* Quiz */
+
+.quizImg {
+  filter: brightness(0%);
+  width: 500px;
+  max-width: 100vw;
+}
+
+.correctImg {
+  width: 500px;
+  max-width: 100vw;
+}
+
+.quizMsg {
+  text-shadow: none;
+  font-weight: 15px;
+  font-weight: 700;
+}
+
+.shadow {
+  text-shadow: 0 4px 3px rgba(0, 0, 0, 0.4), 0 8px 13px rgba(0, 0, 0, 0.1), 0 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+.searchPokemon {
+  color: black;
+  height: 48px;
+  border-radius: 25px;
+  font-size: 20px;
+}
+
+#quizContent .btn {
+  border-radius: 15px;
+  font-size: 25px;
+  margin-bottom: 0.5em;
+}
+
+.marginBottom {
+  margin-bottom: 0.75em;
+}
+
+@media screen and (max-width: 867px) {
+  .quizImg {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 467px) {
+  .quizImg {
+    width: 300px;
+  }
+  #quizContent h1 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 367px) {
+  .quizImg {
+    width: 250px;
+  }
+  #quizContent h1 {
+    font-size: 28px;
+  }
+}

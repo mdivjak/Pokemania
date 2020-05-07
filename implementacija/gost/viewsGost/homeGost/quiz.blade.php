@@ -7,7 +7,7 @@ Quiz
 @section('content')
 <div class="row">
     <div clas="col-lg-12">
-        <div id="content">
+        <div id="quizContent">
             @if(Session::has('success'))
             <div class="row">
                 <div class="col-md12">
@@ -21,7 +21,7 @@ Quiz
                 </div>
             </div>
             @endif
-            <h2>Guess the Pokemon!</h2>
+            <h1 class="shadow">Guess the Pokemon!</h1>
             <hr>
 
             @if(Session::has('success'))
@@ -30,17 +30,17 @@ Quiz
             <img class="quizImg" src="{{$pokeImg}}" />
             @endif
             
-            <hr />
+            <br><br>
             <form action="{{ route('home.quizGuess') }}" method="post">
                 <div class="input form-group justify-content-center">
-                    <div class="col-sm-2">&nbsp;</div>
-                    <div class="col-sm-5">
+                    <!-- <div class="col-sm-2">&nbsp;</div> -->
+                    <div class="col-sm-offset-3 col-sm-6 marginBottom">
                         <input {{Session::has('success') ? "disabled" : '' }} class="searchPokemon form-control" name="quizGuess" type="text" placeholder="It's..." minlength="1">
                     </div>
                     {{csrf_field()}}
-                    <div class="col-sm-4">
+                    <div class="col-sm-offset-4 col-sm-4">
                         <button {{Session::has('success') ? "disabled" : '' }} name="guess" type="submit" class="btn btn-default btn-lg">
-                            <img src="{{URL::to('images/pokeball.svg')}}" height="25" />
+                            <img src="{{URL::to('images/pokeball.svg')}}" height="35" />
                             submit
                         </button>
                         <button name="refresh" class="btn btn-default btn-lg">
