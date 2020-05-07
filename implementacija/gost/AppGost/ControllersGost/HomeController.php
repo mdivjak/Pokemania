@@ -15,11 +15,28 @@ class HomeController extends Controller
     }
 
     public function pokedex() {
-        return view("home.pokedex");
+        $content = file_get_contents("https://pokeapi.co/api/v2/pokemon/?limit=251");
+        $result  = json_decode($content);
+        $data = $result->results;
+        $pokeCnt = count($data);
+        $pokemons = [];
+        $pokeId = 0;
+
+        for ($i = 0; $i < $pokeCnt; $i++) {
+
+            $pokeId++;
+            array_push($pokemons, [
+                'name' => strtoupper($data[$i]->name[0]) . substr($data[$i]->name, 1),
+                'id' => $pokeId, 
+                'img' => "https://pokeres.bastionbot.org/images/pokemon/" . ($pokeId) . ".png" //"https://img.pokemondb.net/artwork/" . $data[$i]->name . ".jpg"
+            ]);
+        }
+        
+       return view("home.pokedex", ["pokemons" => $pokemons]);
     }
 
     public function quiz() {
-        $pokeId =  random_int(1,151);
+        $pokeId =  random_int(1,251);
         $content = file_get_contents("https://pokeapi.co/api/v2/pokemon/{$pokeId}");
         $result  = json_decode($content);
         session(['quizAnswer' => $result->name]);

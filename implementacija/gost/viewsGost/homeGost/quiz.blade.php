@@ -21,8 +21,10 @@ Quiz
                 </div>
             </div>
             @endif
-            <h1 class="shadow">Guess the Pokemon!</h1>
+            <h1 class="shadow">Who's that pokemon?</h1>
+            <br>
             <hr>
+            <br>
 
             @if(Session::has('success'))
             <img class="correctImg" src="{{Session::get('success')[1]}}" />

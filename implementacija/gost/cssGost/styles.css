@@ -174,3 +174,82 @@ hr.styled {
     font-size: 28px;
   }
 }
+
+
+/* Pokedex */
+#pokedexDisplay {
+  height: 75vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+}
+
+#pokedexDisplay::-webkit-scrollbar {
+  display: none;
+}
+
+.pokemon-card {
+  list-style: none;
+  padding: 5px;
+  margin: 15px;
+  background-color: transparent;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.09);
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.pokemon-card:hover {
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.7);
+}
+
+.pokemon-card a:hover {
+  text-decoration: none !important;
+}
+
+.pokeName {
+  color: rgb(36, 82, 151);
+  font-size: 22px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: capitalize;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.pokeName span {
+  font-style: italic;
+}
+
+.image {
+  height: 180px;
+  margin: 10px 0px 10px 0px;
+  width: 180px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color: rgb(36, 82, 151);
+  color: white;
+  cursor: pointer; 
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px; 
+}
+
+#myBtn:hover {
+  color: rgb(36, 82, 151);
+  background-color: white;
+}
+
+#pokedex input[type="search"]::-webkit-search-cancel-button {
+  /*Bootstrap 3 override*/
+  -webkit-appearance: searchfield-cancel-button !important;
+}
