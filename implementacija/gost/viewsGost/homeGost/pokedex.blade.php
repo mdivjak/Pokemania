@@ -4,6 +4,10 @@
 Pokedex
 @endsection
 
+@section('scripts')
+<script src="{{ URL::to('js/pokedex.js') }}"></script>
+@endsection
+
 @section('content')
 <div id="pokedex">
 
@@ -21,7 +25,7 @@ Pokedex
                 @foreach($pokemons as $pokemon)
                 <div class="col-lg-4 col-sm-6">
                     <div class="pokemon-card">
-                        <a href="./pokemon1.html">
+                        <a href="{{route('home.pokemon', ['id' => $pokemon['id']])}}">
                             <div class="pokeName"><span>#{{$pokemon['id']}}</span> {{$pokemon['name']}}</div>
                             <img class="image" src="{{$pokemon['img']}}">
                         </a>

@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="{{ URL::to('css/styles.css') }}">
 	<link rel="icon" href="{{ URL::to('images/pokeball.ico') }}">
 
-	<script src="{{ URL::to('js/pokedex.js') }}"></script>
+	@yield('scripts')
 
 </head>
 

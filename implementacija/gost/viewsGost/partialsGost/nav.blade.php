@@ -25,7 +25,7 @@
 
 					<li><a href="wildfight.html" class="alignPerfect">
 							<!-- Wild Fight -->
-							<img src="images/pokeball.svg" height="20" />
+							<img src="{{ URL::to('images/pokeball.svg') }}" height="20" />
 						</a></li>
 
 					<li><a href="shop.html">
@@ -35,7 +35,7 @@
 
 					<li><a href="arena.html" class="alignPerfect">
 							<!-- Battle Arena -->
-							<img src="images/stadium.svg" height="20" />
+							<img src="{{ URL::to('images/stadium.svg') }}" height="20" />
 						</a></li>
 
 					<li><a href="create.html">
