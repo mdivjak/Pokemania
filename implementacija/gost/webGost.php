@@ -28,7 +28,6 @@ Route::get("/pokedex", [
     "uses" => "HomeController@pokedex",
     "as" => "home.pokedex"
 ]);
-
 Route::get("/pokedex/{id}", [
     "uses" => "HomeController@pokemon",
     "as" => "home.pokemon"
@@ -42,5 +41,6 @@ Route::post("/quiz", [
     "uses" => "HomeController@quizGuess",
     "as" => "home.quizGuess"
 ]);
+
 
 

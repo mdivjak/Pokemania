@@ -13,9 +13,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-nav">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="{{route('home.index')}}">Home</a></li>
-					<li><a href="{{route('home.pokedex')}}">Pokedex</a></li>
-					<li><a href="{{route('home.quiz')}}">Quiz</a></li>
+					<li class="{{ Request::is('/') ? 'active' : null }}"><a href="{{route('home.index')}}">Home</a></li>
+					<li class="{{ Request::segment(1) === 'pokedex' ? 'active' : (Request::segment(1) === 'pokemon' ? 'active' : null) }}"><a href="{{route('home.pokedex')}}">Pokedex</a></li>
+					<li class="{{ Request::segment(1) === 'quiz' ? 'active' : null }}"><a href="{{route('home.quiz')}}">Quiz</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
                 <li><a href="profile.html">
@@ -25,7 +25,7 @@
 
 					<li><a href="wildfight.html" class="alignPerfect">
 							<!-- Wild Fight -->
-							<img src="images/pokeball.svg" height="20" />
+							<img src="{{ URL::to('images/pokeball.svg') }}" height="20" />
 						</a></li>
 
 					<li><a href="shop.html">
@@ -35,7 +35,7 @@
 
 					<li><a href="arena.html" class="alignPerfect">
 							<!-- Battle Arena -->
-							<img src="images/stadium.svg" height="20" />
+							<img src="{{ URL::to('images/stadium.svg') }}" height="20" />
 						</a></li>
 
 					<li><a href="create.html">
