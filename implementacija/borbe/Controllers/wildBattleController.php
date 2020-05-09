@@ -10,6 +10,7 @@ class wildBattleController {
 
         Session::put("user", "1");
         Session::put("load", "1");
+        Session::put("loadAttack", "1");
 
         $trainersPokemonsFromTable=\DB::table('owns')->where('idU', Session::get('user'))->get();
 
@@ -21,20 +22,24 @@ class wildBattleController {
         }
 
         $trainersPokemons=array();
+        $trainersPokemonsLevelsForButtons=array();
         foreach ($trainersPokemonsIDs as $index => $value) {
             $pokeURL="http://pokeapi.co/api/v2/pokemon/"."$value";
             $data=file_get_contents($pokeURL.'/');
             $pokemonJSON=json_decode($data);
             array_push($trainersPokemons, $pokemonJSON->name);
+            array_push($trainersPokemonsLevelsForButtons, \DB::table('owns')->where('idU', Session::get('user'))->where('idP', $value)->first()->level);
         }
 
-        $randNumber=rand(1,807);
+        $randNumber=rand(1,251);
         $pokeURL="http://pokeapi.co/api/v2/pokemon/"."$randNumber";
         $data=file_get_contents($pokeURL.'/');
         $pokemonJSON=json_decode($data);
         $imageURI="https://pokeres.bastionbot.org/images/pokemon/".$randNumber.".png";
 
         $randLevel=rand(min($trainersPokemonsLevels),max($trainersPokemonsLevels));
+        // for testing
+        // $randLevel=16;
 
         Session::put('wildPokemon',$pokemonJSON->name);
         Session::put('wildPokemonLevel',$randLevel);
@@ -45,7 +50,8 @@ class wildBattleController {
             'pokemonName'=>$pokemonJSON->name,
             'pokemonLevel'=>$randLevel,
             'imageURI'=>$imageURI,
-            'trainersPokemons'=>$trainersPokemons
+            'trainersPokemons'=>$trainersPokemons,
+            'trainersPokemonsLevelsForButtons'=>$trainersPokemonsLevelsForButtons
         ]);
     }
 
@@ -79,7 +85,6 @@ class wildBattleController {
         Session::put('wildPokemonID',$wildPokemonID);
         Session::put('wildPokemonIMG',$wildPokemonIMG);
 
-
         $trainerPokemonTypes=$trainerPokemonJSON->types;
 
         $trainerPokemonType1=json_encode($trainerPokemonTypes[0]);
@@ -109,7 +114,10 @@ class wildBattleController {
         Session::put('wildPokemonType1',$wildPokemonType1);
         Session::put('wildPokemonType2',$wildPokemonType2);
 
-        return view('wildBattlePicked');
+        $pokeballNumber=\DB::table('user')->where('idU', Session::get('user'))->first()->cntBalls;
+        return view('wildBattlePicked', [
+            'text'=> 'Pokeballs: '.$pokeballNumber
+        ]);
     }
 
     public function getDoubleFrom($type) {
@@ -144,7 +152,62 @@ class wildBattleController {
         return $double_damage_to_names;
     }
 
+    public function gain() {
+
+        if (Session::get("loadAttack")=="1") Session::put("loadAttack", "0");
+
+        $gainedXP=Session::get('wildPokemonLevel'); 
+        $gainedCash=$gainedXP*10;
+        $requiredXP=Session::get('trainerPokemonLevel')*5;
+        $currentXP=\DB::table('owns')->where('idU', Session::get('user'))->where('idP', Session::get('trainerPokemonID'))->first()->xp;
+
+        //if max level
+        if (Session::get('trainerPokemonLevel')==50) $gainedXP=0;
+        if (Session::get('trainerPokemonLevel')==50) $currentXP=0;
+
+        $newXP=$currentXP+$gainedXP;
+        $newLevel=false;
+        while ($newXP>=$requiredXP) {
+            $newLevel=true;
+            $newXP=$newXP-$requiredXP;
+            \DB::table('owns')->where('idU', Session::get('user'))->where('idP', Session::get('trainerPokemonID'))->increment('level', 1);
+            Session::put('trainerPokemonLevel', Session::get('trainerPokemonLevel')+1);
+            $requiredXP=Session::get('trainerPokemonLevel')*5;
+
+            //if max level
+            if (Session::get('trainerPokemonLevel')==50) break;
+
+        }
+        \DB::table('owns')->where('idU', Session::get('user'))->where('idP', Session::get('trainerPokemonID'))->update(['xp'=>$newXP]);
+        \DB::table('user')->where('idU', Session::get('user'))->increment('cntCash', $gainedCash);
+
+        $message='You won and gained '.$gainedCash.'ß, '.ucfirst(Session::get('trainerPokemon')).' gained '.$gainedXP.'XP';
+        if ($newLevel) {
+            $message=$message.' and grew to level '.Session::get('trainerPokemonLevel');
+        }
+        return $message.'!';
+    }
+
+    public function lose() {
+
+        if (Session::get("loadAttack")=="1") Session::put("loadAttack", "0");
+
+        $lostCash=Session::get('wildPokemonLevel')*5;
+        $currentCash=\DB::table('user')->where('idU', Session::get('user'))->first()->cntCash;
+        $newCash=$currentCash-$lostCash;
+        if ($newCash<0) {
+            $lostCash=$currentCash;
+            $newCash=0;
+        }
+        \DB::table('user')->where('idU', Session::get('user'))->update(['cntCash'=>$newCash]);
+        return 'You lost and dropped '.$lostCash.'ß!';
+    }
+
     public function attack() {
+        if (Session::get("loadAttack")=="0") {
+            return view('welcome');
+        }
+
         $trainerPokemonLevel=Session::get('trainerPokemonLevel');
         $wildPokemonLevel=Session::get('wildPokemonLevel');
         $trainerDamage=rand($trainerPokemonLevel*1.5-7, $trainerPokemonLevel*1.5+7);
@@ -184,26 +247,53 @@ class wildBattleController {
                 if ($trainerPokemonHP<=0) $trainerPokemonHP=0;
                 Session::put('trainerPokemonHP', $trainerPokemonHP);
                 if ($trainerPokemonHP>0) {
-                    $pokeButtonEnable='disabled';
-                    if (Session::get('wildPokemonMaxHP')/$wildPokemonHP>=2) $pokeButtonEnable='';
+                    $pokeButtonEnable=' disabled';
+                    $pokeLinkEnable='pointer-events: none';
+                    if (Session::get('wildPokemonMaxHP')/$wildPokemonHP>=2) {
+                        $pokeButtonEnable='';
+                        $pokeLinkEnable='';
+                    }
+                    $pokeballNumber=\DB::table('user')->where('idU', Session::get('user'))->first()->cntBalls;
+                    if ($pokeballNumber==0) {
+                        $pokeButtonEnable=' disabled';
+                        $pokeLinkEnable='pointer-events: none';
+                    }
                     return view('wildBattleAttacked', [
-                        'text'=>'Battle!',
+                        'text'=> 'Pokeballs: '.$pokeballNumber,
                         'fightButtonEnable'=>'',
-                        'pokeButtonEnable'=>$pokeButtonEnable
+                        'pokeButtonEnable'=>$pokeButtonEnable,
+                        'fightLinkEnable'=>'',
+                        'pokeLinkEnable'=>$pokeLinkEnable,
+                        'backButtonEnable'=>' disabled',
+                        'backLinkEnable'=>'pointer-events: none'
                     ]);
                 }
                 else {
+
+                    $message=$this->lose();
+
                     return view('wildBattleAttacked', [
-                        'text'=>'You lost!',
+                        'text'=>$message,
                         'fightButtonEnable'=>' disabled',
-                        'pokeButtonEnable'=>' disabled'
+                        'pokeButtonEnable'=>' disabled',
+                        'fightLinkEnable'=>'pointer-events: none',
+                        'pokeLinkEnable'=>'pointer-events: none',
+                        'backButtonEnable'=>'',
+                        'backLinkEnable'=>''
                     ]); 
                 }
             } else {
+
+                $message=$this->gain();
+
                 return view('wildBattleAttacked', [
-                    'text'=>'You won!',
+                    'text'=>$message,
                     'fightButtonEnable'=>' disabled',
-                    'pokeButtonEnable'=>' disabled'
+                    'pokeButtonEnable'=>' disabled',
+                    'fightLinkEnable'=>'pointer-events: none',
+                    'pokeLinkEnable'=>'pointer-events: none',
+                    'backButtonEnable'=>'',
+                    'backLinkEnable'=>''
                 ]);
             }
         }
@@ -219,25 +309,52 @@ class wildBattleController {
                 Session::put('wildPokemonHP', $wildPokemonHP);
                 if ($wildPokemonHP>0) {
                     $pokeButtonEnable='disabled';
-                    if (Session::get('wildPokemonMaxHP')/$wildPokemonHP>=2) $pokeButtonEnable='';
+                    $pokeLinkEnable='pointer-events: none';
+                    if (Session::get('wildPokemonMaxHP')/$wildPokemonHP>=2) {
+                        $pokeButtonEnable='';
+                        $pokeLinkEnable='';
+                    }
+                    $pokeballNumber=\DB::table('user')->where('idU', Session::get('user'))->first()->cntBalls;
+                    if ($pokeballNumber==0) {
+                        $pokeButtonEnable=' disabled';
+                        $pokeLinkEnable='pointer-events: none';
+                    }
                     return view('wildBattleAttacked', [
-                        'text'=>'Battle!',
+                        'text'=>'Pokeballs: '.$pokeballNumber,
                         'fightButtonEnable'=>'',
-                        'pokeButtonEnable'=>$pokeButtonEnable
+                        'pokeButtonEnable'=>$pokeButtonEnable,
+                        'fightLinkEnable'=>'',
+                        'pokeLinkEnable'=>$pokeLinkEnable,
+                        'backButtonEnable'=>' disabled',
+                        'backLinkEnable'=>'pointer-events: none'
                     ]);
                 }
                 else {
+
+                    $message=$this->gain();
+
                     return view('wildBattleAttacked', [
-                        'text'=>'You won!',
+                        'text'=>$message,
                         'fightButtonEnable'=>' disabled',
-                        'pokeButtonEnable'=>' disabled'
+                        'pokeButtonEnable'=>' disabled',
+                        'fightLinkEnable'=>'pointer-events: none',
+                        'pokeLinkEnable'=>'pointer-events: none',
+                        'backButtonEnable'=>'',
+                        'backLinkEnable'=>''
                     ]); 
                 }
             } else {
+
+                $message=$this->lose();
+
                 return view('wildBattleAttacked', [
-                    'text'=>'You lost!',
+                    'text'=>$message,
                     'fightButtonEnable'=>' disabled',
-                    'pokeButtonEnable'=>' disabled'
+                    'pokeButtonEnable'=>' disabled',
+                    'fightLinkEnable'=>'pointer-events: none',
+                    'pokeLinkEnable'=>'pointer-events: none',
+                    'backButtonEnable'=>'',
+                    'backLinkEnable'=>''
                 ]);
             }
         }
@@ -249,6 +366,7 @@ class wildBattleController {
         }
         if (Session::get("load")=="1") Session::put("load", "0");
 
+        \DB::table('user')->where('idU', Session::get('user'))->decrement('cntBalls', 1);
         $wildPokemonMaxHP=Session::get('wildPokemonMaxHP');
         $wildPokemonHP=Session::get('wildPokemonHP');
 
@@ -261,7 +379,11 @@ class wildBattleController {
                 return view('wildBattleAttacked', [
                     'text'=>ucfirst(Session::get('wildPokemon')).' got away!',
                     'fightButtonEnable'=>' disabled',
-                    'pokeButtonEnable'=>' disabled'
+                    'pokeButtonEnable'=>' disabled',
+                    'fightLinkEnable'=>'pointer-events: none',
+                    'pokeLinkEnable'=>'pointer-events: none',
+                    'backButtonEnable'=>'',
+                    'backLinkEnable'=>''
                 ]);
             }
             else {
@@ -270,10 +392,15 @@ class wildBattleController {
                     ['idU' => Session::get('user'), 'idP' => Session::get('wildPokemonID'),
                     'xp' => 0, 'level' => Session::get('wildPokemonLevel')]
                 );
+                \DB::table('user')->where('idU', Session::get('user'))->increment('cntPokemons', 1);
                 return view('wildBattleAttacked', [
                     'text'=>'You caught '.ucfirst(Session::get('wildPokemon')).'!',
                     'fightButtonEnable'=>' disabled',
-                    'pokeButtonEnable'=>' disabled'
+                    'pokeButtonEnable'=>' disabled',
+                    'fightLinkEnable'=>'pointer-events: none',
+                    'pokeLinkEnable'=>'pointer-events: none',
+                    'backButtonEnable'=>'',
+                    'backLinkEnable'=>''
                 ]);
             }
         }
@@ -284,7 +411,11 @@ class wildBattleController {
                 return view('wildBattleAttacked', [
                     'text'=>ucfirst(Session::get('wildPokemon')).' got away!',
                     'fightButtonEnable'=>' disabled',
-                    'pokeButtonEnable'=>' disabled'
+                    'pokeButtonEnable'=>' disabled',
+                    'fightLinkEnable'=>'pointer-events: none',
+                    'pokeLinkEnable'=>'pointer-events: none',
+                    'backButtonEnable'=>'',
+                    'backLinkEnable'=>''
                 ]);
             }
             else {
@@ -293,10 +424,15 @@ class wildBattleController {
                     ['idU' => Session::get('user'), 'idP' => Session::get('wildPokemonID'),
                     'xp' => 0, 'level' => Session::get('wildPokemonLevel')]
                 );
+                \DB::table('user')->where('idU', Session::get('user'))->increment('cntPokemons', 1);
                 return view('wildBattleAttacked', [
                     'text'=>'You caught '.ucfirst(Session::get('wildPokemon')).'!',
                     'fightButtonEnable'=>' disabled',
-                    'pokeButtonEnable'=>' disabled'
+                    'pokeButtonEnable'=>' disabled',
+                    'fightLinkEnable'=>'pointer-events: none',
+                    'pokeLinkEnable'=>'pointer-events: none',
+                    'backButtonEnable'=>'',
+                    'backLinkEnable'=>''
                 ]);
             }
         }

@@ -22,10 +22,26 @@
 </div>
 @endsection
 
+@section('fightLinkEnable')
+{{$fightLinkEnable}}
+@endsection
+
+@section('pokeLinkEnable')
+{{$pokeLinkEnable}}
+@endsection
+
+@section('backLinkEnable')
+{{$backLinkEnable}}
+@endsection
+
 @section('fightButtonEnable')
 {{$fightButtonEnable}}
 @endsection
 
 @section('pokeButtonEnable')
 {{$pokeButtonEnable}}
+@endsection
+
+@section('backButtonEnable')
+{{$backButtonEnable}}
 @endsection

@@ -1,7 +1,7 @@
 @extends ('layout1')
 
 @section('text')
-Battle!
+{{$text}}
 @endsection
 
 @section('progress1')
@@ -22,9 +22,25 @@ Battle!
 </div>
 @endsection
 
+@section('fightLinkEnable')
+@endsection
+
+@section('pokeLinkEnable')
+pointer-events: none
+@endsection
+
+@section('backLinkEnable')
+pointer-events: none
+@endsection
+
 @section('fightButtonEnable')
 @endsection
 
 @section('pokeButtonEnable')
 disabled
 @endsection
+
+@section('backButtonEnable')
+disabled
+@endsection
+

@@ -31,12 +31,19 @@
 
   
   <div class="buttonArea">
-      <a href="{{ route('wildBattleAttack') }}"><button type="button" class="btn btn-default @yield('fightButtonEnable')">
+
+      <a href="{{ route('wildBattleAttack') }}" style="@yield('fightLinkEnable');"><button type="button" class="btn btn-default @yield('fightButtonEnable')">
 				<img src="images-Borbe/boxing.png" height="70" />
 			</button></a>
-      <a href="{{ route('wildBattleCatch') }}"><button type="button" class="btn btn-default @yield('pokeButtonEnable')">
+
+      <a href="{{ route('wildBattleCatch') }}" style="@yield('pokeLinkEnable');"><button type="button" class="btn btn-default @yield('pokeButtonEnable')">
 	      <img src="images-Borbe/pokeball.svg" height="70" />
       </button></a>
+
+      <a href="{{ route('begin') }}" style="@yield('backLinkEnable');"><button type="button" class="btn btn-default @yield('backButtonEnable')">
+      <img src="images-Borbe/back.png" height="70" />
+			</button></a>
+
     </div>
 
 

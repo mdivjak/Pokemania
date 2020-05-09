@@ -42,7 +42,7 @@
     flex-direction: column;
     overflow-y: auto;
     height: 170px;
-    width: 200px;
+    width: 220px;
 }
 
 .battlefield {
@@ -108,5 +108,16 @@
 .buttonArea img {
     height: 50px;
     width: 50px;
+}
+
+.buttonArea p {
+    height: 50px;
+    width: 50px;
+}
+
+.trainerPokemonHolder {
+    display: inline !important;
+    text-align: center;
+    margin: 1px;
 }
 
