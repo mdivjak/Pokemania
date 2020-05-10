@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href='/css/alerts.css'>
+  <link rel="stylesheet" href="{{ asset('css/user.css') }}">
 @endsection
 
 @section('content')
@@ -19,13 +19,13 @@
 
   @if (session()->has('message'))
     <div class="col-sm-12 alert-message">
-      <span class="alert alert-danger">{{ session()->get('message') }}</span>
+      <div class="alert alert-danger">{{ session()->get('message') }}</div>
     </div>
   @endif
 
   @if (session()->has('message_success'))
     <div class="col-sm-12 alert-message">
-      <span class="alert alert-success">{{ session()->get('message_success') }}</span>
+      <div class="alert alert-success">{{ session()->get('message_success') }}</div>
     </div>
   @endif
 
@@ -33,7 +33,7 @@
 
     @foreach($tournaments as $tournament)
     <div class="col-lg-3 col-sm-6">
-      <div class="moves container">
+      <div class="pokemons container">
         <div class="thumbnail" style="width: 22rem; height: 24rem;">
           <div class="caption">
             <p class="move-name">{{ $tournament->name }}</p>
@@ -43,15 +43,14 @@
             <p class=" move-accuracy"><b>Max Level:</b> {{ $tournament->maxLevel }} </p>
             <p class=" move-accuracy"><b>End Date:</b> {{ date('d.m.Y', strtotime($tournament->endDate)) }} </p>
             
-            <div style="margin-left: 3rem; margin-top: 2rem;">
-              <!-- Auth::user() -->
-              @if(App\User::find(1)->participates($tournament->id))
+            <div style="margin-top: 2rem;">
+              @if(Auth::user()->participates($tournament->id))
                 
                 <form method='GET' action='{{ route("tournament.show", $tournament->id) }}'>
                   <button type="submit" class="btn btn-success mb-3">Show details</button>
                 </form> 
 
-              @elseif(App\User::find(1)->isRegistered($tournament->id)) 
+              @elseif(Auth::user()->isRegistered($tournament->id)) 
 
                 <p class='text-danger'>Waiting for admin to accept...</p>
 

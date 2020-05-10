@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href='/css/alerts.css'>
+  <link rel="stylesheet" href="{{ asset('images/user.css') }}">
 @endsection
 
 @section('content')
@@ -40,26 +40,26 @@
 
   @if (session()->has('message'))
     <div class="col-sm-12 alert-message">
-      <span class="alert alert-success">{{ session()->get('message') }}</span>
+      <div class="alert alert-success">{{ session()->get('message') }}</div>
     </div>
   @endif
 
   @if (session()->has('message_danger'))
     <div class="col-sm-12 alert-message">
-      <span class="alert alert-danger">{{ session()->get('message_danger') }}</span>
+      <div class="alert alert-danger">{{ session()->get('message_danger') }}</div>
     </div>
   @endif
 
   <div class="row" style="margin-top: 10rem;">
 
     <div class="col-lg-6 col-sm-6">
-      <div class="moves container">
+      <div class="pokemons container">
         <div class="thumbnail" style="width: 20rem; height: 22rem;">
           <div class="caption">
-            <p class="move-name"> POKEBALL </p>
-            <img width=70 height=70 src="{{ asset('images/pokeball.png') }}" style="margin-left:50px;"/>
+            <p class="pokemon-name"> POKEBALL </p>
+            <img width=70 height=70 src="{{ asset('images/pokeball.png') }}"/>
 
-            <div style="margin-top:30px; margin-left:4rem;">
+            <div style="margin-top:30px;">
                 <form method='POST' action='{{ route("user.shop", ["id" => Auth::user()->idU]) }}?buy=pokeball'>
                     @csrf
                     @method('PUT')
@@ -73,13 +73,13 @@
     </div>
 
     <div class="col-lg-6 col-sm-6">
-      <div class="moves container">
+      <div class="pokemons container">
         <div class="thumbnail" style="width: 20rem; height: 22rem;">
           <div class="caption">
-            <p class="move-name"> FRUIT </p>
-            <img width=70 height=70 src="/images/fruit.png" style="margin-left:50px;"/>
+            <p class="pokemon-name"> FRUIT </p>
+            <img width=70 height=70 src="{{ asset('images/fruit.png') }}"/>
 
-            <div style="margin-top:30px; margin-left:4rem;">
+            <div style="margin-top:30px;">
                 <form method='POST' action='{{ route("user.shop", ["id" => Auth::user()->idU]) }}?buy=fruit'>
                     @csrf
                     @method('PUT')

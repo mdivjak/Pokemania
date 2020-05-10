@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class UserController extends Controller
 {
@@ -16,8 +17,7 @@ class UserController extends Controller
 
     public function show()
     {
-        $user = User::find(1);
-        // treba da bude Auth::user
+        $user = Auth::user();
         $pokemons = $user->pokemons;
 
         $collection = array();
@@ -34,10 +34,8 @@ class UserController extends Controller
 
     public function feed()
     {
-        // $userId = Auth::id();
-        // $user = Auth::user();
-        $userId = 1;
-        $user = User::find(1);
+        $userId = Auth::id();
+        $user = Auth::user();
 
         $user->cntFruits--;
 
@@ -57,10 +55,8 @@ class UserController extends Controller
 
     public function release()
     {
-        // $userId = Auth::id();
-        // $user = Auth::user();
-        $userId = 1;
-        $user = User::find(1);
+        $userId = Auth::id();
+        $user = Auth::user();
 
         $user->cntBalls++;
         $user->cntPokemons--;
@@ -76,15 +72,13 @@ class UserController extends Controller
 
     public function shop()
     {
-        $user = User::find(1);
-        // treba da bude Auth::user
+        $user = Auth::user();
         return view("user.shop", compact('user'));
     }
 
     public function buy()
     {
-        $user = User::find(1);
-        // treba da bude Auth::user
+        $user = Auth::user();
 
         if (request('buy') == 'pokeball' || request('buy') == 'fruit') {
             if ($user->cntCash < 50) 

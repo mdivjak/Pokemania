@@ -10,6 +10,6 @@ class Tournament extends Model
     {
         return $this->belongsToMany('App\User', 'participates', 'tournament_id', 'user_id')
                     ->orderBy('cntWin', 'desc')
-                    ->take(3);
+                    ->take(10);
     }
 }
