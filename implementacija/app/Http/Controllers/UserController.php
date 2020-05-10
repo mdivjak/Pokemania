@@ -41,15 +41,30 @@ class UserController extends Controller
 
         $user->save();
 
-        //uvecavanje XP pokemona
-        $data = DB::table('owns')->where([
-                ['user_id', $userId],
-                ['pokemon_id', request('pokemon')],
-            ])->increment('xp', 10);
+        $level = DB::table('owns')->where([['user_id', $userId], ['pokemon_id', request('pokemon')]])->first()->level;
+        $currentXP = DB::table('owns')->where([['user_id', $userId], ['pokemon_id', request('pokemon')]])->first()->xp;
 
-        // uvecavanje HP
-        //prelazak na sledeci nivo? 
+        $gainedXP = 2 * $level;
+        $requiredXP = 5 * $level;
 
+        if ($level == 50) {
+            $gainedXP=0;
+            $currentXP=0;
+        }
+
+        $newXP = $currentXP + $gainedXP;
+        $newLevel = false;
+
+        while ($newXP >= $requiredXP) {
+            $newLevel = true;
+            $newXP  = $newXP - $requiredXP;
+            DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->increment('level', 1);
+            $level++;
+            $requiredXP = $level * 5;
+            if ( $level == 50) break;
+        }
+
+        DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->update(['xp' => $newXP]);
         return redirect()->back()->with('message', 'You have successfully fed your pokemon!');
     }
 
