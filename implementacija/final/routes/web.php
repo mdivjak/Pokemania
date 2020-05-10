@@ -27,27 +27,27 @@ Route::post('/home', 'AdminsController@store');
 //-------------------------------NATALIJINO---------------------------------------
 
 Route::get("/", [
-    "uses" => "HomeController@show",
+    "uses" => "GuestController@show",
     "as" => "home.index"
 ]);
 
 Route::get("/pokedex", [
-    "uses" => "HomeController@pokedex",
+    "uses" => "GuestController@pokedex",
     "as" => "home.pokedex"
 ]);
 
 Route::get("/pokedex/{id}", [
-    "uses" => "HomeController@pokemon",
+    "uses" => "GuestController@pokemon",
     "as" => "home.pokemon"
 ]);
 
 Route::get("/quiz", [
-    "uses" => "HomeController@quiz",
+    "uses" => "GuestController@quiz",
     "as" => "home.quiz"
 ]);
 
 Route::post("/quiz", [
-    "uses" => "HomeController@quizGuess",
+    "uses" => "GuestController@quizGuess",
     "as" => "home.quizGuess"
 ]);
 //------------------------------KRAJ NATALIJINOG------------------------------------
