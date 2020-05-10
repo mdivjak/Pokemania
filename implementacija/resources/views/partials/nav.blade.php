@@ -32,14 +32,14 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{ route('user.shop', Auth::user()->idU) }}">
+							<a href="#">
 								<!-- Shop -->
 								<i class="fas fa-shopping-cart"></i>
 							</a>
 						</li>
 
 						<li>
-							<a href="{{ route('tournament.index') }}" class="alignPerfect">
+							<a href="#" class="alignPerfect">
 								<!-- Battle Arena -->
 								<img src="{{ URL::to('images/stadium.svg') }}" height="20" />
 							</a>
@@ -57,28 +57,32 @@
 							<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 								<!-- Sign Out -->
 								<i class="fas fa-door-closed"></i>
-								{{ __('Logout') }}
+								<!-- {{ __('Logout') }} -->
 							</a>
 							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 								@csrf
 							</form>
 						</li>
 
-						<li>
+						<!-- <li>
 							<a href="#" role="button">
 								{{ Auth::user()->name }}
 							</a>
-						</li>
+						</li> -->
 						
 					@endauth
 
 					@guest
-						<li class="nav-item">
-							<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+						<li class="nav-item {{ (Request::segment(1) === 'login' || Request::segment(1) === 'password')  ? 'active' : null }}">
+							<a class=" nav-link" href="{{ route('login') }}">{{ __('Login') }}
+							<i class="fas fa-user"></i>
+							</a>
 						</li>
 						@if (Route::has('register'))
-							<li class="nav-item">
-								<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+							<li class="nav-item {{ Request::segment(1) === 'register' ? 'active' : null }}">
+								<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}
+								<i class="fas fa-user-plus"></i>
+								</a>
 							</li>
 						@endif
 					@endguest
