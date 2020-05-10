@@ -1,0 +1,140 @@
+
+.wrapperAppeared {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+}
+
+.wrapperAppeared img {
+    margin: 30px;
+    height: 200px;
+    width: 200px;
+}
+
+.headerWrapper {
+    border-radius: 20px;
+    background-color: rgba(104,104,104, 0.5);
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.levelWrapper {
+    background-color: black;
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.levelWrapper h5 {
+    font-size: 15px;
+    font-weight: bold;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+
+.list-group {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 170px;
+    width: 230px;
+}
+
+.battlefield {
+    display: inline !important;
+    text-align: center;
+    flex-direction: row;
+    background-color: rgba(104,104,104, 0.5);
+    border-radius: 30px;
+    margin: 30px;
+}
+
+.battlefield h3 {
+    font-weight: bold;
+}
+
+.me {
+    float:left;
+    margin-right: 200px;
+    margin-left: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.enemy {
+    float:right;
+    margin-left: 200px;
+    margin-right: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.progress-bar {
+    background-color: rgb(0, 255, 0);
+    color: black;
+    text-align: center;
+}
+
+.secondLevelWrapper {
+    background-color: black;
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center !important;
+    margin: auto;
+}
+
+.secondLevelWrapper h5 {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.buttonArea {
+    display: inline !important;
+}
+
+.buttonArea.btn {
+    height: 70px;
+    width: 70px;
+}
+
+.buttonArea img {
+    height: 50px;
+    width: 50px;
+}
+
+.buttonArea p {
+    height: 50px;
+    width: 50px;
+}
+
+.trainerPokemonHolder {
+    display: inline !important;
+    text-align: left;
+    margin: 1px;
+}
+
+.checkboxHolder {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 170px;
+    width: 260px;
+}
+
+.availablePokemonHolder {
+    display: inline !important;
+    text-align: center;
+    margin: 1px;
+}
+
