@@ -109,13 +109,12 @@ class GuestController extends Controller
 
         if ($quizAnswer == $request->input("quizGuess")) {
             //ako je ulogovan
-            /*
-                $user = User::where('nickname', 'klokar')->first(); //ovo izmeniti
-                $user->addPokeCash(100);
-            */
-            return redirect()->route('home.quiz')->with('success', ['Correct answer!', session()->pull('quizAnswerImg')]);
+            if (auth()->user()) {
+                auth()->user()->addPokeCash();
+            }
+            return redirect()->route('home.quiz')->with('right', ['Correct answer!', session()->pull('quizAnswerImg')]);
         } else
-            return redirect()->route('home.quiz')->with('wrong', 'Wrong answer! Try again');
+            return redirect()->route('home.quiz')->with('wrong', 'Wrong answer!');
     }
 
     //------------------KRAJ NATALIJINOG-----------------------

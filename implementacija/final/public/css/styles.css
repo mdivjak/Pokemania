@@ -114,6 +114,16 @@ hr.styled {
 
 /* Quiz */
 
+#quiz {  
+  height: 90vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+}
+
+#quiz::-webkit-scrollbar {
+  display: none;
+}
+
 .quizImg {
   filter: brightness(0%);
   width: 500px;
