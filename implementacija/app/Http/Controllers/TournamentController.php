@@ -6,12 +6,13 @@ use App\Tournament;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class TournamentController extends Controller
 {
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     public function index() 
@@ -22,8 +23,7 @@ class TournamentController extends Controller
 
     public function store(Tournament $tournament)  
     {   
-        $user = User::find(1);
-        //auth user       
+        $user = Auth::user();
 
         if ($user->cntCash < $tournament->entryFee) {
             return redirect()->back()->with('message', "You don't have enough money for registration!");
@@ -49,8 +49,7 @@ class TournamentController extends Controller
 
     public function delete(Tournament $tournament) 
     {
-        $user = User::find(1);
-        //auth user  
+        $user = Auth::user();
 
         $participated = DB::table('participates')->where([
             ['user_id', $user->idU],
