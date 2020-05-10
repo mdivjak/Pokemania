@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('begin');
 
+
 Route::get('/wildBattle', 'wildBattleController@show')->name('wildBattle');
 
 Route::post('/wildBattlePick', 'wildBattleController@pick')->name('wildBattlePick');
@@ -24,3 +25,8 @@ Route::post('/wildBattlePick', 'wildBattleController@pick')->name('wildBattlePic
 Route::get('/wildBattleAttack', 'wildBattleController@attack')->name('wildBattleAttack');
 
 Route::get('/wildBattleCatch', 'wildBattleController@catch')->name('wildBattleCatch');
+
+
+Route::get('/trainerBattle', 'trainerBattleController@show')->name('trainerBattle');
+
+Route::post('/trainerBattlePick', 'trainerBattleController@pick')->name('trainerBattlePick');

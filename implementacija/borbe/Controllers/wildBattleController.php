@@ -30,7 +30,7 @@ class wildBattleController {
             array_push($trainersPokemons, $pokemonJSON->name);
             array_push($trainersPokemonsLevelsForButtons, \DB::table('owns')->where('idU', Session::get('user'))->where('idP', $value)->first()->level);
         }
-
+        
         $randNumber=rand(1,251);
         $pokeURL="http://pokeapi.co/api/v2/pokemon/"."$randNumber";
         $data=file_get_contents($pokeURL.'/');

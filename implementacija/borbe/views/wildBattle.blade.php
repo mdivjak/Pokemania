@@ -13,7 +13,7 @@
         @foreach ($trainersPokemons as $index => $value)
         <div class="trainerPokemonHolder">
           <input class="btn btn-primary" type="submit" style="width: 130px; height: 34px; font-weight:bold;" value="{{ucfirst($value)}}" name="action">
-          <input class="btn btn-danger" style="pointer-events: none; width: 60px; height: 34px; font-weight:bold;" value="LV: {{ucfirst($trainersPokemonsLevelsForButtons[$index])}}">
+          <input class="btn btn-danger" style="pointer-events: none; width: 70px; height: 34px; font-weight:bold;" value="LV: {{ucfirst($trainersPokemonsLevelsForButtons[$index])}}">
         </div>
         @endforeach
   </ul>

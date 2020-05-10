@@ -19,7 +19,7 @@
     <div class="enemy">
       <h3>{{ucfirst(Session::get('wildPokemon'))}}</h3>
       
-      <div class="secondLevelWrapper"><h5>{{"LV: ".Session::get('wildPokemonLevel')."\nTYPE: ".ucfirst(Session::get('wildPokemonType1'))." ".ucfirst(Session::get('wildPokemonType2'))}}</h5></div>
+      <div class="secondLevelWrapper"><h5>{{"LV: ".Session::get('wildPokemonLevel')." TYPE: ".ucfirst(Session::get('wildPokemonType1'))." ".ucfirst(Session::get('wildPokemonType2'))}}</h5></div>
 
       <img src={{ Session::get('wildPokemonIMG') }}>
 

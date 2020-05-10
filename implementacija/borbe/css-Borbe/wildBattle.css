@@ -42,7 +42,7 @@
     flex-direction: column;
     overflow-y: auto;
     height: 170px;
-    width: 220px;
+    width: 230px;
 }
 
 .battlefield {
@@ -116,6 +116,23 @@
 }
 
 .trainerPokemonHolder {
+    display: inline !important;
+    text-align: left;
+    margin: 1px;
+}
+
+.checkboxHolder {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 170px;
+    width: 260px;
+}
+
+.availablePokemonHolder {
     display: inline !important;
     text-align: center;
     margin: 1px;
