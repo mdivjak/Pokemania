@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert(array(
             array(
                 'email' => 'mail@gmail.com',
-                'password' => '123456789',
+                'password' => Hash::make('123456789'),
                 'name' => 'banana',
                 'bAdmin' => 0,
                 'cntBalls' => 2,
@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
             ),
             array(
                 'email' => 'mail123@gmail.com',
-                'password' => '987654321',
+                'password' => Hash::make('987654321'),
                 'name' => 'jabuka',
                 'bAdmin' => 0,
                 'cntBalls' => 2,
@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             ),
             array(
                 'email' => 'mailmail@gmail.com',
-                'password' => '123123123',
+                'password' => Hash::make('123123123'),
                 'name' => 'kruska',
                 'bAdmin' => 0,
                 'cntBalls' => 4,

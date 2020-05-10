@@ -75,3 +75,19 @@ Route::post('/tournament/{tournament}', 'TournamentController@store')->name('tou
 Route::delete('/tournament/{tournament}', 'TournamentController@delete')->name('tournament.delete');
 
 //------------------------------KRAJ ANJINOG----------------------------------------------
+
+//------------------------------VUKASIN-----------------------------------------------
+
+Route::get('/wildBattle', 'wildBattleController@show')->name('wildBattle');
+
+Route::post('/wildBattlePick', 'wildBattleController@pick')->name('wildBattlePick');
+
+Route::get('/wildBattleAttack', 'wildBattleController@attack')->name('wildBattleAttack');
+
+Route::get('/wildBattleCatch', 'wildBattleController@catch')->name('wildBattleCatch');
+
+Route::get('/trainerBattle', 'trainerBattleController@show')->name('trainerBattle');
+
+Route::post('/trainerBattlePick', 'trainerBattleController@pick')->name('trainerBattlePick');
+
+//-----------------------------KRAJ VUKASIN------------------------------------------------------
