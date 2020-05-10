@@ -11,8 +11,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public function addPokeCash ($amount) {
-        $this->cntCash += $amount;
+    public function addPokeCash () {
+        $this->cntCash += env('QUIZ_PRIZE');
         $this->save();
     }
     
