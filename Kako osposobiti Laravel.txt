@@ -11,7 +11,7 @@ npm audit fix
 php artisan ui vue --auth (ne pokretati jer ce ponovo napraviti defaultnu autentifikaciju poremetiti pola stvari)
 
 POKRETANJE MIGRACIJE
-php artisan migrate:refresh
+php artisan migrate:fresh --seed
 
 HELPER ZA FORME
 composer require laravelcollective/html
