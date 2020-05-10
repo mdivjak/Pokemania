@@ -1,0 +1,17 @@
+UPUTSTVO STA SAM RADIO U LARAVEL PROJEKTU
+
+cd xampp/htdocs
+composer create-project laravel/laravel pokemania
+
+INCIJALIZOVANJE AUTENTIFIKACIJE
+cd pokemania
+composer require laravel/ui
+npm install && npm run dev
+npm audit fix
+php artisan ui vue --auth
+
+POKRETANJE MIGRACIJE
+php artisan migrate:refresh
+
+HELPER ZA FORME
+composer require laravelcollective/html
