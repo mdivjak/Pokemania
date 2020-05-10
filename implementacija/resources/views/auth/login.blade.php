@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+Login
+@endsection
+
 @section('scripts')
 <script src="{{ asset('js/app.js') }}" defer></script>
 @endsection
