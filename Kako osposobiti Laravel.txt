@@ -1,0 +1,17 @@
+UPUTSTVO STA SAM RADIO U LARAVEL PROJEKTU
+
+cd xampp/htdocs
+composer create-project laravel/laravel pokemania
+
+INCIJALIZOVANJE AUTENTIFIKACIJE
+cd pokemania
+composer require laravel/ui
+npm install && npm run dev
+npm audit fix
+php artisan ui vue --auth (ne pokretati jer ce ponovo napraviti defaultnu autentifikaciju poremetiti pola stvari)
+
+POKRETANJE MIGRACIJE
+php artisan migrate:fresh --seed
+
+HELPER ZA FORME
+composer require laravelcollective/html
