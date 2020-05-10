@@ -11,6 +11,12 @@
 
 @section('content')
 <div class="top10">
+
+    @if (session()->has('message'))
+        <div class="col-sm-12 alert-message">
+            <div class="alert alert-danger">{{ session()->get('message') }}</div>
+        </div>
+    @endif
         
     <div class="row">
         <div class="col-lg-2 col-sm-2 ">
@@ -48,7 +54,7 @@
                 <div class='form-buttons'>
                     
                     @if (Auth::user()->hasEnoughPokemons($tournament))
-                    <form method='POST' action='' style='display: inline-block'>
+                    <form method='GET' action='{{ route("trainerBattle") }}' style='display: inline-block'>
                         @csrf
                         <button type="submit" class="btn btn-default btn-lg" style='margin: 1em'>
                             <img src="{{ asset('images/boxing.png') }}" height="65" />
