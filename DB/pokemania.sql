@@ -99,12 +99,14 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `idU` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
   `nickname` varchar(64) NOT NULL,
   `bAdmin` tinyint(1) NOT NULL DEFAULT '0',
   `cntBalls` int(11) NOT NULL DEFAULT '3',
   `cntCash` int(11) NOT NULL DEFAULT '500',
   `cntFruits` int(11) NOT NULL DEFAULT '0',
   `cntPokemons` int(11) NOT NULL DEFAULT '1',
+  `trainer` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`idU`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
