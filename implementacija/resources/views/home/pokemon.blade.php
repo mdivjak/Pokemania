@@ -61,7 +61,7 @@
 
 </div>
 
-<div class="container pointers">
+<div class="response container pointers">
     <a class="btn btn-primary" href="{{route('home.pokemon', ['id' => ($id > 1 ? $id - 1 : env('MAX_POKEMONS'))])}}">Prev</a>
     <a class="btn btn-primary" href="{{route('home.pokemon', ['id' => ($id < env('MAX_POKEMONS') ? $id + 1 : 1)])}}">Next</a>
 </div>
