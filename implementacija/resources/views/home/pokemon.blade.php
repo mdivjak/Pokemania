@@ -1,9 +1,5 @@
 @extends('layouts.master')
 
-@section('title')
-{{ucfirst($name)}}
-@endsection
-
 @section('scripts')
 <script src="{{URL::to('js/pokemon.js')}}"></script>
 @endsection

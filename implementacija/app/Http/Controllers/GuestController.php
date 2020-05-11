@@ -23,8 +23,7 @@ class GuestController extends Controller
             abort(404);
 
         return view("home.pokemon", [
-            'id' => $id,
-            'name' => "Bulbasaur"
+            'id' => $id
         ]);
     }
 
