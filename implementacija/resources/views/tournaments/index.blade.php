@@ -9,7 +9,9 @@
 @endsection
 
 @section('content')
-<div class="row" style="margin-top: 10rem;">
+<div id="tournament">
+
+  <div class="row" style="margin-top: 10rem;">
     <div class="col-lg-2 col-sm-2 ">
       <div class="container">
         <h3 class="moves-title title">TOURNAMENTS</h3>
@@ -74,7 +76,7 @@
       </div>
     </div>
     @endforeach
-
+  </div>
 </div>
 
 @endsection

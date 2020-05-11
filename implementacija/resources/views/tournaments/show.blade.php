@@ -12,6 +12,14 @@
 @section('content')
 <div class="top10">
 
+    <div class="row" style="margin-top: 10rem;">
+        <div class="col-lg-2 col-sm-2 ">
+            <div class="container">
+                <h3 class="moves-title title">LEADERBOARD</h3>
+            </div>
+        </div>
+    </div>
+
     @if (session()->has('message'))
         <div class="col-sm-12 alert-message">
             <div class="alert alert-danger">{{ session()->get('message') }}</div>
