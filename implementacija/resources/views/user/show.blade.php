@@ -13,13 +13,13 @@
 
   <div class="row">
     <div class="col-lg-4 col-sm-6">
-      <div class="card" style="width: 50rem; height: 20rem; margin-left: 30rem;">
-        <img class="card-img-top pokemon-image column is-two-thirds" height="250" width="250" src="{{ asset('images/ash.png') }}" alt="Card image cap">
+      <div class="card">
+        <img height="250" width="250" src="{{ asset('images/ash.png') }}" alt="Card image cap">
       </div>
     </div>
 
     <div class="col-lg-4 col-sm-6">
-      <div class="card" style="width: 50rem; height: 20rem; margin-top: 10rem; margin-left: 30rem;">
+      <div class="card" style="margin-top:5rem">
         <div class="card-body">
           <h2 class="card-title">{{ $user->name }}</h2>
           <h4 class="card-text">Pokemons: {{ $user->cntPokemons }}</h4>
@@ -49,7 +49,7 @@
   <div class="row" style="margin-top: 10rem;">
 
   @foreach($collection as $data)
-    <div class="col-md-3 col-sm-12">
+    <div class="col-md-3 col-sm-6">
       <div class="pokemons container">
         <div class="pokemon-card" style="width: 20rem; height: 27rem;">
           <div class="caption">
