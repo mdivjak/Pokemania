@@ -25,7 +25,7 @@
                     <div class="caption">
                         <p class="move-name"> {{ $tournament->name }} </p>
                         <br />
-                        <p class=" move-power"> <b>Prize :</b> {{ $tournament->prize }} ß </p>
+                        <p class=" move-power"> <b>Prize :</b> {{ $tournament->prize }} ₽ </p>
                         <p class=" move-power"> <b>Min Level :</b> {{ $tournament->minLevel }} </p>
                         <p class=" move-accuracy"><b>Max Level:</b> {{ $tournament->maxLevel }} </p>
                         <p class=" move-accuracy"><b>End Date:</b> {{ date('d.m.Y', strtotime($tournament->endDate)) }} </p>
