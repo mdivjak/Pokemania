@@ -11,6 +11,90 @@ class PokemonSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('owns')->insert(array(
+            array(
+                'id' => '1',
+                'user_id' => '1',
+                'pokemon_id' => '1',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '2',
+                'user_id' => '1',
+                'pokemon_id' => '6',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '3',
+                'user_id' => '1',
+                'pokemon_id' => '69',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '4',
+                'user_id' => '2',
+                'pokemon_id' => '2',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '5',
+                'user_id' => '2',
+                'pokemon_id' => '4',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '6',
+                'user_id' => '3',
+                'pokemon_id' => '3',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '7',
+                'user_id' => '3',
+                'pokemon_id' => '5',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '8',
+                'user_id' => '3',
+                'pokemon_id' => '7',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '9',
+                'user_id' => '3',
+                'pokemon_id' => '8',
+                'xp' => '12',
+                'level' => '5',
+                'created_at' => null,
+                'updated_at' => null
+            )
+        ));
+
         DB::table('pokemon')->insert(array(
             array(
                 'id' => '1'
@@ -36,6 +120,9 @@ class PokemonSeeder extends Seeder
             array(
                 'id' => '8'
             ),
+            array(
+                'id' => '69'
+            )
         ));
     }
 }
