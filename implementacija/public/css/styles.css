@@ -278,6 +278,7 @@ hr.styled {
 #pokemon {
   height: 75vh;
   overflow: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
 }
 
@@ -444,8 +445,14 @@ hr.styled {
   position: fixed;
   margin-bottom: 20px;
   bottom: 20px;
+  width: inherit;
 }
 
+@media screen and (max-width: 769px) {
+  .container.pointers {
+    width: 93vw;
+  }
+}
 
 .icon.damage {
   padding-bottom: 5px;
@@ -482,14 +489,20 @@ hr.styled {
   }
 }
 
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 367px) {
   .pokeName h1 {
     font-size: 33px;
   }
   
   .pokemon-image {
-    height: 150px;
-    width: 150px;
+    height: 170px;
+    width: 170px;
+  }
+}
+
+@media screen and (max-width: 327px) {
+  .pokeName h1 {
+    font-size: 30px;
   }
 }
 
