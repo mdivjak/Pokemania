@@ -28,6 +28,7 @@
 #pokemons {
   height: 85vh;
   overflow: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
 }
 #pokemons::-webkit-scrollbar {
