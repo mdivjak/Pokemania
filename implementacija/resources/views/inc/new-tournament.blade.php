@@ -1,18 +1,10 @@
-<div class="card-header text-center">
-    <p class="float-left mt-2">
-      Admin Dashboard
+
+    <p class="float-left" style="float: left;">
+      <b>
+        Admin Dashboard
+      </b>
     </p>
-    <!--
-    {!! Form::open(['action' => 'AdminsController@store', 'method' => 'GET', 'class' => 'form-inline float-right']) !!}
-    {{Form::select('size', ['L' => 'Large', 'S' => 'Small'], 'S')}}
-      <select name="per-page" id="per-page" class="form-control"  onchange="{{ route('home', ['select'=>1]) }}">
-        <option value="2">2</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="25">25</option>
-      </select>
-    {!! Form::close() !!}-->
-    <a href="" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#newTournamentForm" data-whatever="@mdo">
+    <a href="" style="float: right;" class="btn btn-primary float-right" data-toggle="modal" data-target="#newTournamentForm" data-whatever="@mdo">
         Create New Tournament
     </a>
     
@@ -25,8 +17,8 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            {!! Form::open(['action' => 'AdminsController@store', 'method' => 'POST']) !!}
-            <div class="modal-body">
+            {!! Form::open(['action' => 'AdminController@store', 'method' => 'POST']) !!}
+            <div class="modal-body" style="min-height: 400px;">
                 <div class="form-group">
                   <label for="tournament-name" class="col-form-label">Tournament Name:</label>
                   <input type="text" class="form-control" id="tournament-name" name="tournament-name">
@@ -62,4 +54,3 @@
           </div>
         </div>
       </div>
-</div>

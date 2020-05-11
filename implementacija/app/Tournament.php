@@ -12,4 +12,9 @@ class Tournament extends Model
                     ->orderBy('cntWin', 'desc')
                     ->take(10);
     }
+
+    public function registeredUsers()
+    {
+        return $this->belongsToMany('App\User', 'registered', 'tournament_id', 'user_id');
+    }
 }
