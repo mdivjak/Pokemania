@@ -75,7 +75,7 @@ $(document).ready(() => {
                                 src += "physicalMove.svg"
                             }
                             div = $(`<div class="col-lg-3 col-md-4 col-sm-6">
-                                        <div class="thumbnail moves" style="width: 20rem; height: 24rem;">
+                                        <div class="pokemon-card moves" style="width: 20rem; height: 24rem;">
                                             <div class="caption">
                                                 <p class="move-name"> ${mName}&nbsp;&nbsp;
                                                     <img class="icon damage" src=${src}></img>
