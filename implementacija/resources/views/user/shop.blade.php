@@ -21,7 +21,7 @@
         <div class="card-body">
           <h2 class="card-title">{{ $user->nickname }}</h2>
           <h4 class="card-text">Pokemons: {{ $user->cntPokemons }}</h4>
-          <h4 class="card-text">Pokecash: {{ $user->cntCash }} ß</h4>
+          <h4 class="card-text">Pokecash: {{ $user->cntCash }} ₽</h4>
           <h4 class="card-text">Pokeballs: {{ $user->cntBalls }}</h4>
           <h4 class="card-text">Fruits: {{ $user->cntFruits }}</h4>
         </div>
@@ -63,7 +63,7 @@
                 <form method='POST' action='{{ route("user.shop", ["id" => Auth::user()->idU]) }}?buy=pokeball'>
                     @csrf
                     @method('PUT')
-                    <button type="submit" class="btn btn-primary">Buy for 50ß</a>
+                    <button type="submit" class="btn btn-primary">Buy for 50₽</a>
                 </form> 
             </div>           
 
@@ -83,7 +83,7 @@
                 <form method='POST' action='{{ route("user.shop", ["id" => Auth::user()->idU]) }}?buy=fruit'>
                     @csrf
                     @method('PUT')
-                    <button type="submit" class="btn btn-primary">Buy for 50ß</a>
+                    <button type="submit" class="btn btn-primary">Buy for 50₽</a>
                 </form> 
             </div>   
 

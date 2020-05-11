@@ -21,7 +21,7 @@
         <div class="card-body">
           <h2 class="card-title">{{ $user->name }}</h2>
           <h4 class="card-text">Pokemons: {{ $user->cntPokemons }}</h4>
-          <h4 class="card-text">Pokecash: {{ $user->cntCash }} ß</h4>
+          <h4 class="card-text">Pokecash: {{ $user->cntCash }} ₽</h4>
           <h4 class="card-text">Pokeballs: {{ $user->cntBalls }}</h4>
           <h4 class="card-text">Fruits: {{ $user->cntFruits }}</h4>
         </div>
