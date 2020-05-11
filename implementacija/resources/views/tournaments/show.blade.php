@@ -13,7 +13,7 @@
 <div class="top10">
 
     <div class="row" style="margin-top: 10rem;">
-        <div class="col-lg-2 col-sm-2 ">
+        <div class="col-lg-12 col-sm-12 ">
             <div class="container">
                 <h3 class="moves-title title">LEADERBOARD</h3>
             </div>
@@ -21,15 +21,19 @@
     </div>
 
     @if (session()->has('message'))
-        <div class="col-sm-12 alert-message">
-            <div class="alert alert-danger">{{ session()->get('message') }}</div>
+        <div class="row">
+            <div class="col-sm-12 alert-message">
+                <div class="container">
+                    <div class="alert alert-danger">{{ session()->get('message') }}</div>
+                </div>
+            </div>
         </div>
     @endif
         
     <div class="row">
-        <div class="col-lg-2 col-sm-2 ">
-            <div class="pokemons container">
-                <div class="thumbnail" style="width: 20rem; height: 22rem;">
+        <div class="col-lg-2 col-sm-12 ">
+            <div class="tournaments container">
+                <div class="pokemon-card" style="width: 20rem; height: 22rem;">
                     <div class="caption">
                         <p class="move-name"> {{ $tournament->name }} </p>
                         <br />
@@ -40,20 +44,38 @@
                     </div>
                 </div>
             </div>
+
+            @if (!$tournament->ifTop10(Auth::user()))
+                <div class="tournaments container">
+                    <div class="tournament-card" style="width: 20rem; height: 5rem;">
+                        <div class="alert-message">
+                            <p class="alert alert-danger" style="margin-top:1rem"> You are not in top 10! </p>
+                        </div>
+                    </div>
+                </div>   
+            @endif     
+
         </div>
 
-        <div id="leaderboards">
-            <ul class="toplist">
-                @foreach($tournament->topParticipants as $index => $participant)
-                    <li data-rank='{{ $index + 1 }}'>
-                        <div class="thumb">
-                            <a><span class="toplist_name">{{ $participant->name }}</span> </a>
-                            <span class="stat"><b>{{ $participant->cntWins($tournament->id) }}</b>Wins</span>
-                        </div>
-                    </li>
-                @endforeach
-            </ul>
+        <div class="col-lg-8 col-sm-12">
+            <div id="leaderboards">
+                <ul class="toplist">
+                    @foreach($tournament->topParticipants as $index => $participant)
+                        <li data-rank='{{ $index + 1 }}'>
+                            <div class="thumb">
+                                @if ($participant->idU == Auth::id())
+                                    <a><span class="auth_name">{{ $participant->name }}</span> </a>                                
+                                @else 
+                                    <a><span class="toplist_name">{{ $participant->name }}</span> </a>
+                                @endif
+                                <span class="stat"><b>{{ $participant->cntWins($tournament->id) }}</b>Wins</span>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
+        
     </div>
 
     <div class="container" style="padding-top: 2rem">

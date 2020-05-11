@@ -17,4 +17,14 @@ class Tournament extends Model
     {
         return $this->belongsToMany('App\User', 'registered', 'tournament_id', 'user_id');
     }
+
+    public function ifTop10(User $user)
+    {
+        $top10 = $this->topParticipants;
+        foreach($top10 as $u) {
+            if ($user->idU == $u->idU)
+                return true;
+        }
+        return false;
+    }
 }
