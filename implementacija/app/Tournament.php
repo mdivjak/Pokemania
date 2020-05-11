@@ -12,4 +12,14 @@ class Tournament extends Model
                     ->orderBy('cntWin', 'desc')
                     ->take(10);
     }
+
+    public function ifTop10(User $user)
+    {
+        $top10 = $this->topParticipants;
+        foreach($top10 as $u) {
+            if ($user->idU == $u->idU)
+                return true;
+        }
+        return false;
+    }
 }

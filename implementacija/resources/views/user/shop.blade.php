@@ -10,7 +10,7 @@
 
 @section('content')
 <div id="shop">
-  
+
   <div class="row">
     <div class="col-lg-4 col-sm-6">
       <div class="card" style="width: 50rem; height: 20rem; margin-left: 30rem;">
@@ -56,7 +56,7 @@
 
     <div class="col-lg-6 col-sm-6">
       <div class="pokemons container">
-        <div class="thumbnail" style="width: 20rem; height: 22rem;">
+        <div class="pokemon-card" style="width: 20rem; height: 22rem;">
           <div class="caption">
             <p class="pokemon-name"> POKEBALL </p>
             <img width=70 height=70 src="{{ asset('images/pokeball.png') }}"/>
@@ -75,8 +75,8 @@
     </div>
 
     <div class="col-lg-6 col-sm-6">
-      <div class="pokemons container">
-        <div class="thumbnail" style="width: 20rem; height: 22rem;">
+      <div class="container">
+        <div class="pokemon-card" style="width: 20rem; height: 22rem;">
           <div class="caption">
             <p class="pokemon-name"> FRUIT </p>
             <img width=70 height=70 src="{{ asset('images/fruit.png') }}"/>
