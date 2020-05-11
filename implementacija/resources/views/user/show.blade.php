@@ -5,23 +5,25 @@
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href='/css/alerts.css'>
+  <link rel="stylesheet" href="{{ asset('css/user.css') }}">
 @endsection
 
 @section('content')
-<div class="row">
+<div id="pokemons">
+
+  <div class="row">
     <div class="col-lg-4 col-sm-6">
       <div class="card" style="width: 50rem; height: 20rem; margin-left: 30rem;">
-        <img class="card-img-top pokemon-image column is-two-thirds" height="250" width="250" src="/images/ash.png" alt="Card image cap">
+        <img class="card-img-top pokemon-image column is-two-thirds" height="250" width="250" src="{{ asset('images/ash.png') }}" alt="Card image cap">
       </div>
     </div>
 
     <div class="col-lg-4 col-sm-6">
       <div class="card" style="width: 50rem; height: 20rem; margin-top: 10rem; margin-left: 30rem;">
         <div class="card-body">
-          <h2 class="card-title">{{ $user->nickname }}</h2>
+          <h2 class="card-title">{{ $user->name }}</h2>
           <h4 class="card-text">Pokemons: {{ $user->cntPokemons }}</h4>
-          <h4 class="card-text">Pokecash: {{ $user->cntCash }} ß</h4>
+          <h4 class="card-text">Pokecash: {{ $user->cntCash }} ₽</h4>
           <h4 class="card-text">Pokeballs: {{ $user->cntBalls }}</h4>
           <h4 class="card-text">Fruits: {{ $user->cntFruits }}</h4>
         </div>
@@ -40,7 +42,7 @@
   
   @if (session()->has('message'))
     <div class="col-sm-12 alert-message">
-      <span class="alert alert-success">{{ session()->get('message') }}</span>
+      <div class="alert alert-success">{{ session()->get('message') }}</div>
     </div>
   @endif
 
@@ -48,11 +50,11 @@
 
   @foreach($collection as $data)
     <div class="col-md-3 col-sm-12">
-      <div class="moves container">
+      <div class="pokemons container">
         <div class="thumbnail" style="width: 20rem; height: 27rem;">
           <div class="caption">
-            <p class="move-name"> {{ strtoupper(App\Pokemon::find($data->first()->pokemon_id)->getName()) }} </p>
-            <img width=70 height=70 src=" {{ App\Pokemon::find($data->first()->pokemon_id)->getImage() }} " style="margin-left:50px;"/>
+            <p class="pokemon-name"> {{ strtoupper(App\Pokemon::find($data->first()->pokemon_id)->getName()) }} </p>
+            <img width=70 height=70 src=" {{ App\Pokemon::find($data->first()->pokemon_id)->getImage() }} "/>
             <p class=" move-power"> <b>Level :</b> {{  $data->first()->level }} </p>
             <p class=" move-accuracy"><b>XP:</b> {{  $data->first()->xp }}
               <div class="progress">
@@ -85,4 +87,5 @@
   @endforeach
 
   </div>
+</div>
 @endsection

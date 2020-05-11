@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class UserController extends Controller
 {
@@ -16,8 +17,7 @@ class UserController extends Controller
 
     public function show()
     {
-        $user = User::find(1);
-        // treba da bude Auth::user
+        $user = Auth::user();
         $pokemons = $user->pokemons;
 
         $collection = array();
@@ -34,33 +34,44 @@ class UserController extends Controller
 
     public function feed()
     {
-        // $userId = Auth::id();
-        // $user = Auth::user();
-        $userId = 1;
-        $user = User::find(1);
+        $userId = Auth::id();
+        $user = Auth::user();
 
         $user->cntFruits--;
 
         $user->save();
 
-        //uvecavanje XP pokemona
-        $data = DB::table('owns')->where([
-                ['user_id', $userId],
-                ['pokemon_id', request('pokemon')],
-            ])->increment('xp', 10);
+        $level = DB::table('owns')->where([['user_id', $userId], ['pokemon_id', request('pokemon')]])->first()->level;
+        $currentXP = DB::table('owns')->where([['user_id', $userId], ['pokemon_id', request('pokemon')]])->first()->xp;
 
-        // uvecavanje HP
-        //prelazak na sledeci nivo? 
+        $gainedXP = 2 * $level;
+        $requiredXP = 5 * $level;
 
+        if ($level == 50) {
+            $gainedXP=0;
+            $currentXP=0;
+        }
+
+        $newXP = $currentXP + $gainedXP;
+        $newLevel = false;
+
+        while ($newXP >= $requiredXP) {
+            $newLevel = true;
+            $newXP  = $newXP - $requiredXP;
+            DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->increment('level', 1);
+            $level++;
+            $requiredXP = $level * 5;
+            if ( $level == 50) break;
+        }
+
+        DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->update(['xp' => $newXP]);
         return redirect()->back()->with('message', 'You have successfully fed your pokemon!');
     }
 
     public function release()
     {
-        // $userId = Auth::id();
-        // $user = Auth::user();
-        $userId = 1;
-        $user = User::find(1);
+        $userId = Auth::id();
+        $user = Auth::user();
 
         $user->cntBalls++;
         $user->cntPokemons--;
@@ -76,15 +87,13 @@ class UserController extends Controller
 
     public function shop()
     {
-        $user = User::find(1);
-        // treba da bude Auth::user
+        $user = Auth::user();
         return view("user.shop", compact('user'));
     }
 
     public function buy()
     {
-        $user = User::find(1);
-        // treba da bude Auth::user
+        $user = Auth::user();
 
         if (request('buy') == 'pokeball' || request('buy') == 'fruit') {
             if ($user->cntCash < 50) 
