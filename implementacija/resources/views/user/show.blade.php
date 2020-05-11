@@ -9,7 +9,9 @@
 @endsection
 
 @section('content')
-<div class="row">
+<div id="pokemons">
+
+  <div class="row">
     <div class="col-lg-4 col-sm-6">
       <div class="card" style="width: 50rem; height: 20rem; margin-left: 30rem;">
         <img class="card-img-top pokemon-image column is-two-thirds" height="250" width="250" src="{{ asset('images/ash.png') }}" alt="Card image cap">
@@ -85,4 +87,5 @@
   @endforeach
 
   </div>
+</div>
 @endsection
