@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('images/user.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/user.css') }}">
 @endsection
 
 @section('content')

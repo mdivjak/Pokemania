@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('images/user.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/user.css') }}">
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
     <div class="col-lg-4 col-sm-6">
       <div class="card" style="width: 50rem; height: 20rem; margin-top: 10rem; margin-left: 30rem;">
         <div class="card-body">
-          <h2 class="card-title">{{ $user->nickname }}</h2>
+          <h2 class="card-title">{{ $user->name }}</h2>
           <h4 class="card-text">Pokemons: {{ $user->cntPokemons }}</h4>
           <h4 class="card-text">Pokecash: {{ $user->cntCash }} ß</h4>
           <h4 class="card-text">Pokeballs: {{ $user->cntBalls }}</h4>
