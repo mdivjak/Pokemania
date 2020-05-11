@@ -51,7 +51,7 @@
   @foreach($collection as $data)
     <div class="col-md-3 col-sm-12">
       <div class="pokemons container">
-        <div class="thumbnail" style="width: 20rem; height: 27rem;">
+        <div class="pokemon-card" style="width: 20rem; height: 27rem;">
           <div class="caption">
             <p class="pokemon-name"> {{ strtoupper(App\Pokemon::find($data->first()->pokemon_id)->getName()) }} </p>
             <img width=70 height=70 src=" {{ App\Pokemon::find($data->first()->pokemon_id)->getImage() }} "/>
