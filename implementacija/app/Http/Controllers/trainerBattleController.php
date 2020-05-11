@@ -19,6 +19,10 @@ class trainerBattleController extends Controller
         //get all participants
         $allOpponents=\DB::table('participates')->where('tournament_id', Session::get('tournament'))->where('user_id', '!=', Session::get('user'))->get();
 
+        //if (!$allOpponents) {
+            return redirect()->back()->with('message', 'There are currently no opponents in the tournament!');
+        //}
+
         //remove participants that don't have enough pokemons with required level
         $minLevel=\DB::table('tournaments')->where('id', Session::get('tournament'))->first()->minLevel;
         $maxLevel=\DB::table('tournaments')->where('id', Session::get('tournament'))->first()->maxLevel;

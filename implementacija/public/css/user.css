@@ -1,19 +1,28 @@
+.alert {
+  display:inline-block;
+}
 .pokemons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-grow: 1;
-    flex-basis: 0;
-    width: max-content;
-    height: max-content;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  width: max-content;
+  height: max-content;
+  justify-content: center;
 } 
 .pokemon-name {
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 200;
-    text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(36, 82, 151);
+  text-transform: uppercase;
 }
 
 /* TOP 10 */

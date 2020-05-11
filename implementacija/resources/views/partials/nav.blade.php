@@ -20,7 +20,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					@auth
 						<li>
-							<a href="{{ route('home') }}">
+							<a href="{{ route('user.show', Auth::id()) }}">
 								<!-- Profile -->
 								<i class="fas fa-user"></i>
 							</a>
@@ -32,14 +32,14 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="{{ route('user.shop', Auth::id()) }}">
 								<!-- Shop -->
 								<i class="fas fa-shopping-cart"></i>
 							</a>
 						</li>
 
 						<li>
-							<a href="#" class="alignPerfect">
+							<a href="{{ route('tournament.index') }}" class="alignPerfect">
 								<!-- Battle Arena -->
 								<img src="{{ URL::to('images/stadium.svg') }}" height="20" />
 							</a>

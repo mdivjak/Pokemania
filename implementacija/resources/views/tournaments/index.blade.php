@@ -9,7 +9,9 @@
 @endsection
 
 @section('content')
-<div class="row" style="margin-top: 10rem;">
+<div id="tournament">
+
+  <div class="row" style="margin-top: 10rem;">
     <div class="col-lg-2 col-sm-2 ">
       <div class="container">
         <h3 class="moves-title title">TOURNAMENTS</h3>
@@ -37,7 +39,7 @@
         <div class="thumbnail" style="width: 22rem; height: 24rem;">
           <div class="caption">
             <p class="move-name">{{ $tournament->name }}</p>
-            <p class=" move-power"> <b>Prize :</b> {{ $tournament->prize }} ß </p>
+            <p class=" move-power"> <b>Prize :</b> {{ $tournament->prize }} ₽ </p>
 
             <p class=" move-power"> <b>Min Level :</b> {{ $tournament->minLevel }} </p>
             <p class=" move-accuracy"><b>Max Level:</b> {{ $tournament->maxLevel }} </p>
@@ -61,7 +63,7 @@
                   <button type="submit" 
                     class="btn btn-primary mb-3"
                   >
-                    Register for {{ $tournament->entryFee }} ß
+                    Register for {{ $tournament->entryFee }} ₽
                   </button>
                 </form> 
 
@@ -74,7 +76,7 @@
       </div>
     </div>
     @endforeach
-
+  </div>
 </div>
 
 @endsection

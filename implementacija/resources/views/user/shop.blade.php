@@ -5,11 +5,13 @@
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('images/user.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/user.css') }}">
 @endsection
 
 @section('content')
-<div class="row">
+<div id="shop">
+  
+  <div class="row">
     <div class="col-lg-4 col-sm-6">
       <div class="card" style="width: 50rem; height: 20rem; margin-left: 30rem;">
         <img class="card-img-top pokemon-image column is-two-thirds" height="250" width="250" src="/images/ash.png" alt="Card image cap">
@@ -19,9 +21,9 @@
     <div class="col-lg-4 col-sm-6">
       <div class="card" style="width: 50rem; height: 20rem; margin-top: 10rem; margin-left: 30rem;">
         <div class="card-body">
-          <h2 class="card-title">{{ $user->nickname }}</h2>
+          <h2 class="card-title">{{ $user->name }}</h2>
           <h4 class="card-text">Pokemons: {{ $user->cntPokemons }}</h4>
-          <h4 class="card-text">Pokecash: {{ $user->cntCash }} ß</h4>
+          <h4 class="card-text">Pokecash: {{ $user->cntCash }} ₽</h4>
           <h4 class="card-text">Pokeballs: {{ $user->cntBalls }}</h4>
           <h4 class="card-text">Fruits: {{ $user->cntFruits }}</h4>
         </div>
@@ -63,7 +65,7 @@
                 <form method='POST' action='{{ route("user.shop", ["id" => Auth::user()->idU]) }}?buy=pokeball'>
                     @csrf
                     @method('PUT')
-                    <button type="submit" class="btn btn-primary">Buy for 50ß</a>
+                    <button type="submit" class="btn btn-primary">Buy for 50₽</a>
                 </form> 
             </div>           
 
@@ -83,7 +85,7 @@
                 <form method='POST' action='{{ route("user.shop", ["id" => Auth::user()->idU]) }}?buy=fruit'>
                     @csrf
                     @method('PUT')
-                    <button type="submit" class="btn btn-primary">Buy for 50ß</a>
+                    <button type="submit" class="btn btn-primary">Buy for 50₽</a>
                 </form> 
             </div>   
 
@@ -93,6 +95,6 @@
     </div>
 
   </div>
-
   </div>
+</div>
 @endsection
