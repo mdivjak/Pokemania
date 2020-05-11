@@ -10,6 +10,7 @@ $(document).ready(() => {
         },
         success: function (response) {
             name = response['name'];
+            document.title = "Pokemania - " + name.charAt(0).toUpperCase() + name.slice(1);
             weight = response['weight']
             height = response['height']
 
@@ -47,7 +48,7 @@ $(document).ready(() => {
             totalMoves = response['moves'].length
             cntMoves = 0;
             for (i = 0; i < totalMoves && cntMoves < 8; i++) {
-                
+
                 $.ajax({
                     url: response['moves'][i]['move']['url'],
                     async: false,
