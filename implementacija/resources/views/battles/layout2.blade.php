@@ -1,6 +1,11 @@
-@extends ('battles.layout')
+@extends('battles.layout')
 
-@section('content')
+@section('pageTitle')
+Pokemania - Tournament Battle
+@endsection
+
+
+@section('contents')
 
 <div class="wrapperAppeared">
   <div class="headerWrapper"><h2><b>@yield('text')</b></h2></div>
@@ -32,13 +37,9 @@
   
   <div class="buttonArea">
 
-      <a href="{{ route('home.index') }}" style="@yield('fightLinkEnable');"><button type="button" class="btn btn-default @yield('fightButtonEnable')">
+      <a href="{{ route('trainerBattleAttack') }}" style="@yield('fightLinkEnable');"><button type="button" class="btn btn-default @yield('fightButtonEnable')">
 				<img src="images-Borbe/boxing.png" height="70" />
 			</button></a>
-
-      <a href="{{ route('home.index') }}" style="@yield('pokeLinkEnable');"><button type="button" class="btn btn-default @yield('pokeButtonEnable')">
-	      <img src="images-Borbe/pokeball.svg" height="70" />
-      </button></a>
 
       <a href="{{ route('home.index') }}" style="@yield('backLinkEnable');"><button type="button" class="btn btn-default @yield('backButtonEnable')">
       <img src="images-Borbe/back.png" height="70" />
