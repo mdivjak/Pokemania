@@ -64,6 +64,7 @@ Route::post("/quiz", [
 /**
  * Korisnik
  */
+
 Route::get('/profile/{user}', 'UserController@show')->name('user.show');
 Route::put('/profile/{user}/feed', 'UserController@feed')->name('user.feed');
 Route::put('/profile/{user}/release', 'UserController@release')->name('user.release');
@@ -96,5 +97,7 @@ Route::get('/wildBattleCatch', 'wildBattleController@catch')->name('wildBattleCa
 Route::get('/trainerBattle', 'trainerBattleController@show')->name('trainerBattle');
 
 Route::post('/trainerBattlePick', 'trainerBattleController@pick')->name('trainerBattlePick');
+
+Route::get('/trainerBattleAttack', 'trainerBattleController@attack')->name('trainerBattleAttack');
 
 //-----------------------------KRAJ VUKASIN------------------------------------------------------
