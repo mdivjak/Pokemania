@@ -11,6 +11,36 @@ class PokemonSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('pokemon')->insert(array(
+            array(
+                'id' => '1'
+            ),
+            array(
+                'id' => '2'
+            ),
+            array(
+                'id' => '3'
+            ),
+            array(
+                'id' => '4'
+            ),
+            array(
+                'id' => '5'
+            ),
+            array(
+                'id' => '6'
+            ),
+            array(
+                'id' => '7'
+            ),
+            array(
+                'id' => '8'
+            ),
+            array(
+                'id' => '69'
+            )
+        ));
+
         DB::table('owns')->insert(array(
             array(
                 'id' => '1',
@@ -92,36 +122,6 @@ class PokemonSeeder extends Seeder
                 'level' => '5',
                 'created_at' => null,
                 'updated_at' => null
-            )
-        ));
-
-        DB::table('pokemon')->insert(array(
-            array(
-                'id' => '1'
-            ),
-            array(
-                'id' => '2'
-            ),
-            array(
-                'id' => '3'
-            ),
-            array(
-                'id' => '4'
-            ),
-            array(
-                'id' => '5'
-            ),
-            array(
-                'id' => '6'
-            ),
-            array(
-                'id' => '7'
-            ),
-            array(
-                'id' => '8'
-            ),
-            array(
-                'id' => '69'
             )
         ));
     }

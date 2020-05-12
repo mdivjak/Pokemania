@@ -10,7 +10,7 @@
 
 @section('content')
 <div id="shop">
-
+  
   <div class="row">
     <div class="col-lg-4 col-sm-6">
       <div class="card">

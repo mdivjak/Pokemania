@@ -13,7 +13,7 @@
 <div class="top10">
 
     <div class="row" style="margin-top: 10rem;">
-        <div class="col-lg-12 col-sm-12 ">
+        <div class="col-lg-12 col-sm-12">
             <div class="container">
                 <h3 class="moves-title title">LEADERBOARD</h3>
             </div>
@@ -31,7 +31,7 @@
     @endif
         
     <div class="row">
-        <div class="col-lg-2 col-sm-12 ">
+        <div class="col-lg-2 col-sm-12">
             <div class="tournaments container">
                 <div class="pokemon-card" style="width: 20rem; height: 22rem;">
                     <div class="caption">
@@ -44,18 +44,16 @@
                     </div>
                 </div>
             </div>
-
-            @if (!$tournament->ifTop10(Auth::user()))
-                <div class="tournaments container">
-                    <div class="tournament-card" style="width: 20rem; height: 5rem;">
-                        <div class="alert-message">
-                            <p class="alert alert-danger" style="margin-top:1rem"> You are not in top 10! </p>
-                        </div>
-                    </div>
-                </div>   
-            @endif     
-
         </div>
+        @if (!$tournament->ifTop10(Auth::user()))
+            <div class="tournaments container">
+                <div class="tournament-card" style="width: 20rem; height: 5rem;">
+                    <div class="alert-message">
+                        <p class="alert alert-danger" style="margin-top:1rem"> You are not in top 10! </p>
+                    </div>
+                </div>
+            </div>   
+        @endif     
 
         <div class="col-lg-8 col-sm-12">
             <div id="leaderboards">
@@ -75,8 +73,6 @@
                 </ul>
             </div>
         </div>
-        
-    </div>
 
     <div class="container" style="padding-top: 2rem">
         <div class="row">

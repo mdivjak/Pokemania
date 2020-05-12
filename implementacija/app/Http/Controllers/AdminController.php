@@ -31,8 +31,12 @@ class AdminController extends Controller
             'end-date' => 'required|date_format:Y-m-d|after:today',
             'registration-price' => 'required|regex:/^[1-9][0-9]*$/|not_in:0',
         ]);
+        
         $tname = $request->input('tournament-name');
-
+        $tournament = DB::table('tournaments')->where('name', $tname)->get();
+        if($tournament->count() > 0) {
+            return redirect()->back()->with('tournament-exists', 'Tournament with name "'.$tname.'" already exists!');
+        }
         if($request->has('createTournament')) {
             $tournament = new Tournament;
             $tournament->name = $request->input('tournament-name');
@@ -43,7 +47,7 @@ class AdminController extends Controller
             $tournament->entryFee = $request->input('registration-price');
             $tournament->save();
 
-            return redirect('/admin')->with('message', 'Successfully created tournament '.$tournament->name.'!');
+            return redirect()->back()->with('tournament-created', 'Successfully created tournament "'.$tournament->name.'"!');
         }
         else return 'Usli smo u nepoznate vode';
     }

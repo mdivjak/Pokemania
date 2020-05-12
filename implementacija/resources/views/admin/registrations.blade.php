@@ -29,7 +29,7 @@
 
                 <div class="card-body">
                     @if (count($registrations) > 0)
-                        <table class="table" style="min-height: 400px;">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th style="text-align: center">User Name</th>
@@ -71,7 +71,7 @@
                         </div>
                     @else
                         <div class="p-5" style="min-height: 400px; padding: 100px; font-size:26;">
-                            <b style="">Currently there are no registrations for this tournament</b>
+                            <b>Currently there are no registrations for this tournament</b>
                         </div>
                     @endif
                 </div>

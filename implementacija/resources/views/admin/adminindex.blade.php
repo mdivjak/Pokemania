@@ -9,6 +9,16 @@
 @endsection
 
 @section('content')
+@if(session()->has('tournament-exists'))
+    <div class="alert alert-danger">
+        {{session()->get('tournament-exists')}}
+    </div>
+@endif
+@if(session()->has('tournament-created'))
+    <div class="alert alert-success">
+        {{session()->get('tournament-created')}}
+    </div>
+@endif
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -42,6 +52,10 @@
                         
                         <div>
                             {{$tournaments->links()}}
+                        </div>
+                    @else
+                        <div class="p-5" style="min-height: 400px; padding: 100px; font-size:26;">
+                            <b style="">Currently there are no tournaments</b>
                         </div>
                     @endif
                 </div>

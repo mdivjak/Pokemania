@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Pokemon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use \DB;
 
 class RegisterController extends Controller
 {
@@ -64,10 +66,39 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        //bulbasaur carmander skvrl pikacu
+        $pokemon_ids = [1, 4, 7, 25];
+        $index = rand(0, 3);
+
+        //ako pokemoni nisu u bazi pokemona, dodaj ih
+        if(is_null(Pokemon::find($pokemon_ids[$index]))) {
+            DB::table('pokemon')->insert(array(
+                array(
+                    'id' => $pokemon_ids[$index]
+                )
+            ));
+        }
+
+        //napravi korisnika
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'cntPokemons' => 1,
+            'cntBalls' => 3,
+            'cntCash' => 500
         ]);
+
+        //dodaj da korisnik poseduje tog pokemona
+        DB::table('owns')->insert(array(
+            array(
+                'user_id' => $user->idU,
+                'pokemon_id' => $pokemon_ids[$index],
+                'xp' => 0,
+                'level' => 1
+            )
+        ));
+
+        return $user;
     }
 }

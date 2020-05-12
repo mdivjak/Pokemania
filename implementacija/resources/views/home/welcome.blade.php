@@ -11,10 +11,16 @@
                 <h1>Pokemania</h1>
                 <h3>Made with ❤️ by Disciplinovani</h3>
                 <hr>
-                <button onclick="location.href='login.html'" type="button" class="btn btn-default btn-lg">
-                    <img src="{{URL::to('images/pokeball.svg')}}" height="35" />
-                    Get Started!
-                </button>
+                <form action="@guest {{ route('login') }} @else {{ route('wildBattle') }} @endguest" method="get">
+                    <button type="submit" class="btn btn-default btn-lg">
+                        <img src="{{URL::to('images/pokeball.svg')}}" height="35" />
+                        @guest
+                            Get Started!
+                        @else
+                            Catch 'em all!
+                        @endguest
+                    </button>
+                </form>
             </div>
         </div>
     </div>

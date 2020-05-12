@@ -22,11 +22,12 @@
 						<li>
 							<a href="{{ route('user.show', Auth::id()) }}">
 								<!-- Profile -->
+								{{ Auth::user()->name }} &nbsp; &nbsp;
 								<i class="fas fa-user"></i>
 							</a>
 						</li>
 						<li>
-							<a href="#" class="alignPerfect">
+							<a href="{{ route('wildBattle') }}" class="alignPerfect">
 								<!-- Wild Fight -->
 								<img src="{{ URL::to('images/pokeball.svg') }}" height="20" />
 							</a>
@@ -46,14 +47,9 @@
 						</li>
 						@if (Auth::user()->bAdmin)
 							<li>
-								<a href="create.html">
+								<a href="{{ route('admin') }}">
 									<!-- Create Tournament -->
 									<i class="fas fa-plus"></i>
-								</a>
-							</li>
-							<li>
-								<a href="{{ route('admin') }}">
-									Admin Dashboard
 								</a>
 							</li>
 						@endif
