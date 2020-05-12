@@ -60,9 +60,7 @@ Register
 
                 <div class="form-group row {{$fast ? '' : 'fadeIn fifth'}}">
                     <input type="hidden" name="avatar" value="1" id="avatar-choice">
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#avatar-picker">
-                        Choose Your Avatar
-                    </button>
+                    <input type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#avatar-picker" value="Choose Your Avatar">
                 </div>
 
                 <div class="form-group row mb-0 {{$fast ? '' : 'fadeIn sixth'}}">
