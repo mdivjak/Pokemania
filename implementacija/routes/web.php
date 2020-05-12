@@ -65,8 +65,8 @@ Route::post("/quiz", [
  * Korisnik
  */
 Route::get('/profile/{user}', 'UserController@show')->name('user.show');
-Route::put('/profile/{id}/feed', 'UserController@feed')->name('user.feed');
-Route::put('/profile/{id}/release', 'UserController@release')->name('user.release');
+Route::put('/profile/{user}/feed', 'UserController@feed')->name('user.feed');
+Route::put('/profile/{user}/release', 'UserController@release')->name('user.release');
 /**
  * Kupovina u prodavnici
  */

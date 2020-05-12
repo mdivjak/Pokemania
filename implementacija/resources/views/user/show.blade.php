@@ -70,13 +70,13 @@
 
             @if(Auth::id()==$user->idU)
               <div>
-                <form method='POST' action='{{ route("user.feed", ["id" => Auth::user()->idU]) }}?pokemon={{ $data->first()->pokemon_id }}' style="float:left;">
+                <form method='POST' action='{{ route("user.feed", Auth::user()) }}?pokemon={{ $data->first()->pokemon_id }}' style="float:left;">
                   @csrf
                   @method('PUT')
                   <button type='submit' class="btn btn-primary @if($user->cntFruits==0) disabled @endif">Feed</a>
                 </form>
 
-                <form method='POST' action='{{ route("user.release", ["id" => Auth::user()->idU]) }}?pokemon={{ $data->first()->pokemon_id }}' style="float:left;">
+                <form method='POST' action='{{ route("user.release", Auth::user()) }}?pokemon={{ $data->first()->pokemon_id }}' style="float:left;">
                   @csrf
                   @method('PUT')
                   <button type="submit" class="btn btn-primary" style="float:right;">Let Go</a>
