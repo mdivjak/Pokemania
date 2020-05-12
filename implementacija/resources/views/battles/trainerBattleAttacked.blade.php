@@ -7,8 +7,8 @@
 @section('progress1')
 <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar"
-          aria-valuemin="0" aria-valuemax="100" style="width:100%">
-            <b>HP:&nbsp;{{Session::get('trainerPokemonMaxHP')}}</b>
+          aria-valuemin="0" aria-valuemax="100" style="width:{{Session::get('trainerPokemonHP')/Session::get('trainerPokemonMaxHP')*100}}%">
+            <b>HP:&nbsp;{{Session::get('trainerPokemonHP')}}</b>
         </div>
 </div>
 @endsection
@@ -16,23 +16,24 @@
 @section('progress2')
 <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar"
-          aria-valuemin="0" aria-valuemax="100" style="width:100%">
-            <b>HP:&nbsp;{{Session::get('opponentPokemonMaxHP')}}</b>
+          aria-valuemin="0" aria-valuemax="100" style="width:{{Session::get('opponentPokemonHP')/Session::get('opponentPokemonMaxHP')*100}}%">
+          <b>HP:&nbsp;{{Session::get('opponentPokemonHP')}}</b>
         </div>
 </div>
 @endsection
 
 @section('fightLinkEnable')
+{{$fightLinkEnable}}
 @endsection
 
 @section('backLinkEnable')
-pointer-events: none
+{{$backLinkEnable}}
 @endsection
 
 @section('fightButtonEnable')
+{{$fightButtonEnable}}
 @endsection
 
 @section('backButtonEnable')
-disabled
+{{$backButtonEnable}}
 @endsection
-

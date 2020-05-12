@@ -1,6 +1,10 @@
-@extends ('battles.layout')
+@extends('battles.layout')
 
-@section('content')
+@section('pageTitle')
+Pokemania - Tournament Battle
+@endsection
+
+@section('contents')
 
 <div class="wrapperAppeared">
   <div class="headerWrapper"><h2><b>@yield('text')</b></h2></div>
