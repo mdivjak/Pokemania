@@ -26,7 +26,7 @@ class wildBattleController extends Controller {
         $trainersPokemonsIDs=array();
         $trainersPokemonsLevels=array();
         foreach ($trainersPokemonsFromTable as $index => $value) {
-            array_push($trainersPokemonsIDs, $value->id);
+            array_push($trainersPokemonsIDs, $value->pokemon_id);
             array_push($trainersPokemonsLevels, $value->level);
         }
 

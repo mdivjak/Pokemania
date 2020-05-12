@@ -97,4 +97,6 @@ Route::get('/trainerBattle', 'trainerBattleController@show')->name('trainerBattl
 
 Route::post('/trainerBattlePick', 'trainerBattleController@pick')->name('trainerBattlePick');
 
+Route::get('/trainerBattleAttack', 'trainerBattleController@attack')->name('trainerBattleAttack');
+
 //-----------------------------KRAJ VUKASIN------------------------------------------------------
