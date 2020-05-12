@@ -37,7 +37,7 @@
     <div class="col-lg-3 col-sm-6">
       <div class="pokemons container">
         <div class="pokemon-card" style="width: 22rem; height: 27rem; display: flex; align-items: center;">
-          <div class="caption" style="margin: auto;">
+          <div class="caption" style="margin: auto">
             <p class="move-name">{{ $tournament->name }}</p>
             <p class=" move-power"> <b>Prize :</b> {{ $tournament->prize }} ₽ </p>
 

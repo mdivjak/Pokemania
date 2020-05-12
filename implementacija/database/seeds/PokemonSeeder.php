@@ -122,7 +122,43 @@ class PokemonSeeder extends Seeder
                 'level' => '5',
                 'created_at' => null,
                 'updated_at' => null
-            )
+            ),
+            array(
+                'id' => '10',
+                'user_id' => '2',
+                'pokemon_id' => '1',
+                'xp' => '12',
+                'level' => '3',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '11',
+                'user_id' => '2',
+                'pokemon_id' => '3',
+                'xp' => '17',
+                'level' => '4',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '12',
+                'user_id' => '2',
+                'pokemon_id' => '5',
+                'xp' => '12',
+                'level' => '3',
+                'created_at' => null,
+                'updated_at' => null
+            ),
+            array(
+                'id' => '13',
+                'user_id' => '2',
+                'pokemon_id' => '6',
+                'xp' => '17',
+                'level' => '4',
+                'created_at' => null,
+                'updated_at' => null
+            ),
         ));
     }
 }

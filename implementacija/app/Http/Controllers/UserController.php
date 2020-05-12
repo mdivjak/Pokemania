@@ -15,9 +15,8 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    public function show()
+    public function show(User $user)
     {
-        $user = Auth::user();
         $pokemons = $user->pokemons;
 
         $collection = array();
@@ -88,7 +87,7 @@ class UserController extends Controller
     public function shop()
     {
         $user = Auth::user();
-        return view("user.shop", compact('user'));
+        return view('user.shop', compact('user'));
     }
 
     public function buy()
