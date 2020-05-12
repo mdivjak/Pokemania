@@ -86,7 +86,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'cntPokemons' => 1,
             'cntBalls' => 3,
-            'cntCash' => 500
+            'cntCash' => 500,
+            'avatar' => $data['avatar']
         ]);
 
         //dodaj da korisnik poseduje tog pokemona

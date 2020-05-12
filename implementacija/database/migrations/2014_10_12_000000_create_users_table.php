@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('cntBalls')->default('0');
             $table->integer('cntFruits')->default('0');
             $table->integer('cntCash')->default('0');
+            $table->integer('avatar')->default('1');
 
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
