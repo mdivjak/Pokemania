@@ -28,7 +28,7 @@ class CreateTournamentsTable extends Migration
             $table->primary(['user_id', 'tournament_id']);
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('tournament_id');
-            $table->integer('cntWin');
+            $table->integer('cntWin')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')
@@ -58,15 +58,6 @@ class CreateTournamentsTable extends Migration
                 ->on('tournaments')
                 ->onDelete('cascade');
         });
-
-        /*MARKOVO, ALI BOLJE JE ANJINO
-        Schema::create('registered', function (Blueprint $table) {
-            $table->unsignedBigInteger('idU');
-            $table->unsignedBigInteger('idT');
-            $table->foreign('idU')->references('idU')->on('users')->onDelete('cascade');
-            $table->foreign('idT')->references('id')->on('tournaments')->onDelete('cascade');
-        });
-        */
     }
 
     /**

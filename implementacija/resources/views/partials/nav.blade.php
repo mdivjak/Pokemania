@@ -51,6 +51,11 @@
 									<i class="fas fa-plus"></i>
 								</a>
 							</li>
+							<li>
+								<a href="{{ route('admin') }}">
+									Admin Dashboard
+								</a>
+							</li>
 						@endif
 
 						<li>

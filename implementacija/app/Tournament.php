@@ -13,6 +13,11 @@ class Tournament extends Model
                     ->take(10);
     }
 
+    public function registeredUsers()
+    {
+        return $this->belongsToMany('App\User', 'registered', 'tournament_id', 'user_id');
+    }
+
     public function ifTop10(User $user)
     {
         $top10 = $this->topParticipants;
