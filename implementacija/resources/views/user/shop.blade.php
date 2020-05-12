@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-lg-4 col-sm-6">
       <div class="card">
-        <img height="250" width="250" src="{{ asset('images/ash.png') }}" alt="Card image cap">
+        <img height="250" width="250" src="{{ asset('images/avatars/avatar'.$user->avatar.'.png') }}" alt="Card image cap">
       </div>
     </div>
 

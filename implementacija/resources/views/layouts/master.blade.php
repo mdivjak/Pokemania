@@ -15,8 +15,6 @@
 	<link rel="icon" href="{{ URL::to('images/pokeball.ico') }}">
 
 	@yield('scripts')
-	
-
 </head>
 
 <body>
@@ -26,7 +24,6 @@
 		@include('inc.messages')
 		@yield('content')
 	</div>
-
 </body>
 
 </html>

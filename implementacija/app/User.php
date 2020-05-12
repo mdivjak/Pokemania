@@ -28,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password', 'name', 'bAdmin', 'cntBalls' ,'cntCash', 'cntFruits', 'cntPokemons'
+        'email', 'password', 'name', 'bAdmin', 'cntBalls' ,'cntCash', 'cntFruits', 'cntPokemons', 'avatar'
     ];
 
     /**
@@ -49,7 +49,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    //-------------------------------ANJINO-----------------------------
     public function pokemons() 
     {
         return $this->belongsToMany('App\Pokemon', 'owns', 'user_id', 'pokemon_id');
@@ -105,6 +104,4 @@ class User extends Authenticatable
         }
         return false;
     }
-
-    //---------------------------KRAJ ANJINOG-----------------------------------
 }

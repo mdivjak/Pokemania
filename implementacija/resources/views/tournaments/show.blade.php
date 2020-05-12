@@ -63,11 +63,13 @@
                     @foreach($tournament->topParticipants as $index => $participant)
                         <li data-rank='{{ $index + 1 }}'>
                             <div class="thumb">
-                                @if ($participant->idU == Auth::id())
-                                    <a><span class="auth_name">{{ $participant->name }}</span> </a>                                
-                                @else 
-                                    <a><span class="toplist_name">{{ $participant->name }}</span> </a>
-                                @endif
+                                <a href="{{ route('user.show', $participant) }}">
+                                    @if ($participant->idU == Auth::id())
+                                        <span class="auth_name">{{ $participant->name }}</span>                                
+                                    @else 
+                                        <span class="toplist_name">{{ $participant->name }}</span>
+                                    @endif
+                                </a> 
                                 <span class="stat"><b>{{ $participant->cntWins($tournament->id) }}</b>Wins</span>
                             </div>
                         </li>

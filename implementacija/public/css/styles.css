@@ -199,6 +199,7 @@ hr.styled {
 #pokedexDisplay {
   height: 75vh;
   overflow: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
 }
 
@@ -278,7 +279,6 @@ hr.styled {
 #pokemon {
   height: 75vh;
   overflow: scroll;
-  overflow-x: hidden;
   -ms-overflow-style: none;
 }
 
@@ -505,7 +505,6 @@ hr.styled {
     font-size: 30px;
   }
 }
-
 
 /* Login */
 #auth {  
