@@ -31,7 +31,7 @@ class UserController extends Controller
         return view("user.show", compact('user', 'collection'));        
     }
 
-    public function feed()
+    public function feed(User $user)
     {
         $userId = Auth::id();
         $user = Auth::user();
@@ -67,7 +67,7 @@ class UserController extends Controller
         return redirect()->back()->with('message', 'You have successfully fed your pokemon!');
     }
 
-    public function release()
+    public function release(User $user)
     {
         $userId = Auth::id();
         $user = Auth::user();

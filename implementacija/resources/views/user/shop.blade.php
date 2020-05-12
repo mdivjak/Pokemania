@@ -62,7 +62,7 @@
             <img width=70 height=70 src="{{ asset('images/pokeball.png') }}"/>
 
             <div style="margin-top:30px;">
-                <form method='POST' action='{{ route("user.shop", ["id" => Auth::user()->idU]) }}?buy=pokeball'>
+                <form method='POST' action='{{ route("user.shop", Auth::user()) }}?buy=pokeball'>
                     @csrf
                     @method('PUT')
                     <button type="submit" class="btn btn-primary">Buy for 50₽</a>
@@ -82,7 +82,7 @@
             <img width=70 height=70 src="{{ asset('images/fruit.png') }}"/>
 
             <div style="margin-top:30px;">
-                <form method='POST' action='{{ route("user.shop", ["id" => Auth::user()->idU]) }}?buy=fruit'>
+                <form method='POST' action='{{ route("user.shop", Auth::user()) }}?buy=fruit'>
                     @csrf
                     @method('PUT')
                     <button type="submit" class="btn btn-primary">Buy for 50₽</a>

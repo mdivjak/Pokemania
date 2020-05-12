@@ -20,7 +20,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					@auth
 						<li>
-							<a href="{{ route('user.show', Auth::id()) }}">
+							<a href="{{ route('user.show', Auth::user()->name) }}">
 								<!-- Profile -->
 								{{ Auth::user()->name }} &nbsp; &nbsp;
 								<i class="fas fa-user"></i>
@@ -33,7 +33,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{ route('user.shop', Auth::id()) }}">
+							<a href="{{ route('user.shop', Auth::user()->name) }}">
 								<!-- Shop -->
 								<i class="fas fa-shopping-cart"></i>
 							</a>
