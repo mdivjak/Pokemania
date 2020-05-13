@@ -49,7 +49,7 @@
 							<li class="{{ Request::segment(1) === 'admin' ? 'active' : null }}">
 								<a href="{{ route('admin') }}">
 									<!-- Create Tournament -->
-									<i class="fas fa-plus"></i>
+									<i class="fas fa-user-cog"></i>
 								</a>
 							</li>
 						@endif
