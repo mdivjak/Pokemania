@@ -66,7 +66,11 @@ Profile
               <p class=" move-power"> <b>Level :</b> {{ $data->first()->level }} </p>
               <p class=" move-accuracy"><b>XP:</b> {{ $data->first()->xp }}
                 <div class="progress">
-                  <div class="progress-bar @if($data->first()->level==50) progress-bar-striped @endif" role="progressbar" aria-valuenow="13" aria-valuemin="0" aria-valuemax="35" style="width: {{ $data->first()->level==50? 100 :($data->first()->xp)/(($data->first()->level)*5)*100 }}%;">
+                  <div class="progress-bar @if($data->first()->level==100) progress-bar-striped @endif" role="progressbar" 
+                    aria-valuenow="13" aria-valuemin="0" 
+                    aria-valuemax="35" 
+                    style="width: {{ $data->first()->level==100? 100 :($data->first()->xp)/(($data->first()->level)*5)*100 }}%;"
+                  >
                     <span class="sr-only">{{ $data->first()->xp/($data->first()->level*5) }}% Complete</span>
                   </div>
                 </div>
