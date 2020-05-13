@@ -1,8 +1,9 @@
 .alert {
-  display:inline-block;
+  display: inline-block;
 }
 
 /* Pokemons */
+
 .pokemons {
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,28 +12,33 @@
   flex-basis: 0;
   height: max-content;
   justify-content: center;
-} 
+}
+
 @media screen and (min-width: 1200px) {
   .pokemons {
     width: max-content;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .container {
     padding: 0 !important;
   }
 }
+
 @media screen and (max-width: 770px) {
   .pokemons {
     display: flex;
   }
 }
+
 .pokemon-name {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 200;
   text-align: center;
 }
+
 .card-title {
   font-size: 20px;
   font-weight: 700;
@@ -46,45 +52,56 @@
   overflow-x: hidden;
   -ms-overflow-style: none;
 }
+
 #pokemons::-webkit-scrollbar {
   display: none;
 }
+
 #pokemons .card {
-  height: 20rem; 
+  height: 20rem;
   padding: 2rem;
 }
+
 .text-white {
   color: white !important;
-  text-shadow: 0 0 3px rgb(36, 82, 151);;
+  text-shadow: 0 0 3px rgb(36, 82, 151);
+  ;
 }
+
 .progress-bar-striped {
   background-color: rgb(255, 98, 8) !important;
 }
 
 /* Shop */
+
 #shop {
   height: 90vh;
   overflow: scroll;
   -ms-overflow-style: none;
 }
+
 #shop::-webkit-scrollbar {
   display: none;
 }
 
 /* Tournaments */
+
 #tournament {
   height: 80vh;
   overflow: scroll;
   -ms-overflow-style: none;
 }
+
 #tournament::-webkit-scrollbar {
   display: none;
 }
+
 .tournament-card {
   padding: 5px;
   margin: 15px;
   background-color: transparent;
 }
+
 .tournaments {
   flex-direction: row;
   flex-wrap: wrap;
@@ -93,12 +110,14 @@
   flex-basis: 0;
   height: max-content;
   justify-content: center;
-} 
+}
+
 @media screen and (min-width: 1200px) {
   .tournaments {
     width: max-content;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .tournaments {
     display: flex;
@@ -106,6 +125,7 @@
 }
 
 /* TOP 10 */
+
 .top10 {
   width: 100%;
   max-width: 100%;
@@ -115,23 +135,28 @@
   overflow-y: scroll;
   overflow-x: visible;
   -ms-overflow-style: none;
-}  
+}
+
 .top10::-webkit-scrollbar {
   display: none;
 }
+
 #leaderboards {
   font-size: 0;
 }
+
 @media screen and (max-width: 1200px) {
   #leaderboards {
     margin-top: 2rem;
   }
 }
-#leaderboards > * {
+
+#leaderboards>* {
   position: relative;
   font-size: 14px;
   display: inline-block;
 }
+
 #leaderboards .toplist {
   padding: 0;
   margin: 0;
@@ -139,12 +164,14 @@
   width: 80%;
   float: right;
 }
+
 @media screen and (max-width: 1200px) {
   #leaderboards .toplist {
     width: 90%;
     float: none;
   }
 }
+
 #leaderboards .toplist li {
   margin-bottom: 14px;
   color: black;
@@ -157,9 +184,17 @@
   transition: 0.3s ease-in-out;
   border-radius: 10px;
 }
+
+#leaderboards .toplist li.ultraShadow {
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 3px 15px 2px rgba(0, 0, 0, 0.7);
+}
+
 #leaderboards .toplist li:hover {
   box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.7);
 }
+
 #leaderboards .toplist li .thumb {
   padding: 20px 20px 19px;
   font-weight: bold;
@@ -168,26 +203,62 @@
   line-height: 36px;
   position: relative;
 }
+
 #leaderboards .toplist_name {
   color: black;
 }
+
 #leaderboards .auth_name {
   color: rgb(36, 82, 151);
   font-weight: bold;
 }
+
+#leaderboards .toplist li .thumb span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+  font-family: 'Kanit', sans-serif;
+  word-break: break-all;
+  padding-right: 5px;
+}
+
+@media screen and (max-width: 550px) {
+  #leaderboards .toplist li .thumb {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 450px) {
-  #leaderboards .toplist_name {
+  /* #leaderboards .toplist_name {
     float: left;
   }
   #leaderboards .auth_name {
     float: left;
+  } */
+  #leaderboards .toplist li .thumb span {
+    font-size: 20px;
+  }
+  #leaderboards .toplist li .thumb span.stat {
+    padding-right: 0px;
+    margin-right: 0px;
+  }
+  #leaderboards .toplist li .thumb {
+    padding-left: 5px;
   }
 }
-#leaderboards .toplist li .thumb span {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 15px;
+
+@media screen and (max-width: 430px) {
+  #leaderboards .toplist li .thumb span {
+    font-size: 15px;
+  }
 }
+
+@media screen and (max-width: 360px) {
+  #leaderboards .toplist li .thumb span {
+    font-size: 13px;
+  }
+}
+
 #leaderboards .toplist li .thumb .stat {
   position: absolute;
   top: 26px;
@@ -197,11 +268,13 @@
   text-align: center;
   font-size: 10px;
 }
+
 #leaderboards .toplist li .thumb .stat b {
   display: block;
   font-size: 20px;
   margin: 0;
 }
+
 #leaderboards .toplist li:after {
   content: attr(data-rank);
   position: absolute;
@@ -219,23 +292,26 @@
   font-weight: bold;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  box-shadow: 0 4px rgba(0,0,0,0.05);
+  box-shadow: 0 4px rgba(0, 0, 0, 0.05);
+  padding-top: 5px;
 }
-#leaderboards .toplist li[data-rank="1"]:after,
-#leaderboards .toplist li[data-rank="2"]:after,
-#leaderboards .toplist li[data-rank="3"]:after {
+
+#leaderboards .toplist li[data-rank="1"]:after, #leaderboards .toplist li[data-rank="2"]:after, #leaderboards .toplist li[data-rank="3"]:after {
   content: "\f091";
   font-family: FontAwesome;
   font-size: 24px;
   font-weight: 100;
   line-height: 77px;
 }
+
 #leaderboards .toplist li[data-rank="1"]:after {
   color: #e0aa03;
 }
+
 #leaderboards .toplist li[data-rank="2"]:after {
   color: #9A9A9A;
 }
+
 #leaderboards .toplist li[data-rank="3"]:after {
   color: #CC913C;
 }
@@ -245,7 +321,23 @@
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
   border: 0;
 }
+
 .btn-default:hover {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.7);
+}
+
+.tooltip-wrapper {
+  display: inline-block; /* display: block works as well */
+  margin: 50px; /* make some space so the tooltip is visible */
+}
+
+.tooltip-wrapper .btn[disabled] {
+  /* don't let button block mouse events from reaching wrapper */
+  pointer-events: none;
+}
+
+.tooltip-wrapper.disabled {
+  /* OPTIONAL pointer-events setting above blocks cursor setting, so set it here */
+  cursor: not-allowed;
 }

@@ -427,7 +427,7 @@ hr.styled {
   font-weight: 700;
 }
 
-#pokemon .thumbnail.moves, #pokemon .pokemon-card.moves {
+#pokemon .thumbnail.moves, #pokemon .pokemon-card.moves, .pokemon-card.ultraShadow {
   margin-left: auto;
   margin-right: auto;
   color:black;

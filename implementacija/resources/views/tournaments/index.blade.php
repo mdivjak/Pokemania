@@ -11,7 +11,7 @@
 @section('content')
 <div id="tournament">
 
-  <div class="row" style="margin-top: 10rem;">
+  <div class="row" style="margin-top: 3rem;">
     <div class="col-lg-2 col-sm-2 ">
       <div class="container">
         <h3 class="moves-title title">TOURNAMENTS</h3>
