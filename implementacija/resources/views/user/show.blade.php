@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-   Profile
+Profile
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user.css') }}">
 @endsection
 
 @section('content')
@@ -39,66 +39,76 @@
       <h3 class="moves-title title  @if (Auth::id() != $user->idU) text-white @endif">POKEMONS</h3>
     </div>
   </div>
-  
+
   @if (session()->has('message'))
-    <div class="col-sm-12 alert-message">
-      <div class="alert alert-success">{{ session()->get('message') }}</div>
-    </div>
+  <div class="col-sm-12 alert-message">
+    <div class="alert alert-success">{{ session()->get('message') }}</div>
+  </div>
   @endif
 
   @if (session()->has('message_warning'))
-    <div class="col-sm-12 alert-message">
-      <div class="alert alert-warning">{{ session()->get('message_warning') }}</div>
-    </div>
+  <div class="col-sm-12 alert-message">
+    <div class="alert alert-warning">{{ session()->get('message_warning') }}</div>
+  </div>
   @endif
 
   <div class="row" style="margin-top: 10rem;">
 
-  @foreach($collection as $data)
+    @foreach($collection as $data)
     <div class="col-md-3 col-sm-6">
       <div class="pokemons container">
         <div class="pokemon-card" style="width: 20rem; height: 27rem;">
-          <div class="caption">
-            <p class="pokemon-name"> {{ strtoupper(App\Pokemon::find($data->first()->pokemon_id)->getName()) }} </p>
-            <img width=70 height=70 src=" {{ App\Pokemon::find($data->first()->pokemon_id)->getImage() }} "/>
-            <p class=" move-power"> <b>Level :</b> {{  $data->first()->level }} </p>
-            <p class=" move-accuracy"><b>XP:</b> {{  $data->first()->xp }}
-              <div class="progress">
-                <div class="progress-bar @if($data->first()->level==100) progress-bar-striped @endif" role="progressbar" 
-                  aria-valuenow="13" aria-valuemin="0" 
-                  aria-valuemax="35" 
-                  style="width: {{ $data->first()->level==100? 100 :($data->first()->xp)/(($data->first()->level)*5)*100 }}%;"
-                >
-                  <span class="sr-only">{{ $data->first()->xp/($data->first()->level*5) }}% Complete</span>
-                </div>
-              </div>
-            </p>
+          <a href="{{ route('home.pokemon', $data->first()->pokemon_id) }}">
 
-            @if(Auth::id()==$user->idU)
-              <div>
+            <div class="caption">
+              <p class="pokemon-name"> {{ strtoupper(App\Pokemon::find($data->first()->pokemon_id)->getName()) }} </p>
+              <img width=70 height=70 src=" {{ App\Pokemon::find($data->first()->pokemon_id)->getImage() }} " />
+              <p class=" move-power"> <b>Level :</b> {{ $data->first()->level }} </p>
+              <p class=" move-accuracy"><b>XP:</b> {{ $data->first()->xp }}
+                <div class="progress">
+                  <div class="progress-bar @if($data->first()->level==50) progress-bar-striped @endif" role="progressbar" aria-valuenow="13" aria-valuemin="0" aria-valuemax="35" style="width: {{ $data->first()->level==50? 100 :($data->first()->xp)/(($data->first()->level)*5)*100 }}%;">
+                    <span class="sr-only">{{ $data->first()->xp/($data->first()->level*5) }}% Complete</span>
+                  </div>
+                </div>
+              </p>
+
+              @if(Auth::id()==$user->idU)
+              <div class="row">
                 @if($user->cntFruits>0)
+                <div class="col-sm-6">
                   <form method='POST' action='{{ route("user.feed", Auth::user()) }}?pokemon={{ $data->first()->pokemon_id }}' style="float:left;">
                     @csrf
                     @method('PUT')
-                    <button type='submit' class="btn btn-primary">Feed</a>
+                    <button type='submit' class="btn btn-primary">Feed</button>
                   </form>
+                </div>
+
                 @else
-                    <button class="btn btn-primary disabled" style="float:left">Feed</a>
+                <div class="col-sm-6">
+                  <button class="btn btn-primary disabled" style="float:left">Feed</button>
+
+                </div>
                 @endif
+                <div class="col-sm-6">
+                  <form method='POST' action='{{ route("user.release", Auth::user()) }}?pokemon={{ $data->first()->pokemon_id }}' style="float:left;">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-primary" style="float:right;">Let Go</button>
+                  </form>
+                </div>
 
-                <form method='POST' action='{{ route("user.release", Auth::user()) }}?pokemon={{ $data->first()->pokemon_id }}' style="float:left;">
-                  @csrf
-                  @method('PUT')
-                  <button type="submit" class="btn btn-primary" style="float:right;">Let Go</a>
-                </form>              
               </div>
-            @endif
+              @endif
 
-          </div>
+            </div>
+
+          </a>
+
+
         </div>
       </div>
     </div>
-  @endforeach
+    @endforeach
 
   </div>
 </div>

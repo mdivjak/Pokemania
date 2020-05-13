@@ -56,7 +56,7 @@ Wild Battle
 	      <img src="images-Borbe/pokeball.svg" height="70" />
       </button></a>
 
-      <a href="{{ route('home.index') }}" style="@yield('backLinkEnable');"><button type="button" class="btn btn-default @yield('backButtonEnable')">
+      <a href="{{ route('user.show', Auth::user()->name) }}" style="@yield('backLinkEnable');"><button type="button" class="btn btn-default @yield('backButtonEnable')">
       <img src="images-Borbe/back.png" height="70" />
 			</button></a>
 

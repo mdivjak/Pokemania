@@ -7,3 +7,13 @@
 .admin-table tr {
     max-height: 25px;
 }
+
+.goLeft {
+    float: left;
+    width: 50%;
+}
+
+.goRight {
+    float: right;
+    width: 50%;
+}

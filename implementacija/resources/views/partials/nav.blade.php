@@ -19,37 +19,37 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					@auth
-						<li>
+						<li class="{{count(Request::segments()) == 2 && Request::segment(1) === 'profile' ? 'active' : null }}">
 							<a href="{{ route('user.show', Auth::user()->name) }}">
 								<!-- Profile -->
-								{{ Auth::user()->name }} &nbsp; &nbsp;
+								{{ Auth::user()->name }} 
 								<i class="fas fa-user"></i>
 							</a>
 						</li>
-						<li>
+						<li class="{{ strpos(Request::segment(1), 'wildBattle') !== false ? 'active' : null }}">
 							<a href="{{ route('wildBattle') }}" class="alignPerfect">
 								<!-- Wild Fight -->
 								<img src="{{ URL::to('images/pokeball.svg') }}" height="20" />
 							</a>
 						</li>
-						<li>
+						<li class="{{count(Request::segments()) == 3 && Request::segment(3) === 'shop' ? 'active' : null }}">
 							<a href="{{ route('user.shop', Auth::user()->name) }}">
 								<!-- Shop -->
 								<i class="fas fa-shopping-cart"></i>
 							</a>
 						</li>
 
-						<li>
+						<li class="{{ strpos(Request::segment(1), 'trainerBattle') !== false  || Request::segment(1) === 'tournament' ? 'active' : null }}">
 							<a href="{{ route('tournament.index') }}" class="alignPerfect">
 								<!-- Battle Arena -->
 								<img src="{{ URL::to('images/stadium.svg') }}" height="20" />
 							</a>
 						</li>
 						@if (Auth::user()->bAdmin)
-							<li>
+							<li class="{{ Request::segment(1) === 'admin' ? 'active' : null }}">
 								<a href="{{ route('admin') }}">
 									<!-- Create Tournament -->
-									<i class="fas fa-plus"></i>
+									<i class="fas fa-user-cog"></i>
 								</a>
 							</li>
 						@endif

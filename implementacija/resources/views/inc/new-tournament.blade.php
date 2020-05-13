@@ -12,7 +12,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="#newTournamentFormTitle">Create New Tournament</h5>
+              <h3 class="modal-title" id="#newTournamentFormTitle">Create New Tournament</h3>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                   <label for="registration-price" class="col-form-label">Registration Price:</label>
-                  <input type="number" id="registration-price" class="form-control" name="registration-price">
+                  <input type="number" id="registration-price" class="form-control" name="registration-price" min="0">
                 </div>
                 <div class="form-group">
                     <label for="end-date" class="col-form-label">End Date:</label>
@@ -33,16 +33,16 @@
                 </div>
                 <div class="form-group">
                     <label for="prize-amount" class="col-form-label">Prize Amount:</label>
-                    <input type="number" id="prize-amount" class="form-control" name="prize-amount">
+                    <input type="number" id="prize-amount" class="form-control" name="prize-amount" min="0">
                 </div>
                 <div class="form-row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 goLeft">
                         <label for="min-level" class="col-form-label">Min Level:</label>
-                        <input type="number" id="min-level" class="form-control" name="min-level">
+                        <input type="number" id="min-level" class="form-control" name="min-level" min="1" max="100">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 goRight">
                         <label for="max-level" class="col-form-label">Max Level:</label>
-                        <input type="number" id="max-level" class="form-control" name="max-level">
+                        <input type="number" id="max-level" class="form-control" name="max-level" min="1" max="100">
                     </div>
                 </div>
             </div>
