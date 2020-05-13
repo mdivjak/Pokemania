@@ -15,6 +15,8 @@ class trainerBattleController extends Controller
 
         Session::put("user", auth()->user()->idU);
         Session::put("tournament", "1");
+        Session::put("loadAttack", "1");
+        Session::put("loadPick", "1");
 
         //get all participants
         $allOpponents=\DB::table('participates')->where('tournament_id', Session::get('tournament'))->where('user_id', '!=', Session::get('user'))->get();
@@ -157,6 +159,10 @@ class trainerBattleController extends Controller
     } 
 
     public function pick(Request $request) {
+        
+        if (Session::get("loadPick")=="0") {
+            return $this->show();
+        }
 
         $picked=$request->input('picked');
         shuffle($picked);
@@ -170,6 +176,9 @@ class trainerBattleController extends Controller
                 'trainerPokemons'=>Session::get('trainerPokemons'),
                 'trainerPokemonsLevelsForButtons'=>Session::get('trainerPokemonsLevels')
             ]);
+        }
+        else {
+            if (Session::get("loadPick")=="1") Session::put("loadPick", "0");
         }
         
         //store users picked pokemon and their levels
@@ -205,18 +214,17 @@ class trainerBattleController extends Controller
             $newCash=0;
         }
         \DB::table('users')->where('idU', Session::get('user'))->update(['cntCash'=>$newCash]);
-        return ' -> You lost and dropped '.$lostCash.'ß!';
+        return ' -> You lost and dropped '.$lostCash.'₽!';
     }
 
     public function win() {
-
         if (Session::get("loadAttack")=="1") Session::put("loadAttack", "0");
 
         $gainedCash=\DB::table('tournaments')->where('id', Session::get('tournament'))->first()->entryFee/2;
         \DB::table('users')->where('idU', Session::get('user'))->increment('cntCash', $gainedCash);
         \DB::table('participates')->where('user_id', Session::get('user'))->increment('cntWin', 1);
 
-        return ' -> You won and gained '.$gainedCash.'ß!';
+        return ' -> You won and gained '.$gainedCash.'₽!';
     }
 
 
@@ -274,7 +282,7 @@ class trainerBattleController extends Controller
 
     public function attack() {
         if (Session::get("loadAttack")=="0") {
-            route('home.index');
+            return $this->show();
         }
 
         $trainerPokemonLevel=Session::get('trainerPokemonLevel');

@@ -18,8 +18,9 @@ class wildBattleController extends Controller {
 
     public function show() {
         Session::put("user", auth()->user()->idU);
-        Session::put("load", "1");
+        Session::put("loadCatch", "1");
         Session::put("loadAttack", "1");
+        Session::put("loadPick", "1");
 
         $trainersPokemonsFromTable=\DB::table('owns')->where('user_id', Session::get('user'))->get();
 
@@ -46,9 +47,15 @@ class wildBattleController extends Controller {
         $pokemonJSON=json_decode($data);
         $imageURI="https://pokeres.bastionbot.org/images/pokemon/".$randNumber.".png";
 
-        $randLevel=rand(min($trainersPokemonsLevels),max($trainersPokemonsLevels));
-        // for testing
-        // $randLevel=16;
+        if (count($trainersPokemonsFromTable)>0) $randLevel=rand(min($trainersPokemonsLevels),max($trainersPokemonsLevels));
+        else $randLevel=rand(1,20);
+        
+        //ako nema pokemona
+        if (count($trainersPokemonsFromTable)==0) return view('battles.wildBattleFail', [
+            'pokemonName'=>$pokemonJSON->name,
+            'pokemonLevel'=>$randLevel,
+            'imageURI'=>$imageURI,
+        ]);
 
         Session::put('wildPokemon',$pokemonJSON->name);
         Session::put('wildPokemonLevel',$randLevel);
@@ -65,6 +72,12 @@ class wildBattleController extends Controller {
     }
 
     public function pick(Request $request) {
+
+        if (Session::get("loadPick")=="0") {
+            return $this->show();
+        }
+        if (Session::get("loadPick")=="1") Session::put("loadPick", "0");
+
         $trainerPokemon=lcfirst($request->input('action'));
         
         $pokeURL="http://pokeapi.co/api/v2/pokemon/".$trainerPokemon;
@@ -190,7 +203,7 @@ class wildBattleController extends Controller {
         \DB::table('owns')->where('user_id', Session::get('user'))->where('pokemon_id', Session::get('trainerPokemonID'))->update(['xp'=>$newXP]);
         \DB::table('users')->where('idU', Session::get('user'))->increment('cntCash', $gainedCash);
 
-        $message='You won and gained '.$gainedCash.'ß, '.ucfirst(Session::get('trainerPokemon')).' gained '.$gainedXP.'XP';
+        $message='You won and gained '.$gainedCash.'₽, '.ucfirst(Session::get('trainerPokemon')).' gained '.$gainedXP.'XP';
         if ($newLevel) {
             $message=$message.' and grew to level '.Session::get('trainerPokemonLevel');
         }
@@ -209,12 +222,12 @@ class wildBattleController extends Controller {
             $newCash=0;
         }
         \DB::table('users')->where('idU', Session::get('user'))->update(['cntCash'=>$newCash]);
-        return 'You lost and dropped '.$lostCash.'ß!';
+        return 'You lost and dropped '.$lostCash.'₽!';
     }
 
     public function attack() {
         if (Session::get("loadAttack")=="0") {
-            return view('battles.welcome');
+            return $this->show();
         }
 
         $trainerPokemonLevel=Session::get('trainerPokemonLevel');
@@ -370,10 +383,10 @@ class wildBattleController extends Controller {
     }
 
     public function catch() {
-        if (Session::get("load")=="0") {
-            return view('battles.welcome');
+        if (Session::get("loadCatch")=="0") {
+            return $this->show();
         }
-        if (Session::get("load")=="1") Session::put("load", "0");
+        if (Session::get("loadCatch")=="1") Session::put("loadCatch", "0");
 
         \DB::table('users')->where('idU', Session::get('user'))->decrement('cntBalls', 1);
         $wildPokemonMaxHP=Session::get('wildPokemonMaxHP');
@@ -399,8 +412,8 @@ class wildBattleController extends Controller {
                 //catch
                 \DB::table('owns')->insert(
                     ['user_id' => Session::get('user'), 'pokemon_id' => Session::get('wildPokemonID'),
-                    'xp' => 0, 'level' => Session::get('wildPokemonLevel')]
-                );
+                    'xp' => 0, 'level' => Session::get('wildPokemonLevel')]);
+                \DB::table('pokemon')->insert(['id' => Session::get('wildPokemonID')]);
                 \DB::table('users')->where('idU', Session::get('user'))->increment('cntPokemons', 1);
                 return view('battles.wildBattleAttacked', [
                     'text'=>'You caught '.ucfirst(Session::get('wildPokemon')).'!',
@@ -433,6 +446,7 @@ class wildBattleController extends Controller {
                     ['user_id' => Session::get('user'), 'pokemon_id' => Session::get('wildPokemonID'),
                     'xp' => 0, 'level' => Session::get('wildPokemonLevel')]
                 );
+                \DB::table('pokemon')->insert(['id' => Session::get('wildPokemonID')]);
                 \DB::table('users')->where('idU', Session::get('user'))->increment('cntPokemons', 1);
                 return view('battles.wildBattleAttacked', [
                     'text'=>'You caught '.ucfirst(Session::get('wildPokemon')).'!',

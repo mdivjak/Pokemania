@@ -1,20 +1,26 @@
 @extends('battles.layout')
 
-@section('pageTitle')
-Pokemania - Tournament Battle
+@section('part')
+Tournament Battle
 @endsection
 
-
 @section('contents')
+
+<div id="aroundBattle">
 
 <div class="wrapperAppeared">
   <div class="headerWrapper"><h2><b>@yield('text')</b></h2></div>
 
   <div class="battlefield">
     <div class="me">
-      <h3>{{ucfirst(Session::get('trainerPokemon'))}}</h3>
+      <h3 style="display: inline-block; vertical-align: middle; margin-top: 14px;">{{ucfirst(Session::get('trainerPokemon'))}}</h3>
+      <div class="secondLevelWrapper"><h5>{{"LV: ".Session::get('trainerPokemonLevel')}}</h5></div>
       
-      <div class="secondLevelWrapper"><h5>{{"LV: ".Session::get('trainerPokemonLevel')." TYPE: ".ucfirst(Session::get('trainerPokemonType1'))." ".ucfirst(Session::get('trainerPokemonType2'))}}</h5></div>
+      <div class="infoInBattle">
+        
+        <span class="{{Session::get('trainerPokemonType1')}}" style="width: 30%; padding: 5px; border-radius: 10px; margin: auto; margin-right: 2px;"><b>{{strtoupper(Session::get('trainerPokemonType1'))}}</b></span>
+        <span class="{{Session::get('trainerPokemonType2')}}" style="width: 30%; padding: 5px; border-radius: 10px; margin: auto; margin-left: 2px;"><b>{{strtoupper(Session::get('trainerPokemonType2'))}}</b></span>
+      </div>
 
       <img src={{ Session::get('trainerPokemonIMG') }}>
 
@@ -22,9 +28,14 @@ Pokemania - Tournament Battle
 
     </div>
     <div class="enemy">
-      <h3>{{ucfirst(Session::get('opponentPokemon'))}}</h3>
+    <h3 style="display: inline-block; vertical-align: middle; margin-top: 14px;">{{ucfirst(Session::get('opponentPokemon'))}}</h3>
+      <div class="secondLevelWrapper"><h5>{{"LV: ".Session::get('opponentPokemonLevel')}}</h5></div>
       
-      <div class="secondLevelWrapper"><h5>{{"LV: ".Session::get('opponentPokemonLevel')." TYPE: ".ucfirst(Session::get('opponentPokemonType1'))." ".ucfirst(Session::get('opponentPokemonType2'))}}</h5></div>
+      <div class="infoInBattle">
+        
+        <span class="{{Session::get('opponentPokemonType1')}}" style="width: 30%; padding: 5px; border-radius: 10px; margin: auto; margin-right: 2px;"><b>{{strtoupper(Session::get('opponentPokemonType1'))}}</b></span>
+        <span class="{{Session::get('opponentPokemonType2')}}" style="width: 30%; padding: 5px; border-radius: 10px; margin: auto; margin-left: 2px;"><b>{{strtoupper(Session::get('opponentPokemonType2'))}}</b></span>
+      </div>
 
       <img src={{ Session::get('opponentPokemonIMG') }}>
 
@@ -33,7 +44,7 @@ Pokemania - Tournament Battle
     </div>
 
   </div>
-
+  
   
   <div class="buttonArea">
 
@@ -48,6 +59,7 @@ Pokemania - Tournament Battle
     </div>
 
 
+</div>
 </div>
 
 @endsection

@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
 @section('title')
-jeah
+
+@yield('part')
+
 @endsection
 
 @section('content')
