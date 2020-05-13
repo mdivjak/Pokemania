@@ -36,6 +36,8 @@ class UserController extends Controller
         $userId = Auth::id();
         $user = Auth::user();
 
+        if ($user->cntFruits == 0) return redirect()->back()->with('message', 'You have successfully fed your pokemon!');
+
         $level = DB::table('owns')->where([['user_id', $userId], ['pokemon_id', request('pokemon')]])->first()->level;
         $currentXP = DB::table('owns')->where([['user_id', $userId], ['pokemon_id', request('pokemon')]])->first()->xp;
 
