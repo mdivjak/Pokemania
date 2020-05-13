@@ -36,10 +36,6 @@ class UserController extends Controller
         $userId = Auth::id();
         $user = Auth::user();
 
-        $user->cntFruits--;
-
-        $user->save();
-
         $level = DB::table('owns')->where([['user_id', $userId], ['pokemon_id', request('pokemon')]])->first()->level;
         $currentXP = DB::table('owns')->where([['user_id', $userId], ['pokemon_id', request('pokemon')]])->first()->xp;
 
@@ -60,8 +56,17 @@ class UserController extends Controller
             DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->increment('level', 1);
             $level++;
             $requiredXP = $level * 5;
-            if ( $level == 50) break;
+            if ($level == 50) break;
         }
+
+        if ($level == 50) {
+            $newXP = 0;
+            DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->update(['xp' => $newXP]);
+            return redirect()->back()->with('message_warning', 'Your pokemon has reached maximum level');
+        }
+
+        $user->cntFruits--;
+        $user->save();
 
         DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->update(['xp' => $newXP]);
         return redirect()->back()->with('message', 'You have successfully fed your pokemon!');
