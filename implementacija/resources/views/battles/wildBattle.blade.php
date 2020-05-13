@@ -1,6 +1,12 @@
 @extends ('battles.layout')
 
+@section('part')
+Wild Battle
+@endsection
+
 @section('content')
+
+<div class="aroundBattle">
 
 <div class="wrapperAppeared">
   <div class="headerWrapper"><h3 style="font-weight:bold;">A wild {{ ucfirst($pokemonName) }} appeared!</h3></div>
@@ -18,6 +24,8 @@
         @endforeach
   </ul>
   </form>
+</div>
+
 </div>
 
 @endsection

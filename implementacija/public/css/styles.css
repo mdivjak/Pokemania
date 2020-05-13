@@ -930,6 +930,14 @@ textarea.form-control.is-invalid {
   padding-right:20px;
 }
 
+.headerWrapper h2, h3 {
+  margin: 10px;
+}
+
+.wrapperAppeared h2, h3 {
+  margin: 10px;
+}
+
 .levelWrapper {
   background-color: black;
   color: white;
@@ -965,6 +973,7 @@ textarea.form-control.is-invalid {
 
 .battlefield h3 {
   font-weight: bold;
+  font-size: 30px;
 }
 
 .me {
@@ -992,17 +1001,17 @@ textarea.form-control.is-invalid {
 .secondLevelWrapper {
   background-color: black;
   color: white;
-  margin-bottom: 30px;
   border-radius: 10px;
-  width: 70%;
   text-align: center !important;
   margin: auto;
+  width: 20%;
+  display: inline-block;
+  height: 30px;
 }
 
 .secondLevelWrapper h5 {
   font-size: 12px;
   font-weight: bold;
-  padding: 5px;
 }
 
 .buttonArea {
@@ -1045,6 +1054,20 @@ textarea.form-control.is-invalid {
   display: inline !important;
   text-align: center;
   margin: 1px;
+}
+
+#aroundBattle {
+  height: 90vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+}
+
+#aroundBattle::-webkit-scrollbar {
+  display: none;
+}
+
+.infoInBattle {
+  margin-top: 5px;
 }
 
 

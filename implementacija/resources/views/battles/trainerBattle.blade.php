@@ -1,6 +1,12 @@
 @extends ('battles.layout')
 
+@section('part')
+Torunament Battle
+@endsection
+
 @section('content')
+
+<div id="aroundBattle">
 
 <div class="wrapperAppeared">
   <div class="headerWrapper"><h3 style="font-weight:bold;">Your opponent is {{$opponentNick}}!</h3></div>
@@ -21,6 +27,8 @@
     </div>
     <input class="btn btn-warning" type="submit" style="width: 130px; height: 34px; font-weight:bold;" value="Battle!" name="action">
   </form>
+</div>
+
 </div>
 
 @endsection
