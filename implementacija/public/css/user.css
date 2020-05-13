@@ -57,6 +57,9 @@
   color: white !important;
   text-shadow: 0 0 3px rgb(36, 82, 151);;
 }
+.progress-bar-striped {
+  background-color: rgb(255, 98, 8) !important;
+}
 
 /* Shop */
 #shop {
