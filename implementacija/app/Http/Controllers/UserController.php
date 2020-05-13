@@ -44,7 +44,7 @@ class UserController extends Controller
         $gainedXP = 2 * $level;
         $requiredXP = 5 * $level;
 
-        if ($level == 50) {
+        if ($level == 100) {
             $gainedXP=0;
             $currentXP=0;
         }
@@ -58,10 +58,10 @@ class UserController extends Controller
             DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->increment('level', 1);
             $level++;
             $requiredXP = $level * 5;
-            if ($level == 50) break;
+            if ($level == 100) break;
         }
 
-        if ($level == 50) {
+        if ($level == 100) {
             $newXP = 0;
             DB::table('owns')->where('user_id', $userId)->where('pokemon_id', request('pokemon'))->update(['xp' => $newXP]);
             return redirect()->back()->with('message_warning', 'Your pokemon has reached maximum level');
