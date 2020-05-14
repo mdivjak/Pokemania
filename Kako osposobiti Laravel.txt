@@ -41,3 +41,36 @@ Poziva se metoda markdown() sa imenom viewa.
 Definisani su defaultni stilovi i struktura mejlova u resources/vendor/mail/html/
 Za testiranje izgleda mejla moze da se napravi ruta koja vraca objekat te klase, da se ne bi slao stalno mejl.
 Primer rute je u web.php
+
+
+BRISANJE TURNIRA NA DNEVNOM NIVOU:
+- manuelno:
+	1. u app/Console/Kernel.php u schedule fji definisati ->at('hh:mm")
+	   kada treba zakazati pokretanje 
+	2. dodatno pokrenuti (nakon tog "at"):
+	   php artisan schedule:run
+- automatiski (Win):
+https://quantizd.com/how-to-use-laravel-task-scheduler-on-windows-10/
+	1. otvoriti Task Scheduler
+	2. create a new task 
+	3. General: upisati ime, select Run only when user is logged on, 
+				select Hidden, Configure for: Windows 10 (ako taj koristite)
+	   Triggers: New...,
+				 Settings - daily
+				 Start: (izabrati vreme)
+				 Recur every: 1 days 
+				 Advanced - Repeat task every 5 minutes (pa izbrisati 5 i staviti 1 minutes)
+							for a duration of 15 minutes (ovo ustv nije potrebno al cisto da vidite da se zapravo pokrece)
+	   Actions:	 New...,
+				 Action: start a program,
+				 Program/script: putanja do php.exe (kod mene je to u wamp, bin, php..)
+				 Add arguments:  putanja do projekta (artisan fajla u projektu) + dodajete komandu
+								 (....www\pokemania\artisan schedule:run)
+	   Conditions:
+				iskljuciti Start task only on AC power!
+			 
+- automatski (Linux):
+		1. sudo crontab -e
+		2. dodati:
+					* * * * * php putanjaDoProjekta/artisan schedule:run >> /dev/null 2>&1
+
