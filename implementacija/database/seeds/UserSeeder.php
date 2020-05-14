@@ -144,6 +144,17 @@ class UserSeeder extends Seeder
                 'cntPokemons' => 4,
                 'avatar' => 3
             ),
+            array(
+                'email' => 'marko@gmail.com',
+                'password' => Hash::make('123123123'),
+                'name' => 'marko',
+                'bAdmin' => 1,
+                'cntBalls' => 4,
+                'cntCash' => 600,
+                'cntFruits' => 3,
+                'cntPokemons' => 4,
+                'avatar' => 3
+            )
         ));
     }
 }

@@ -24,7 +24,7 @@ Route::post('/admin', 'AdminController@store');
 //pregled prijava
 Route::get('/admin/tournament/{id}', 'AdminController@listRegistrations')->name('admin.registrations');
 //prihvatanje prijave
-Route::post('/admin/tournament/{id}/accept', 'AdminController@accept')->name('admin.accept');
+Route::put('/admin/tournament/{id}/accept', 'AdminController@accept')->name('admin.accept');
 //odbijanje prijave
 Route::post('/admin/tournament/{id}/decline', 'AdminController@decline')->name('admin.decline');
 

@@ -19,6 +19,11 @@
         {{session()->get('decline-message')}}
     </div>
 @endif
+@if(session()->has('backlink'))
+    <div class="alert alert-success">
+        {{session()->get('backlink')}}
+    </div>
+@endif
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -50,6 +55,7 @@
                                         <td>
                                             <form method='POST' action='{{ route('admin.accept', [$registration->pivot->tournament_id])}}'>
                                                 @csrf
+                                                @method('PUT')
                                                 <input type="hidden" name="idU" value="{{ $registration->idU }}">
                                                 <button type="submit" class="btn btn-success">Accept</a>
                                             </form> 

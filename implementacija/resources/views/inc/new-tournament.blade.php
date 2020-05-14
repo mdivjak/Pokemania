@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-md-4 float-left">
     @if (Route::current()->getName() == 'admin.registrations')
-    <a href="{{ URL::previous() }}" class="btn btn-default float-left" style="float:left;">
+    <a href="{{ route('admin') }}" class="btn btn-default float-left" style="float:left;">
       Back
     </a>
     @endif
