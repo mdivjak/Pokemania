@@ -14,7 +14,6 @@ class trainerBattleController extends Controller
     public function show() {
 
         Session::put("user", auth()->user()->idU);
-        Session::put("tournament", "1");
         Session::put("loadAttack", "1");
         Session::put("loadPick", "1");
 

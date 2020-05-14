@@ -6,6 +6,7 @@ use App\Tournament;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Auth;
 
 class TournamentController extends Controller
@@ -44,6 +45,7 @@ class TournamentController extends Controller
 
     public function show(Tournament $tournament) 
     {
+        Session::put("tournament", $tournament->id);
         return view('tournaments.show', compact('tournament'));
     }
 
