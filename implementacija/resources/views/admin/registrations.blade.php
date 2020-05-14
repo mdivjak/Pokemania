@@ -27,7 +27,7 @@
                     @include('inc.new-tournament')
                 </div>
 
-                <div class="card-body">
+                <div class="card-body" style="padding-bottom:10px;">
                     @if (count($registrations) > 0)
                         <table class="table">
                             <thead>

@@ -59,16 +59,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->bAdmin) {
-            $tournaments = Tournament::orderBy('endDate', 'asc')->paginate(2);
-            return view('admin.adminindex')->with('tournaments', $tournaments);
-        }
-        return redirect()->route('user.show', [auth()->user()->name]);
+        if(!auth()->user()->bAdmin)
+            return redirect()->route('user.show', [auth()->user()->name]);
+
+        //$tournaments = Tournament::orderBy('endDate', 'asc')->with('registrations')->paginate(10);
+        $tournaments = Tournament::withCount('registrations')->orderBy('registrations_count', 'desc')->orderBy('endDate', 'asc')->paginate(10);
+        return view('admin.adminindex')->with('tournaments', $tournaments);
     }
 
     public function listRegistrations(Request $request) {
-        if(!auth()->user()->bAdmin)
-            return redirect()->route('user.show', [auth()->user()->name]);
+        
         
         $registrations = Tournament::find($request->id)->registeredUsers()->paginate(10);
         //return $registrations;

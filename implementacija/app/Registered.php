@@ -10,8 +10,10 @@ class Registered extends Model
     /*public function user() {
         return $this->belongsTo('App\User');
     }
-
+    */
+    protected $table = 'registered';
+    
     public function tournament() {
         return $this->belongsTo('App\Tournament');
-    }*/
+    }
 }
