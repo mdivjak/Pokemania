@@ -64,7 +64,7 @@ class AdminController extends Controller
         if(!auth()->user()->bAdmin)
             return redirect()->route('user.show', [auth()->user()->name]);
 
-        $tournaments = Tournament::withCount('registrations')->having('registrations_count', '>', 0)->orderBy('registrations_count', 'desc')->orderBy('endDate', 'asc')->paginate(10);
+        $tournaments = Tournament::withCount('registrations')->orderBy('registrations_count', 'desc')->orderBy('endDate', 'asc')->paginate(10);
         return view('admin.adminindex')->with('tournaments', $tournaments);
     }
 
@@ -162,7 +162,7 @@ class AdminController extends Controller
 
         }
 
-        //$tournament->delete();
+        $tournament->delete();
         return redirect()->back()->with('tournament-created', 'Successfully deleted tournament "'.$tournament->name.'"!');
     }
 }
