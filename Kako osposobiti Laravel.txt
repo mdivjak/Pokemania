@@ -22,3 +22,22 @@ na mailtrapu da bi vam tu stizali poslati mejlovi
 
 Kad se izmene mail.php i .env treba da se izvrsi:
 php artisan config:cache
+
+DODATNO ZA MEJLOVE
+composer require guzzlehttp/guzzle (mislim da je ovo nepotrebno)
+php artisan vendor:publish --tag=laravel-mail (ovo je za generisanje defaultnih stilova za mejlove, ne treba pokretati ponovo jer sam ja vec pokrenuo i vec je izgenerisano)
+
+PRAVLJENJE MEJL KLASE
+php artisan make:mail TournamentWon --markdown=emails.tournament-won
+	-napravice klasu TournamentWon i tournament-won.blade.php
+
+MEJLOVI TUTORIAL
+Klase se prave gornjom komandom, u klasi se definisu public polja koja pretstavljaju podatke koje koristi mejl.
+Ti podaci se prosledjuju konstruktoru (ne moraju, ali tako je najlakse).
+Sva polja moraju da budu public da bi bila dostupna blade.php
+U blade.php ti podaci se koriste kao da su prosledjeni sa with().
+U mejl klasi mora da postoji metoda build(). Ona vraca neki od viewova u emails folderu.
+Poziva se metoda markdown() sa imenom viewa.
+Definisani su defaultni stilovi i struktura mejlova u resources/vendor/mail/html/
+Za testiranje izgleda mejla moze da se napravi ruta koja vraca objekat te klase, da se ne bi slao stalno mejl.
+Primer rute je u web.php

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
+use App\User;
+use App\Tournament;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,3 +104,11 @@ Route::post('/trainerBattlePick', 'trainerBattleController@pick')->name('trainer
 Route::get('/trainerBattleAttack', 'trainerBattleController@attack')->name('trainerBattleAttack');
 
 //-----------------------------KRAJ VUKASIN------------------------------------------------------
+
+
+//-----------------------------PREVIEW MEJLOVA-----------------------------------------------------
+
+Route::get('/test-mejl', function () {
+   // Mail::to("dekan@etf.rs")->send(new App\Mail\AcceptRegistration(User::find(1), Tournament::find(1)));
+    return new App\Mail\AcceptRegistration(User::find(1),Tournament::find(1));
+});
