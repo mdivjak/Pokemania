@@ -1093,3 +1093,12 @@ textarea.form-control.is-invalid {
 }
 
 
+/* 404 */
+.styleFont {
+  font-family: 'Kanit', sans-serif;
+  color: rgb(36, 82, 151);
+}
+
+.noTopMargin, .loading.noTopMargin {
+  margin-top: 0px;
+}

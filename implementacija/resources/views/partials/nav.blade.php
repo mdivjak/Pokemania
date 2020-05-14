@@ -19,7 +19,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					@auth
-						<li class="{{count(Request::segments()) == 2 && Request::segment(1) === 'profile' ? 'active' : null }}">
+						<li class="{{count(Request::segments()) == 2 && Request::segment(1) === 'profile' && Request::segment(2) === Auth::user()->name ? 'active' : null }}">
 							<a href="{{ route('user.show', Auth::user()->name) }}">
 								<!-- Profile -->
 								{{ Auth::user()->name }} 
