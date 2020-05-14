@@ -52,7 +52,7 @@ Tournament Battle
 				<img src="images-Borbe/boxing.png" height="70" />
 			</button></a>
 
-      <a href="{{ route('home.index') }}" style="@yield('backLinkEnable');"><button type="button" class="btn btn-default @yield('backButtonEnable')">
+      <a href="{{ route('tournament.show', ['tournament' => Session::get('tournament')]) }}" style="@yield('backLinkEnable');"><button type="button" class="btn btn-default @yield('backButtonEnable')">
       <img src="images-Borbe/back.png" height="70" />
 			</button></a>
 

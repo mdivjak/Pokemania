@@ -247,8 +247,8 @@ class trainerBattleController extends Controller
         $currentXP=\DB::table('owns')->where('user_id', Session::get('user'))->where('pokemon_id', $trainerPokemonID)->first()->xp;
 
         //if max level
-        if ($trainerPokemonLevel==50) $gainedXP=0;
-        if ($trainerPokemonLevel==50) $currentXP=0;
+        if ($trainerPokemonLevel==100) $gainedXP=0;
+        if ($trainerPokemonLevel==100) $currentXP=0;
 
         $newXP=$currentXP+$gainedXP;
         $newLevel=false;
@@ -260,7 +260,7 @@ class trainerBattleController extends Controller
             $requiredXP=$trainerPokemonLevel*5;
 
             //if max level
-            if ($trainerPokemonLevel==50) break;
+            if ($trainerPokemonLevel==100) break;
 
         }
         \DB::table('owns')->where('user_id', Session::get('user'))->where('pokemon_id', $trainerPokemonID)->update(['xp'=>$newXP]);
