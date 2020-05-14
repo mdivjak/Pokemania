@@ -11,35 +11,13 @@ class PokemonSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pokemon')->insert(array(
-            array(
-                'id' => '1'
-            ),
-            array(
-                'id' => '2'
-            ),
-            array(
-                'id' => '3'
-            ),
-            array(
-                'id' => '4'
-            ),
-            array(
-                'id' => '5'
-            ),
-            array(
-                'id' => '6'
-            ),
-            array(
-                'id' => '7'
-            ),
-            array(
-                'id' => '8'
-            ),
-            array(
-                'id' => '69'
-            )
-        ));
+        for($i = 1; $i <= 251; $i++) {
+            DB::table('pokemon')->insert(array(
+                array(
+                    'id' => $i
+                )
+                ));
+        }
 
         DB::table('owns')->insert(array(
             array(
