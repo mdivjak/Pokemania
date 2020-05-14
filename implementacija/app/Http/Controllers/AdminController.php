@@ -64,16 +64,12 @@ class AdminController extends Controller
         if(!auth()->user()->bAdmin)
             return redirect()->route('user.show', [auth()->user()->name]);
 
-        //$tournaments = Tournament::orderBy('endDate', 'asc')->with('registrations')->paginate(10);
         $tournaments = Tournament::withCount('registrations')->orderBy('registrations_count', 'desc')->orderBy('endDate', 'asc')->paginate(10);
         return view('admin.adminindex')->with('tournaments', $tournaments);
     }
 
     public function listRegistrations(Request $request) {
-        
-        
         $registrations = Tournament::find($request->id)->registeredUsers()->paginate(10);
-        //return $registrations;
         return view('admin.registrations')->with('registrations', $registrations);
     }
 
@@ -166,7 +162,7 @@ class AdminController extends Controller
 
         }
 
-        //$tournament->delete();
+        $tournament->delete();
         return redirect()->back()->with('tournament-created', 'Successfully deleted tournament "'.$tournament->name.'"!');
     }
 }

@@ -172,6 +172,14 @@ class TournamentSeeder extends Seeder
                 'user_id' => 1,
                 'tournament_id' => 3,
             ),
+            array(
+                'user_id' => 4,
+                'tournament_id' => 3,
+            ),
+            array(
+                'user_id' => 5,
+                'tournament_id' => 3,
+            )            
         ));
     }
 }
