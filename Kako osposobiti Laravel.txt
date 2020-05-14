@@ -15,3 +15,10 @@ php artisan migrate:fresh --seed
 
 HELPER ZA FORME
 composer require laravelcollective/html
+
+SLANJE MEJLOVA:
+u .env treba da se ubace MAIL_USERNAME i MAIL_PASSWORD od vaseg naloga
+na mailtrapu da bi vam tu stizali poslati mejlovi
+
+Kad se izmene mail.php i .env treba da se izvrsi:
+php artisan config:cache
