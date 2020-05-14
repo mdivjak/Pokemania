@@ -15,6 +15,12 @@ class Tournament extends Model
                     ->take(10);
     }
 
+    public function allParticipants()
+    {
+        return $this->belongsToMany('App\User', 'participates', 'tournament_id', 'user_id')
+                    ->orderBy('cntWin', 'desc');
+    }
+
     public function registeredUsers()
     {
         return $this->belongsToMany('App\User', 'registered', 'tournament_id', 'user_id');

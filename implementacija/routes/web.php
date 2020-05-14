@@ -27,6 +27,8 @@ Route::get('/admin/tournament/{id}', 'AdminController@listRegistrations')->name(
 Route::post('/admin/tournament/{id}/accept', 'AdminController@accept')->name('admin.accept');
 //odbijanje prijave
 Route::post('/admin/tournament/{id}/decline', 'AdminController@decline')->name('admin.decline');
+//brisanje turnira
+Route::post('/admin/tournament/{tournament}/delete', 'AdminController@deleteTournament')->name('admin.delete');
 
 
 //------------------------------KRAJ MARKOVOG------------------------------------

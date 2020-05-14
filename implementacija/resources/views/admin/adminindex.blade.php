@@ -2,6 +2,7 @@
 
 @section('scripts')
 <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/admin.js') }}" defer></script>
 @endsection
 
 @section('css')
@@ -50,7 +51,15 @@
                                                 <a href="{{ route('admin.registrations', [$tournament->id]) }}" class="float-right btn btn-primary">Check Pending Registrations</a>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-danger">Delete Tournament</a>
+                                                <div class="form-group row" style="width: max-content">
+                                                    <input type="hidden" name="avatar" value="1" id="avatar-choice">
+                                                    <input type="button" class="float-left btn btn-danger delete-tournament-button" 
+                                                        data-delete-link="{{ route('admin.delete', $tournament) }}"
+                                                        data-toggle="modal" data-target="#avatar-picker" 
+                                                        data-tournament="{{ $tournament }}"
+                                                        value="Delete Tournament"
+                                                    >
+                                                </div>
                                             </td>
                                         </tr>
                                     @endif
@@ -67,6 +76,33 @@
                         </div>
                     @endif
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="avatar-picker" tabindex="-1" role="dialog" aria-labelledby="#avatar-picker-label" style="color:#777;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="avatar-picker-label">Are you sure you want to delete this tournament?</h4>
+            </div>
+            <div class="modal-footer">
+                <table>
+                    <td>
+                        <tr>
+                            <form method="POST" id="delete-tournament-form" action="">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </tr>
+                        <tr>
+                            <button type="submit" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                        </tr>
+                    </td>
+                </table>
             </div>
         </div>
     </div>
