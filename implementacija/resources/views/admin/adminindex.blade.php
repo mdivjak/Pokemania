@@ -27,25 +27,33 @@
                     @include('inc.new-tournament')
                 </div>
 
-                <div class="card-body">
+                <div class="card-body" style="padding-bottom:10px;">
                     @if (count($tournaments) > 0)
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th style="text-align: center">Tournament Name</th>
+                                    <th style="text-align: center">Number of Registrations</th>
                                     <th style="text-align: center">End Date</th>
+                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($tournaments as $tournament)
-                                    <tr>
-                                        <td>{{$tournament->name}}</td>
-                                        <td>{{$tournament->endDate}}</td>
-                                        <td>
-                                            <a href="{{ route('admin.registrations', [$tournament->id]) }}" class="float-right btn btn-primary">Check Pending Registrations</a>
-                                        </td>
-                                    </tr>
+                                    @if ($tournament->registrations_count > 0)
+                                        <tr>
+                                            <td>{{$tournament->name}}</td>
+                                            <td>{{ $tournament->registrations_count }}</td>
+                                            <td>{{$tournament->endDate}}</td>
+                                            <td>
+                                                <a href="{{ route('admin.registrations', [$tournament->id]) }}" class="float-right btn btn-primary">Check Pending Registrations</a>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-danger">Delete Tournament</a>
+                                            </td>
+                                        </tr>
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>

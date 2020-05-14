@@ -184,8 +184,8 @@ class wildBattleController extends Controller {
         $currentXP=\DB::table('owns')->where('user_id', Session::get('user'))->where('pokemon_id', Session::get('trainerPokemonID'))->first()->xp;
 
         //if max level
-        if (Session::get('trainerPokemonLevel')==50) $gainedXP=0;
-        if (Session::get('trainerPokemonLevel')==50) $currentXP=0;
+        if (Session::get('trainerPokemonLevel')==100) $gainedXP=0;
+        if (Session::get('trainerPokemonLevel')==100) $currentXP=0;
 
         $newXP=$currentXP+$gainedXP;
         $newLevel=false;
@@ -197,7 +197,7 @@ class wildBattleController extends Controller {
             $requiredXP=Session::get('trainerPokemonLevel')*5;
 
             //if max level
-            if (Session::get('trainerPokemonLevel')==50) break;
+            if (Session::get('trainerPokemonLevel')==100) break;
 
         }
         \DB::table('owns')->where('user_id', Session::get('user'))->where('pokemon_id', Session::get('trainerPokemonID'))->update(['xp'=>$newXP]);
@@ -276,7 +276,8 @@ class wildBattleController extends Controller {
                         $pokeLinkEnable='';
                     }
                     $pokeballNumber=\DB::table('users')->where('idU', Session::get('user'))->first()->cntBalls;
-                    if ($pokeballNumber==0) {
+                    $caughtPokemon=\DB::table('owns')->where('user_id', Session::get('user'))->get();
+                    if ($pokeballNumber==0 || count($caughtPokemon)==12) {
                         $pokeButtonEnable=' disabled';
                         $pokeLinkEnable='pointer-events: none';
                     }
@@ -337,7 +338,8 @@ class wildBattleController extends Controller {
                         $pokeLinkEnable='';
                     }
                     $pokeballNumber=\DB::table('users')->where('idU', Session::get('user'))->first()->cntBalls;
-                    if ($pokeballNumber==0) {
+                    $caughtPokemon=\DB::table('owns')->where('user_id', Session::get('user'))->get();
+                    if ($pokeballNumber==0 || count($caughtPokemon)==12) {
                         $pokeButtonEnable=' disabled';
                         $pokeLinkEnable='pointer-events: none';
                     }
@@ -413,7 +415,12 @@ class wildBattleController extends Controller {
                 \DB::table('owns')->insert(
                     ['user_id' => Session::get('user'), 'pokemon_id' => Session::get('wildPokemonID'),
                     'xp' => 0, 'level' => Session::get('wildPokemonLevel')]);
-                \DB::table('pokemon')->insert(['id' => Session::get('wildPokemonID')]);
+
+                $found=\DB::table('pokemon')->where('id', Session::get('wildPokemonID'))->first();
+                if ($found==null) {
+                    \DB::table('pokemon')->insert(['id' => Session::get('wildPokemonID')]);
+                }
+
                 \DB::table('users')->where('idU', Session::get('user'))->increment('cntPokemons', 1);
                 return view('battles.wildBattleAttacked', [
                     'text'=>'You caught '.ucfirst(Session::get('wildPokemon')).'!',
@@ -446,7 +453,12 @@ class wildBattleController extends Controller {
                     ['user_id' => Session::get('user'), 'pokemon_id' => Session::get('wildPokemonID'),
                     'xp' => 0, 'level' => Session::get('wildPokemonLevel')]
                 );
-                \DB::table('pokemon')->insert(['id' => Session::get('wildPokemonID')]);
+                
+                $found=\DB::table('pokemon')->where('id', Session::get('wildPokemonID'))->first();
+                if ($found==null) {
+                    \DB::table('pokemon')->insert(['id' => Session::get('wildPokemonID')]);
+                }
+
                 \DB::table('users')->where('idU', Session::get('user'))->increment('cntPokemons', 1);
                 return view('battles.wildBattleAttacked', [
                     'text'=>'You caught '.ucfirst(Session::get('wildPokemon')).'!',

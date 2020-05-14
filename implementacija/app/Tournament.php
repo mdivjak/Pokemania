@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tournament extends Model
 {
+    protected $table = 'tournaments';
+
     public function topParticipants()
     {
         return $this->belongsToMany('App\User', 'participates', 'tournament_id', 'user_id')
@@ -26,5 +28,9 @@ class Tournament extends Model
                 return true;
         }
         return false;
+    }
+
+    public function registrations() {
+        return $this->hasMany('App\Registered');
     }
 }

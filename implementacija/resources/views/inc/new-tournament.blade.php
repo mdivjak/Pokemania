@@ -1,13 +1,25 @@
 
-    <p class="float-left" style="float: left;">
+<div class="row">
+  <div class="col-md-4 float-left">
+    @if (Route::current()->getName() == 'admin.registrations')
+    <a href="{{ URL::previous() }}" class="btn btn-default float-left" style="float:left;">
+      Back
+    </a>
+    @endif
+  </div>
+  <div class="col-md-4">
+    <p>
       <b>
         Admin Dashboard
       </b>
     </p>
+  </div>
+  <div class="col-md-4">
     <a href="" style="float: right;" class="btn btn-primary float-right" data-toggle="modal" data-target="#newTournamentForm" data-whatever="@mdo">
         Create New Tournament
     </a>
-    
+  </div>
+</div>
     <div class="modal fade" id="newTournamentForm" tabindex="-1" role="dialog" aria-labelledby="newTournamentFormTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">

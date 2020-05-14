@@ -59,16 +59,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->bAdmin) {
-            $tournaments = Tournament::orderBy('endDate', 'asc')->paginate(2);
-            return view('admin.adminindex')->with('tournaments', $tournaments);
-        }
-        return redirect()->route('user.show', [auth()->user()->idU]);
+        if(!auth()->user()->bAdmin)
+            return redirect()->route('user.show', [auth()->user()->name]);
+
+        //$tournaments = Tournament::orderBy('endDate', 'asc')->with('registrations')->paginate(10);
+        $tournaments = Tournament::withCount('registrations')->orderBy('registrations_count', 'desc')->orderBy('endDate', 'asc')->paginate(10);
+        return view('admin.adminindex')->with('tournaments', $tournaments);
     }
 
     public function listRegistrations(Request $request) {
-        if(!auth()->user()->bAdmin)
-            return redirect()->route('user.show', [auth()->user()->idU]);
+        
         
         $registrations = Tournament::find($request->id)->registeredUsers()->paginate(10);
         //return $registrations;
@@ -77,12 +77,12 @@ class AdminController extends Controller
 
     public function accept(Request $request) {
         if(!auth()->user()->bAdmin)
-            return redirect()->route('user.show', [auth()->user()->idU]);
+            return redirect()->route('user.show', [auth()->user()->name]);
         
         $registration = \DB::table('registered')->where('user_id', $request->input('idU'))->where('tournament_id', $request->id)->first();
         
         if($registration == null)
-            return redirect()->route('user.show', [auth()->user()->idU]);
+            return redirect()->route('user.show', [auth()->user()->name]);
 
         DB::beginTransaction();
         try {
@@ -106,12 +106,12 @@ class AdminController extends Controller
 
     public function decline(Request $request) {
         if(!auth()->user()->bAdmin)
-            return redirect()->route('user.show', [auth()->user()->idU]);
+            return redirect()->route('user.show', [auth()->user()->name]);
         
         $registration = \DB::table('registered')->where('user_id', $request->input('idU'))->where('tournament_id', $request->id)->first();
 
         if($registration == null)
-            return redirect()->route('user.show', [auth()->user()->idU]);
+            return redirect()->route('user.show', [auth()->user()->name]);
 
         $tournament = Tournament::find($registration->tournament_id);
         $user = User::find($registration->user_id);
