@@ -6,7 +6,7 @@ Dear {{ $user->name }},
 Your registration for the "{{ $tournament->name }}" tournament has been accepted.
 
 
-@component('mail::button', ['url' => "{{ route('tournament.index') }}" ])
+@component('mail::button', ['url' => route('tournament.index') ])
 Start Fighting
 @endcomponent
 

@@ -110,12 +110,12 @@ Route::get('/trainerBattleAttack', 'trainerBattleController@attack')->name('trai
 //-----------------------------PREVIEW MEJLOVA-----------------------------------------------------
 
 Route::get('/test-accept-mail', function () {
-   // Mail::to("dekan@etf.rs")->send(new App\Mail\AcceptRegistration(User::find(1), Tournament::find(1)));
+    Mail::to("dekan@etf.rs")->send(new App\Mail\AcceptRegistration(User::find(1), Tournament::find(1)));
     return new App\Mail\AcceptRegistration(User::find(1),Tournament::find(1));
 });
 
 Route::get('/test-decline-mail', function () {
-    // Mail::to("dekan@etf.rs")->send(new App\Mail\DeclineRegistration(User::find(1), Tournament::find(1)));
+    Mail::to("dekan@etf.rs")->send(new App\Mail\DeclineRegistration(User::find(1), Tournament::find(1)));
      return new App\Mail\DeclineRegistration(User::find(1),Tournament::find(1));
  });
 
