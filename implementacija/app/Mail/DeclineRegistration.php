@@ -9,7 +9,7 @@ use Illuminate\Queue\SerializesModels;
 use App\User;
 use App\Tournament;
 
-class AcceptRegistration extends Mailable
+class DeclineRegistration extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -34,6 +34,6 @@ class AcceptRegistration extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.accept-registration')->subject("You have been accepted to ".$this->tournament->name." tournament");
+        return $this->markdown('emails.decline-registration')->subject("You have not been accepted to ".$this->tournament->name." tournament");
     }
 }
