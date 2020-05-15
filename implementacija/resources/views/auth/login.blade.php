@@ -19,13 +19,13 @@ Login
                 @csrf
 
                 <div class="form-group row {{$fast ? '' : 'fadeIn first'}}">
-                    <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus name="email" placeholder="Email">
+                    <input type="text" id="login" class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}" name="login" value="{{ old('username') ?: old('email') }}" required autofocus placeholder="Email / Username">
 
-                    @error('email')
+                    @if ($errors->has('username') || $errors->has('email'))
                     <div class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </div>
-                    @enderror
+                    @endif
                 </div>
 
                 <div class="form-group row {{$fast ? '' : 'fadeIn second'}}">

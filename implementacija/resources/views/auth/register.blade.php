@@ -22,7 +22,7 @@ Register
                 @csrf
 
                 <div class="form-group row {{$fast ? '' : 'fadeIn first'}}">
-                    <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nickname">
+                    <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Username">
 
                     @error('name')
                     <div class="invalid-feedback" role="alert">
