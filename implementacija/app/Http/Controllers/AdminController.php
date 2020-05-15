@@ -10,6 +10,7 @@ use App\Participates;
 use App\User;
 use App\Mail\AcceptRegistration;
 use App\Mail\DeclineRegistration;
+use App\Mail\TournamentDeleted;
 use \Auth;
 use \DB;
 
@@ -139,41 +140,30 @@ class AdminController extends Controller
     public function deleteTournament(Tournament $tournament) {
         $participants = $tournament->allParticipants;
 
-        $first_message = 'Congratulations! The '. $tournament->name. ' has ended. You won the first place!';
-        $second_message = 'Congratulations! The '. $tournament->name. ' has ended. You won the second place!';
-        $third_message = 'Congratulations! The '. $tournament->name. ' has ended. You won the third place!';
-        $won_prize = ' You won '.$tournament->prize.'₽ prize!';
+        $first_message = 'You won the first place!';
+        $second_message = 'You won the second place!';
+        $third_message = 'You won the third place!';
+        $won_prize = ' You won the first prize of '.$tournament->prize.'₽!';
 
         foreach($participants as $index => $participant) {
             if ($index == 0) {
                 $message = $first_message;
-                $cntWin = DB::table('participates')->where([
-                        ['user_id', 2], 
-                        ['tournament_id',1]
-                    ])->first()->cntWin;
+                $cntWin = DB::table('participates')->where([['user_id', $participant->idU], ['tournament_id', $tournament->id]])->first()->cntWin;
                 if ($cntWin > 0) {
-                    $message = $first_message.$won_prize;
+                    $message = $won_prize;
                     $participant->cntCash += $tournament->prize;
                     $participant->save();
                 }
             }
             else if ($index == 1) $message = $second_message;
             else if ($index == 2) $message = $third_message;
-            else $message = 'The '. $tournament->name. ' has ended! You are'. $index .'. on the list of all participants!';
+            else $message = 'You are '. $index + 1 .'. on the list of all participants!';
 
-            Session::put('participant', $participant);
-            Session::put('index', $index);
-
-            Mail::raw($message, function ($m) {
-                $user = Session::get('participant');
-
-                $m->from('office@pokemania.com', 'Pokemania');    
-                $m->to($user->email, $user->name)
-                        ->subject('The tournament has ended!');
-            });
-
+            Mail::to($participant->email)->send(new TournamentDeleted($participant, $tournament, $message));
         }
 
+        DB::table('registered')->where('tournament_id', $tournament->id)->delete();
+        DB::table('participates')->where('tournament_id', $tournament->id)->delete();
         $tournament->delete();
         return redirect()->back()->with('tournament-created', 'Successfully deleted tournament "'.$tournament->name.'"!');
     }
