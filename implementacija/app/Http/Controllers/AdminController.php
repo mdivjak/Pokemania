@@ -137,7 +137,7 @@ class AdminController extends Controller
         return redirect()->back()->with('decline-message', 'Registration declined');
     }
 
-    public function deleteTournament(Tournament $tournament) {
+    public function sendMail(Tournament $tournament){
         $participants = $tournament->allParticipants;
 
         $first_message = 'You won the first place!';
@@ -157,10 +157,15 @@ class AdminController extends Controller
             }
             else if ($index == 1) $message = $second_message;
             else if ($index == 2) $message = $third_message;
-            else $message = 'You are '. $index + 1 .'. on the list of all participants!';
+            else $message = 'You are '. ($index + 1) .'. on the list of all participants!';
 
             Mail::to($participant->email)->send(new TournamentDeleted($participant, $tournament, $message));
+            sleep(1);
         }
+    }
+
+    public function deleteTournament(Tournament $tournament) {
+        $this->sendMail($tournament);
 
         DB::table('registered')->where('tournament_id', $tournament->id)->delete();
         DB::table('participates')->where('tournament_id', $tournament->id)->delete();
