@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Session;
 use App\Tournament;
 use App\Participates;
 use App\User;
+use App\Mail\AcceptRegistration;
+use App\Mail\DeclineRegistration;
 use \Auth;
 use \DB;
 
@@ -99,6 +101,11 @@ class AdminController extends Controller
             throw 'Failed transaction';
         }
 
+        //slanje obavestenja mejlom
+        $user = User::find($registration->user_id);
+        $tournament = Tournament::find($registration->tournament_id);
+        Mail::to($user->email)->send(new AcceptRegistration($user, $tournament));
+
         return redirect()->back()->with('accept-message', 'Participant successfully registered for tournament');
     }
 
@@ -120,6 +127,11 @@ class AdminController extends Controller
             ['user_id', $registration->user_id],
             ['tournament_id', $registration->tournament_id],
         ])->delete();
+
+        //slanje obavestenja mejlom
+        $user = User::find($registration->user_id);
+        $tournament = Tournament::find($registration->tournament_id);
+        Mail::to($user->email)->send(new DeclineRegistration($user, $tournament));
         
         return redirect()->back()->with('decline-message', 'Registration declined');
     }

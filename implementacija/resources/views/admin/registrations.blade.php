@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
 
+@section('title')
+Admin Registrations View
+@endsection
+
 @section('content')
 @if(session()->has('accept-message'))
     <div class="alert alert-success">
@@ -17,11 +21,6 @@
 @if(session()->has('decline-message'))
     <div class="alert alert-danger">
         {{session()->get('decline-message')}}
-    </div>
-@endif
-@if(session()->has('backlink'))
-    <div class="alert alert-success">
-        {{session()->get('backlink')}}
     </div>
 @endif
 <div class="container">

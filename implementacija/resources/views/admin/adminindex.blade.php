@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
 
+@section('title')
+Admin Dashboard
+@endsection
+
 @section('content')
 @if(session()->has('tournament-exists'))
     <div class="alert alert-danger">
@@ -42,27 +46,25 @@
                             </thead>
                             <tbody>
                                 @foreach ($tournaments as $tournament)
-                                    @if ($tournament->registrations_count > 0)
-                                        <tr>
-                                            <td>{{$tournament->name}}</td>
-                                            <td>{{ $tournament->registrations_count }}</td>
-                                            <td>{{$tournament->endDate}}</td>
-                                            <td>
-                                                <a href="{{ route('admin.registrations', [$tournament->id]) }}" class="float-right btn btn-primary">Check Pending Registrations</a>
-                                            </td>
-                                            <td>
-                                                <div class="form-group row" style="width: max-content">
-                                                    <input type="hidden" name="avatar" value="1" id="avatar-choice">
-                                                    <input type="button" class="float-left btn btn-danger delete-tournament-button" 
-                                                        data-delete-link="{{ route('admin.delete', $tournament) }}"
-                                                        data-toggle="modal" data-target="#avatar-picker" 
-                                                        data-tournament="{{ $tournament }}"
-                                                        value="Delete Tournament"
-                                                    >
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endif
+                                    <tr>
+                                        <td>{{$tournament->name}}</td>
+                                        <td>{{ $tournament->registrations_count }}</td>
+                                        <td>{{$tournament->endDate}}</td>
+                                        <td>
+                                            <a href="{{ route('admin.registrations', [$tournament->id]) }}" class="float-right btn btn-primary">Check Pending Registrations</a>
+                                        </td>
+                                        <td>
+                                            <div class="form-group row" style="width: max-content">
+                                                <input type="hidden" name="avatar" value="1" id="avatar-choice">
+                                                <input type="button" class="float-left btn btn-danger delete-tournament-button" 
+                                                    data-delete-link="{{ route('admin.delete', $tournament) }}"
+                                                    data-toggle="modal" data-target="#avatar-picker" 
+                                                    data-tournament="{{ $tournament }}"
+                                                    value="Delete Tournament"
+                                                >
+                                            </div>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

@@ -164,9 +164,18 @@ class trainerBattleController extends Controller
         }
 
         $picked=$request->input('picked');
-        shuffle($picked);
 
         //check if user picked exactly 3 pokemon
+        if ($picked==null) {
+            return view('battles.trainerBattle',[
+                'text'=>'You need to choose exactly 3 Pokemon!',
+                'opponentNick'=>Session::get('opponentNick'),
+                'trainerPokemonsIDs'=>Session::get('trainerPokemonsIDs'),
+                'trainerPokemons'=>Session::get('trainerPokemons'),
+                'trainerPokemonsLevelsForButtons'=>Session::get('trainerPokemonsLevels')
+            ]);
+        }
+
         if (count($picked)!=3) {
             return view('battles.trainerBattle',[
                 'text'=>'You need to choose exactly 3 Pokemon!',
@@ -181,6 +190,7 @@ class trainerBattleController extends Controller
         }
         
         //store users picked pokemon and their levels
+        shuffle($picked);
         $trainerPickedPokemonsLevels=array();
         foreach($picked as $index => $pokemon) {
             array_push($trainerPickedPokemonsLevels, \DB::table('owns')->where('user_id', Session::get('user'))->where('pokemon_id', $pokemon)->first()->level);

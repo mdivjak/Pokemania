@@ -1,13 +1,15 @@
 @component('mail::message')
-# You have been accepted to tournament {{ $tournament->name }}
+# You have been accepted to the "{{ $tournament->name }}" tournament
 
-{{ $user->name }}, your registration for {{ $tournament->name }} has been accepted.
+Dear {{ $user->name }},
+
+Your registration for the "{{ $tournament->name }}" tournament has been accepted.
 
 
-@component('mail::button', ['url' => '{{ route("tournament.index") }}'])
+@component('mail::button', ['url' => route('tournament.index') ])
 Start Fighting
 @endcomponent
 
-We wish you all the best,<br>
+Good luck fighting in this tournament,<br>
 {{ config('app.name') }}
 @endcomponent

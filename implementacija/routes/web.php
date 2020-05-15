@@ -19,18 +19,19 @@ use App\Tournament;
 //-----------------------------------MARKOVO----------------------------------
 
 Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin', 'AdminController@index')->name('admin')->middleware('verified');
 //kreiranje novog turnira
-Route::post('/admin', 'AdminController@store');
+Route::post('/admin', 'AdminController@store')->middleware('verified');
 //pregled prijava
-Route::get('/admin/tournament/{id}', 'AdminController@listRegistrations')->name('admin.registrations');
+Route::get('/admin/tournament/{id}', 'AdminController@listRegistrations')->name('admin.registrations')->middleware('verified');
 //prihvatanje prijave
-Route::put('/admin/tournament/{id}/accept', 'AdminController@accept')->name('admin.accept');
+Route::put('/admin/tournament/{id}/accept', 'AdminController@accept')->name('admin.accept')->middleware('verified');
 //odbijanje prijave
-Route::post('/admin/tournament/{id}/decline', 'AdminController@decline')->name('admin.decline');
+Route::post('/admin/tournament/{id}/decline', 'AdminController@decline')->name('admin.decline')->middleware('verified');
 //brisanje turnira
-Route::post('/admin/tournament/{tournament}/delete', 'AdminController@deleteTournament')->name('admin.delete');
+Route::post('/admin/tournament/{tournament}/delete', 'AdminController@deleteTournament')->name('admin.delete')->middleware('verified');
 
 
 //------------------------------KRAJ MARKOVOG------------------------------------
@@ -108,7 +109,21 @@ Route::get('/trainerBattleAttack', 'trainerBattleController@attack')->name('trai
 
 //-----------------------------PREVIEW MEJLOVA-----------------------------------------------------
 
-Route::get('/test-mejl', function () {
-   // Mail::to("dekan@etf.rs")->send(new App\Mail\AcceptRegistration(User::find(1), Tournament::find(1)));
+Route::get('/test-accept-mail', function () {
+    Mail::to("dekan@etf.rs")->send(new App\Mail\AcceptRegistration(User::find(1), Tournament::find(1)));
     return new App\Mail\AcceptRegistration(User::find(1),Tournament::find(1));
 });
+
+Route::get('/test-decline-mail', function () {
+    Mail::to("dekan@etf.rs")->send(new App\Mail\DeclineRegistration(User::find(1), Tournament::find(1)));
+     return new App\Mail\DeclineRegistration(User::find(1),Tournament::find(1));
+ });
+
+ Route::get('/test-verify', function () {
+    return view('auth.verify');
+ });
+
+ 
+ Route::get('/test-reset', function () {
+    return view('auth.passwords.reset');
+ });
