@@ -116,14 +116,18 @@ Route::get('/test-accept-mail', function () {
 
 Route::get('/test-decline-mail', function () {
     Mail::to("dekan@etf.rs")->send(new App\Mail\DeclineRegistration(User::find(1), Tournament::find(1)));
-     return new App\Mail\DeclineRegistration(User::find(1),Tournament::find(1));
- });
+    return new App\Mail\DeclineRegistration(User::find(1),Tournament::find(1));
+});
 
- Route::get('/test-verify', function () {
+Route::get('/test-delete-mail', function () {
+    Mail::to("dekan@etf.rs")->send(new App\Mail\TournamentDeleted(User::find(1), Tournament::find(1), "Test message"));
+    return new App\Mail\TournamentDeleted(User::find(1),Tournament::find(1), "Test message");
+});
+
+Route::get('/test-verify', function () {
     return view('auth.verify');
- });
+});
 
- 
- Route::get('/test-reset', function () {
+Route::get('/test-reset', function () {
     return view('auth.passwords.reset');
- });
+});
