@@ -105,7 +105,7 @@ Tournaments
                 </form>
                 @else
                 <div class="tooltip-wrapper disabled" data-title="You do not meet the tournament criteria.">
-                    <button class="btn btn-default btn-lg disabled" style='margin: 1em'>
+                    <button class="btn btn-default btn-lg disabled btnFightDisabled" style='margin: 1em'>
                         <img src="{{ asset('images/boxing.png') }}" height="65" />
                     </button>
                 </div>

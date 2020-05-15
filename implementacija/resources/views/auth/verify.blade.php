@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Please Verify Your Email
+Email Verification
 @endsection
 
 @section('scripts')
@@ -15,18 +15,24 @@ Please Verify Your Email
     <div class="wrapper {{$fast ? '' : 'fadeInDown'}}">
         <div id="formContent">
             <br>
-            <div class="card loginForm" style="height: 300px; width: 300px; color: red;">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
-
-                <div class="card-body">
+            <div class="card loginForm">
+                <div class="card-header colorBlue headingStyle">{{ __('Verify Your Email Address') }}</div>
+                <br>
+                <div class="card-body colorRed smallPadding">
                     @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
+                    <div class="alert alert-success styleSuccess" role="alert">
+                        {{ __('A fresh verification link has been sent to your email address.') }}
+                    </div>
                     @endif
+                    <div class="subText">
+                        {{ __('Before proceeding, please check your email for a verification link.') }}
+                        <br>
+                        {{ __('If you did not receive the email') }},
+                    </div>
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+                    <div class="row">
+                        &nbsp;
+                    </div>
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
                         <input type="submit" class="btn btn-link p-0 m-0 align-baseline" value="Request Another Link">

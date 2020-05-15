@@ -84,7 +84,7 @@ Register
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        @for ($i = 1; $i <= env('NUM_AVATARS'); $i++)
+                        @for ($i = 1; $i <= 9; $i++)
                             <div class="col-md-4" style="margin-top:10px;">
                                 <img src="{{ asset('images/avatars/avatar'.$i.'.png') }}" class="img-fluid img-thumbnail" id="avatar{{$i}}" onclick="pickedAvatar(this)">
                             </div>
