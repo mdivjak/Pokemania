@@ -292,3 +292,12 @@ img {
 .break-all {
     word-break: break-all;
 }
+
+
+body {
+    height: 100vh;
+}
+
+.wrapper {
+    height: 100%;
+}

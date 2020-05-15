@@ -316,15 +316,20 @@
   color: #CC913C;
 }
 
-.btn-default {
+.btn-default, .btn-default.disabled {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
   border: 0;
 }
 
-.btn-default:hover {
+.btn-default:hover, .btn-default.disabled:hover {
   background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255,255,255,0.2);
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.7);
+}
+
+.btn.disabled.btnFightDisabled {
+  opacity: 1;
 }
 
 .tooltip-wrapper {

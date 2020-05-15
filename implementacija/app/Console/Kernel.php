@@ -35,7 +35,7 @@ class Kernel extends ConsoleKernel
                 DB::table('participates')->where('tournament_id', $tournament->id)->delete();
             }
             DB::table('tournaments')->where("endDate", "<",  "$now")->delete();
-        })->daily()->at('18:12'); 
+        })->daily()->at('12:04'); 
 
         //moze ->everyMinute();  u cmd pokrenuti php artisan schedule:run za manuelno
     }

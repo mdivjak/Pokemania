@@ -1102,3 +1102,40 @@ textarea.form-control.is-invalid {
 .noTopMargin, .loading.noTopMargin {
   margin-top: 0px;
 }
+
+
+/* Verify Email */
+
+.colorBlue {
+  color: rgb(36, 82, 151);
+}
+
+.colorRed {
+  color: red;
+}
+
+.smallPadding {
+  padding: 5px;
+}
+
+.headingStyle {
+  font-weight: 700;
+  font-size: 17px;
+  width: 90%;
+  margin: auto;
+}
+
+.subText {
+  width: 95%;
+  margin: auto;
+}
+
+.styleSuccess {
+  margin-bottom: 20px !important;
+  width: 70%;
+  margin: auto;
+}
+
+.noBottomMargin {
+  margin-bottom: 0px !important;
+}
