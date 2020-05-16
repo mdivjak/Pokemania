@@ -13,10 +13,10 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert(array(
             array(
-                'email' => 'mail@gmail.com',
+                'email' => 'naca@ntec.ch',
                 'password' => Hash::make('123456789'),
                 'name' => 'banana',
-                'bAdmin' => 0,
+                'bAdmin' => 1,
                 'cntBalls' => 2,
                 'cntCash' => 500,
                 'cntFruits' => 2,
@@ -24,8 +24,8 @@ class UserSeeder extends Seeder
                 'avatar' => 1
             ),
             array(
-                'email' => 'mail123@gmail.com',
-                'password' => Hash::make('987654321'),
+                'email' => 'naca1908+jabuka@gmail.com',
+                'password' => Hash::make('123456789'),
                 'name' => 'jabuka',
                 'bAdmin' => 0,
                 'cntBalls' => 2,
@@ -35,8 +35,8 @@ class UserSeeder extends Seeder
                 'avatar' => 2
             ),
             array(
-                'email' => 'mailmail@gmail.com',
-                'password' => Hash::make('123123123'),
+                'email' => 'naca1908+kruska@gmail.com',
+                'password' => Hash::make('123456789'),
                 'name' => 'kruska',
                 'bAdmin' => 0,
                 'cntBalls' => 4,
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
                 'avatar' => 3
             ),
             array(
-                'email' => 'email@gmail.com',
+                'email' => 'naca1908+lubenica@gmail.com',
                 'password' => Hash::make('123456789'),
                 'name' => 'lubenica',
                 'bAdmin' => 0,
@@ -57,8 +57,8 @@ class UserSeeder extends Seeder
                 'avatar' => 4
             ),
             array(
-                'email' => 'limun@gmail.com',
-                'password' => Hash::make('987654321'),
+                'email' => 'naca1908+limun@gmail.com',
+                'password' => Hash::make('123456789'),
                 'name' => 'limun',
                 'bAdmin' => 0,
                 'cntBalls' => 2,
@@ -68,8 +68,8 @@ class UserSeeder extends Seeder
                 'avatar' => 5
             ),
             array(
-                'email' => 'jagoda@gmail.com',
-                'password' => Hash::make('123123123'),
+                'email' => 'naca1908+jagoda@gmail.com',
+                'password' => Hash::make('123456789'),
                 'name' => 'jagoda',
                 'bAdmin' => 0,
                 'cntBalls' => 4,
@@ -79,7 +79,7 @@ class UserSeeder extends Seeder
                 'avatar' => 6
             ),
             array(
-                'email' => 'malina@gmail.com',
+                'email' => 'naca1908+malina@gmail.com',
                 'password' => Hash::make('123456789'),
                 'name' => 'malina',
                 'bAdmin' => 0,
@@ -90,8 +90,8 @@ class UserSeeder extends Seeder
                 'avatar' => 7
             ),
             array(
-                'email' => 'tresnja@gmail.com',
-                'password' => Hash::make('987654321'),
+                'email' => 'naca1908+tresnja@gmail.com',
+                'password' => Hash::make('123456789'),
                 'name' => 'tresnja',
                 'bAdmin' => 0,
                 'cntBalls' => 2,
@@ -101,8 +101,8 @@ class UserSeeder extends Seeder
                 'avatar' => 8
             ),
             array(
-                'email' => 'kivi@gmail.com',
-                'password' => Hash::make('123123123'),
+                'email' => 'naca1908+kivi@gmail.com',
+                'password' => Hash::make("123456789"),
                 'name' => 'kivi',
                 'bAdmin' => 0,
                 'cntBalls' => 4,
@@ -112,7 +112,7 @@ class UserSeeder extends Seeder
                 'avatar' => 9
             ),
             array(
-                'email' => 'dunja@gmail.com',
+                'email' => 'naca1908+dunja@gmail.com',
                 'password' => Hash::make('123456789'),
                 'name' => 'dunja',
                 'bAdmin' => 0,
@@ -123,8 +123,8 @@ class UserSeeder extends Seeder
                 'avatar' => 1
             ),
             array(
-                'email' => 'kupina@gmail.com',
-                'password' => Hash::make('987654321'),
+                'email' => 'naca1908+kupina@gmail.com',
+                'password' => Hash::make('123456789'),
                 'name' => 'kupina',
                 'bAdmin' => 0,
                 'cntBalls' => 2,
@@ -134,8 +134,8 @@ class UserSeeder extends Seeder
                 'avatar' => 2
             ),
             array(
-                'email' => 'borovnica@gmail.com',
-                'password' => Hash::make('123123123'),
+                'email' => 'naca1908+borovnica@gmail.com',
+                'password' => Hash::make('123456789'),
                 'name' => 'borovnica',
                 'bAdmin' => 0,
                 'cntBalls' => 4,
@@ -145,8 +145,8 @@ class UserSeeder extends Seeder
                 'avatar' => 3
             ),
             array(
-                'email' => 'marko@gmail.com',
-                'password' => Hash::make('123123123'),
+                'email' => 'naca1908+marko@gmail.com',
+                'password' => Hash::make('123456789'),
                 'name' => 'marko',
                 'bAdmin' => 1,
                 'cntBalls' => 4,
