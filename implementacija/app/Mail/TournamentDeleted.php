@@ -11,7 +11,7 @@ use App\Tournament;
 
 class TournamentDeleted extends Mailable
 {
-    use Queueable; //, SerializesModels;
+    use Queueable, SerializesModels;
 
     public $user;
     public $tournament;

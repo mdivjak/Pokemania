@@ -18,7 +18,7 @@ class TournamentSeeder extends Seeder
                 'minLevel' => 1,
                 'maxLevel' => 10,
                 'entryFee' => 50,
-                'endDate' => '2020-01-01'
+                'endDate' => '2020-10-10'
             ),
             array(
                 'name' => 'Belgrade Top 10',
@@ -34,7 +34,7 @@ class TournamentSeeder extends Seeder
                 'minLevel' => 34,
                 'maxLevel' => 43,
                 'entryFee' => 300,
-                'endDate' => '2020-01-02'
+                'endDate' => '2020-7-29'
             ),
             array(
                 'name' => 'Tournament4',
