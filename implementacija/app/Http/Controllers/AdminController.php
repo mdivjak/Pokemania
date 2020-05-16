@@ -158,9 +158,11 @@ class AdminController extends Controller
             else if ($index == 1) $message = $second_message;
             else if ($index == 2) $message = $third_message;
             else $message = 'You are '. ($index + 1) .'. on the list of all participants!';
-
-            Mail::to($participant->email)->send(new TournamentDeleted($participant, $tournament, $message));
-            sleep(1);
+            
+            Mail::to($participant->email)->queue(new TournamentDeleted($participant, $tournament, $message));
+            
+          //  Mail::to($participant->email)->send(new TournamentDeleted($participant, $tournament, $message));
+          // sleep(1);
         }
     }
 

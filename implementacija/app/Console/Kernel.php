@@ -6,7 +6,13 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Http\Controllers\AdminController;
+use App\Mail\AcceptRegistration;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TournamentDeleted;
+use App\User;
 use App\Tournament;
+use Illuminate\Support\Facades\URL;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,7 +22,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\DeleteTournaments::class
     ];
 
     /**
@@ -27,17 +33,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
-            $now = Carbon::now()->toDateString();
-            $tournaments = DB::table('tournaments')->where("endDate", "<",  "$now")->get();
-            foreach ($tournaments as $tournament) {
-                DB::table('registered')->where('tournament_id', $tournament->id)->delete();
-                DB::table('participates')->where('tournament_id', $tournament->id)->delete();
-            }
-            DB::table('tournaments')->where("endDate", "<",  "$now")->delete();
-        })->daily()->at('12:04'); 
+        
+        $schedule->command('tournament:delete')->dailyAt('13:13')->sendOutputTo('deleteTournament.log');
 
-        //moze ->everyMinute();  u cmd pokrenuti php artisan schedule:run za manuelno
+        //u cmd pokrenuti php artisan schedule:run za manuelno
     }
 
     /**
