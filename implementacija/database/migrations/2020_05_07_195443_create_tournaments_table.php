@@ -4,6 +4,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * CreateTournamentsTable - migracija za kreiranje tournaments, participates i registered tabele
+ *
+ * @author Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class CreateTournamentsTable extends Migration
 {
     /**

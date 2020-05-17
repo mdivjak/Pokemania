@@ -9,9 +9,16 @@ use Illuminate\Queue\SerializesModels;
 use App\User;
 use App\Tournament;
 
+/**
+ * TournamentDeleted – klasa za slanje mejla o brisanju turnira
+ *
+ * @author Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class TournamentDeleted extends Mailable
 {
-    use Queueable; //, SerializesModels;
+    use Queueable;
 
     public $user;
     public $tournament;

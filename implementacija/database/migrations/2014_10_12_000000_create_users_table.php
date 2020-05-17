@@ -4,6 +4,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * CreateUsersTable - migracija za kreiranje users, pokemon i owns tabele
+ *
+ * @author Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class CreateUsersTable extends Migration
 {
     /**
