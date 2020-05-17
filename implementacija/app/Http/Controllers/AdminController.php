@@ -14,6 +14,13 @@ use App\Mail\TournamentDeleted;
 use \Auth;
 use \DB;
 
+/**
+ * AdminController – klasa za 
+ *
+ * @author Marko Divjak 0084/17, Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class AdminController extends Controller
 {
     /**
@@ -137,6 +144,12 @@ class AdminController extends Controller
         return redirect()->back()->with('decline-message', 'Registration declined');
     }
 
+    /**
+     * Slanje mejla o završetku turnira svim učesnicima
+     *
+     * @param  App\Tournament  $tournament
+     *
+     */
     public function sendMail(Tournament $tournament){
         $participants = $tournament->allParticipants;
 
@@ -160,12 +173,17 @@ class AdminController extends Controller
             else $message = 'You are '. ($index + 1) .'. on the list of all participants!';
             
             Mail::to($participant->email)->queue(new TournamentDeleted($participant, $tournament, $message));
-            
-          //  Mail::to($participant->email)->send(new TournamentDeleted($participant, $tournament, $message));
-          // sleep(1);
         }
     }
 
+    /**
+     * Brisanje turnira
+     *
+     * @param  App\Tournament  $tournament
+     *
+     * @return \Illuminate\Routing\Redirector
+     *
+    */
     public function deleteTournament(Tournament $tournament) {
         $this->sendMail($tournament);
 

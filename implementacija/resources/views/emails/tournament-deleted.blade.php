@@ -1,3 +1,13 @@
+<?php
+/**
+ * Markdown - mejl za brisanje turnira
+ *
+ * @author Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
+?>
+
 @component('mail::message')
 # The "{{ $tournament->name }}" tournament has ended!
 <br>

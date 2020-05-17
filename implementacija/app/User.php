@@ -7,6 +7,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * User – model ulogovanog korisnika 
+ *
+ * @author Anja Marković 0420/17, Marko Divjak 0084/17
+ *
+ * @version 1.0
+ */
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
@@ -49,16 +56,36 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Funkcija koja vraća sve pokemone nekog korisnika
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     *
+     */
     public function pokemons() 
     {
         return $this->belongsToMany('App\Pokemon', 'owns', 'user_id', 'pokemon_id');
     }
 
+    /**
+     * Funkcija koja vraća sve turnire na kojima učestvuje neki korisnik
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     *
+     */
     public function tournaments() 
     {
         return $this->belongsToMany('App\User', 'participates', 'user_id', 'tournament_id');
     }
 
+    /**
+     * Funkcija koja vraća sve turnire na kojima učestvuje neki korisnik
+     *
+     * @param  int  $tournament_id
+     *
+     * @return int
+     *
+     */
     public function cntWins($tournament_id) 
     {
         return DB::table('participates')->where([
@@ -67,6 +94,14 @@ class User extends Authenticatable implements MustVerifyEmail
         ])->first()->cntWin;
     }
 
+    /**
+     * Funkcija koja proverava da li je korisnik registrovan na zadati turnir
+     *
+     * @param  int  $tournament_id
+     *
+     * @return bool
+     *
+     */
     public function isRegistered($tournament_id) 
     {
         $registered = DB::table('registered')->where([
@@ -78,6 +113,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return false;
     }
 
+    /**
+     * Funkcija koja proverava da li korisnik učestvuje na zadatom turniru
+     *
+     * @param  int  $tournament_id
+     *
+     * @return bool
+     *
+     */
     public function participates($tournament_id) 
     {
         $participates = DB::table('participates')->where([
@@ -89,6 +132,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return false;
     }    
 
+    /**
+     * Funkcija koja proverava da li korisnik ima dovoljno pokemona koji ispunjavaju uslov zadatog turnira
+     *
+     * @param  App\Tournament  $tournament
+     *
+     * @return bool
+     *
+     */
     public function hasEnoughPokemons(Tournament $tournament)
     {   
         $cnt = 0;
@@ -105,6 +156,12 @@ class User extends Authenticatable implements MustVerifyEmail
         return false;
     }
 
+    /**
+     * Funkcija koja vraća route key User modela
+     *
+     * @return string
+     *
+     */
     public function getRouteKeyName()
     {
         return 'name';

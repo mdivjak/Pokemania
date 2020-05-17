@@ -7,14 +7,30 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
 
+/**
+ * UserController – klasa za implementaciju metoda vezanih za ulogovanog korisnika
+ *
+ * @author Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class UserController extends Controller
 {
-
+    /**
+     * Kreira novi UserController objekat 
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * Prikazivanje profila zadatog korisnika
+     * 
+     * @param  App\User  $user
+     * 
+     * @return \Illuminate\View\View
+     */
     public function show(User $user)
     {
         $pokemons = $user->pokemons;
@@ -31,6 +47,13 @@ class UserController extends Controller
         return view("user.show", compact('user', 'collection'));        
     }
 
+    /**
+     * Hranjenje pokemona
+     * 
+     * @param  App\User  $user
+     * 
+     * @return \Illuminate\Routing\Redirector
+     */
     public function feed(User $user)
     {
         $userId = Auth::id();
@@ -74,6 +97,13 @@ class UserController extends Controller
         return redirect()->back()->with('message', 'You have successfully fed your pokemon!');
     }
 
+    /**
+     * Puštanje pokemona u divljinu
+     * 
+     * @param  App\User  $user
+     * 
+     * @return \Illuminate\Routing\Redirector
+     */
     public function release(User $user)
     {
         $userId = Auth::id();
@@ -91,12 +121,24 @@ class UserController extends Controller
         return redirect()->back()->with('message', 'You have released your Pokemon!');
     }
 
+    /**
+     * Prikazivanje stranice za kupovinu u prodavnici
+     * 
+     * @return \Illuminate\View\View
+     */
     public function shop()
     {
         $user = Auth::user();
         return view('user.shop', compact('user'));
     }
 
+    /**
+     * Kupovina u prodavnici
+     * 
+     * @param  App\User  $user
+     * 
+     * @return \Illuminate\Routing\Redirector
+     */
     public function buy()
     {
         $user = Auth::user();
