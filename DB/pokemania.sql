@@ -108,7 +108,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `cntPokemons` int(11) NOT NULL DEFAULT '1',
   `trainer` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`idU`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `nickname` (`nickname`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
