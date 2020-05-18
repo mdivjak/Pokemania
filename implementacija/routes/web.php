@@ -38,30 +38,15 @@ Route::post('/admin/tournament/{tournament}/delete', 'AdminController@deleteTour
 
 //-------------------------------NATALIJINO---------------------------------------
 
-Route::get("/", [
-    "uses" => "GuestController@show",
-    "as" => "home.index"
-]);
+Route::get('/', 'GuestController@show')->name('home.index');
 
-Route::get("/pokedex", [
-    "uses" => "GuestController@pokedex",
-    "as" => "home.pokedex"
-]);
+Route::get('/pokedex', 'GuestController@pokedex')->name('home.pokedex');
 
-Route::get("/pokedex/{id}", [
-    "uses" => "GuestController@pokemon",
-    "as" => "home.pokemon"
-]);
+Route::get('/pokedex/{id}', 'GuestController@pokemon')->name('home.pokemon');
 
-Route::get("/quiz", [
-    "uses" => "GuestController@quiz",
-    "as" => "home.quiz"
-]);
+Route::get('/quiz', 'GuestController@quiz')->name('home.quiz');
 
-Route::post("/quiz", [
-    "uses" => "GuestController@quizGuess",
-    "as" => "home.quizGuess"
-]);
+Route::post('/quiz', 'GuestController@quizGuess')->name('home.quizGuess');
 //------------------------------KRAJ NATALIJINOG------------------------------------
 
 //----------------------------------ANJINE RUTE-------------------------------------
