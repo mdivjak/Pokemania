@@ -17,11 +17,6 @@ use Illuminate\Support\Facades\DB;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-
-    public function addPokeCash () {
-        $this->cntCash += env('QUIZ_PRIZE');
-        $this->save();
-    }
     
     protected $table = 'users';
 
@@ -55,6 +50,15 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Funkcija koja dodaje novac u slučaju tačnog odgovora na kvizu
+     */
+    public function addPokeCash () {
+        $this->cntCash += env('QUIZ_PRIZE');
+        $this->save();
+    }
 
     /**
      * Funkcija koja vraća sve pokemone nekog korisnika
