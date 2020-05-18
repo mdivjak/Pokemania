@@ -1,3 +1,9 @@
+/**
+ * Funkcija kojom se aktivira animacija učitavanja, dohvataju informacije za odgovarajućeg pokemona
+ * i deaktivira animacija učitavanja
+ *
+ * @author Natalija Mitić 0084/2017
+ */
 $(document).ready(() => {
     pokeId = $(location).attr("href").substring($(location).attr("href").lastIndexOf('/') + 1);
     $.ajax({
@@ -75,7 +81,7 @@ $(document).ready(() => {
                                 src += "physicalMove.svg"
                             }
                             div = $(`<div class="col-lg-3 col-md-4 col-sm-6">
-                                        <div class="pokemon-card moves" style="width: 20rem; height: 24rem;">
+                                        <div class="pokemon-card moves" style="width: 20rem; height: 25rem;">
                                             <div class="caption">
                                                 <p class="move-name"> ${mName}&nbsp;&nbsp;
                                                     <img class="icon damage" src=${src}></img>
@@ -83,7 +89,7 @@ $(document).ready(() => {
                                                 <p class=" move-power"> <b>Power :</b> ${power} </p>
                                                 <p class=" move-accuracy"><b>Acc:</b> ${accuracy} %
                                                     <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" aria-valuenow="${accuracy}" aria-valuemin="0" aria-valuemax="100" style="width:  ${accuracy}%;">
+                                                        <div class="progress-bar moves" role="progressbar" aria-valuenow="${accuracy}" aria-valuemin="0" aria-valuemax="100" style="width:  ${accuracy}%;">
                                                             <span class="sr-only">${accuracy}% Accuracy</span>
                                                         </div>
                                                     </div>

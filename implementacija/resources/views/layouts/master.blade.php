@@ -1,3 +1,13 @@
+<?php
+/**
+ * Šablon svih stranica
+ *
+ * @author Natalija Mitić 0085/17
+ *
+ * @version 1.0
+ */
+?>
+
 <!DOCTYPE html>
 <html>
 

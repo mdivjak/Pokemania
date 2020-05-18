@@ -47,7 +47,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Get the login username to be used by the controller.
+     * Get the login username (or email) to be used by the controller.
      *
      * @return string
      */

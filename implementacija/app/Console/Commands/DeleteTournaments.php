@@ -13,6 +13,13 @@ use App\User;
 use App\Tournament;
 use App\Mail\TournamentDeleted;
 
+/**
+ * DeleteTournaments – klasa za komandu automatskog brisanja turnira
+ *
+ * @author Natalija Mitić 0085/17
+ *
+ * @version 1.0
+ */
 class DeleteTournaments extends Command
 {
     /**
@@ -41,9 +48,10 @@ class DeleteTournaments extends Command
 
 
     /**
-     * Execute the console command.
+     * Pronalaženje isteklih turnira, poziv fje slanja mejlova,
+     * brisanje turnira i pratećih informacija.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {

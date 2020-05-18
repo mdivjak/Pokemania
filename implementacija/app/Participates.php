@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Participates – model ucesca na turniru
+ * Participates – model učešća na turniru
  *
  * @author ?
  *

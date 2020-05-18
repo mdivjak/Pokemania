@@ -1,3 +1,13 @@
+<?php
+/**
+ * Navigacija
+ *
+ * @author Natalija Mitić 0085/17
+ *
+ * @version 1.0
+ */
+?>
+
 <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">

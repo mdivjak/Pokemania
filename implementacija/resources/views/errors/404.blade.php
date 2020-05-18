@@ -1,3 +1,13 @@
+<?php
+/**
+ * View za prikazivanje stranice za grešku 404
+ *
+ * @author Natalija Mitić 0085/17
+ *
+ * @version 1.0
+ */
+?>
+
 @extends('layouts.master')
 
 @section('title')
