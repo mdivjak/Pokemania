@@ -23,7 +23,7 @@ Tournament Registrations View
 
 @section('content')
 
-<div class="container">
+<div class="container scrollMain">
     @if(session()->has('accept-message'))
     <div class="alert alert-success">
         {{session()->get('accept-message')}}
@@ -41,27 +41,28 @@ Tournament Registrations View
                     @include('inc.new-tournament')
                 </div>
 
-                <div class="card-body" style="padding-bottom:10px;">
+                <div class="card-body scrollable" style="padding-bottom:10px;">
                     @if (count($registrations) > 0)
-                    <table class="table">
+                    <table class="table scrollable" width="100%">
                         <thead>
-                            <tr>
-                                <th style="text-align: center">User Name</th>
-                                <th style="text-align: center">e-mail</th>
-                                <th style="text-align: center">Number of pokemons</th>
-                                <th style="text-align: center">Pokecash</th>
-                                <th></th>
-                                <th></th>
+                            <tr width="100%">
+                                <th width="20%" style="text-align: center">User Name</th>
+                                <th width="20%" style="text-align: center">e-mail</th>
+                                <th width="20%" style="text-align: center">Number of pokemons</th>
+                                <th width="18%" style="text-align: center">Pokecash</th>
+                                <th width="20%">&nbsp;</th>
+                                <th width="2%">&nbsp;</th>
+                                <th width="20%">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($registrations as $registration)
-                            <tr>
-                                <td>{{$registration->name}}</td>
-                                <td>{{$registration->email}}</td>
-                                <td>{{$registration->cntPokemons}}</td>
-                                <td>{{$registration->cntCash}}</td>
-                                <td>
+                            <tr width="100%">
+                                <td width="20%">{{$registration->name}}</td>
+                                <td width="20%">{{$registration->email}}</td>
+                                <td width="20%">{{$registration->cntPokemons}}</td>
+                                <td width="18%">{{$registration->cntCash}}</td>
+                                <td width="20%">
                                     <form method='POST' action='{{ route('admin.accept', [$registration->pivot->tournament_id])}}'>
                                         @csrf
                                         @method('PUT')
@@ -69,7 +70,8 @@ Tournament Registrations View
                                         <button type="submit" class="btn btn-success">Accept</a>
                                     </form>
                                 </td>
-                                <td>
+                                <td width="1%">&nbsp;</td>
+                                <td width="20%">
                                     <form method='POST' action='{{ route('admin.decline', [$registration->pivot->tournament_id])}}'>
                                         @csrf
                                         <input type="hidden" name="idU" value="{{ $registration->idU }}">
