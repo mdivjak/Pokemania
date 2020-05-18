@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class GuestController extends Controller
 {
-    //------------------GOST - NATALIJINO-------------------
+    
     public function show()
     {
         return view("home.welcome");
@@ -58,6 +58,4 @@ class GuestController extends Controller
         } else
             return redirect()->route('home.quiz')->with('wrong', 'Wrong answer!');
     }
-
-    //------------------KRAJ NATALIJINOG-----------------------
 }

@@ -1,3 +1,8 @@
+/**
+ * Funkcija za biranje avatara prilikom registracije
+ *
+ * @author Marko Divjak 0084/2017
+ */
 function pickedAvatar(avatar) {
     input_pick = document.getElementById('avatar-choice');
     if(input_pick.value != -1) {

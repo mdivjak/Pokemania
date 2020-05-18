@@ -1,3 +1,13 @@
+<?php
+/**
+ * Administratorska index stranica
+ *
+ * @author Marko Divjak 0084/2017
+ *
+ * @version 1.0
+ */
+?>
+
 @extends('layouts.master')
 
 @section('scripts')

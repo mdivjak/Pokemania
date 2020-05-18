@@ -68,6 +68,14 @@ class Tournament extends Model
         return false;
     }
 
+    /**
+     * Funkcija koja vraca sve registracije na turniru
+     *
+     * @author Marko Divjak 0084/2017
+     * @version 1.0
+     * @return bool
+     *
+     */
     public function registrations() {
         return $this->hasMany('App\Registered');
     }
