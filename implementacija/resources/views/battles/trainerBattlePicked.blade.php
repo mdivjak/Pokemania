@@ -1,3 +1,13 @@
+<?php
+/**
+ * Početni view pri biranju pokemona u borbi na turniru
+ * 
+ * @author Vukašin Drašković 0455/17
+ *
+ * @version 1.0
+ */
+?>
+
 @extends ('battles.layout2')
 
 @section('text')

@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+
+/**
+ * trainerBattleController – klasa za borbu sa divljim pokemonom
+ *
+ * @author Vukašin Drašković 0455/17
+ *
+ * @version 1.0
+ */
 class wildBattleController extends Controller {
 
     /**
@@ -16,6 +24,11 @@ class wildBattleController extends Controller {
         $this->middleware('auth');
     }
 
+    /**
+     * Prikazivanje strane sa random divljim pokemonom
+     * 
+     * @return \Illuminate\View\View
+     */
     public function show() {
         Session::put("user", auth()->user()->idU);
         Session::put("loadCatch", "1");
@@ -71,6 +84,13 @@ class wildBattleController extends Controller {
         ]);
     }
 
+    /**
+     * Prikazivanje borbe nakon biranja pokemona
+     * 
+     * @param  Illuminate\Http\Request $request
+     * 
+     * @return \Illuminate\View\View
+     */
     public function pick(Request $request) {
 
         if (Session::get("loadPick")=="0") {
@@ -142,6 +162,13 @@ class wildBattleController extends Controller {
         ]);
     }
 
+    /**
+     * Dohvatanje tipova protiv kojih je dati tip slab
+     * 
+     * @param string $type
+     * 
+     * @return string[]
+     */
     public function getDoubleFrom($type) {
         if ($type=='') return array();
 
@@ -158,6 +185,13 @@ class wildBattleController extends Controller {
         return $double_damage_from_names;
     }
 
+    /**
+     * Dohvatanje tipova protiv kojih je dati tip jak
+     * 
+     * @param string $type
+     * 
+     * @return string[]
+     */
     public function getDoubleTo($type) {
         if ($type=='') return array("none");
 
@@ -174,6 +208,11 @@ class wildBattleController extends Controller {
         return $double_damage_to_names;
     }
 
+    /**
+     * Azuriranje baze u slučaju pobede u borbi
+     * 
+     * @return string
+     */
     public function gain() {
 
         if (Session::get("loadAttack")=="1") Session::put("loadAttack", "0");
@@ -210,6 +249,11 @@ class wildBattleController extends Controller {
         return $message.'!';
     }
 
+    /**
+     * Azuriranje baze u slučaju poraza u borbi
+     * 
+     * @return string
+     */
     public function lose() {
 
         if (Session::get("loadAttack")=="1") Session::put("loadAttack", "0");
@@ -225,6 +269,11 @@ class wildBattleController extends Controller {
         return 'You lost and dropped '.$lostCash.'₽!';
     }
 
+    /**
+     * Prikaz novog stanja borbe pri napadu
+     * 
+     * @return \Illuminate\View\View
+     */
     public function attack() {
         if (Session::get("loadAttack")=="0") {
             return $this->show();
@@ -384,6 +433,11 @@ class wildBattleController extends Controller {
         }
     }
 
+    /**
+     * Prikaz strane pri pokušaju hvatanja pokemona
+     * 
+     * @return \Illuminate\View\View
+     */
     public function catch() {
         if (Session::get("loadCatch")=="0") {
             return $this->show();
