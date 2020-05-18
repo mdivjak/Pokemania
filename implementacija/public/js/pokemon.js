@@ -2,7 +2,7 @@
  * Funkcija kojom se aktivira animacija učitavanja, dohvataju informacije za odgovarajućeg pokemona
  * i deaktivira animacija učitavanja
  *
- * @author Natalija Mitić 0084/2017
+ * @author Natalija Mitić 0085/2017
  */
 $(document).ready(() => {
     pokeId = $(location).attr("href").substring($(location).attr("href").lastIndexOf('/') + 1);

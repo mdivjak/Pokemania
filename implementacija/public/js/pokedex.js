@@ -1,7 +1,7 @@
 /**
  * Funkcija kojom se radi pretraživanje pokemona tokom kucanja/brisanja
  *
- * @author Natalija Mitić 0084/2017
+ * @author Natalija Mitić 0085/2017
  */
 function search() {
   var input = document.getElementById('searchPokedex');
