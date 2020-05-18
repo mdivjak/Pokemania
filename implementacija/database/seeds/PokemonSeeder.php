@@ -2,6 +2,13 @@
 
 use Illuminate\Database\Seeder;
 
+/**
+ * PokemonSeeder - klasa za popunjavanje pokemon i owns tabele test podacima
+ *
+ * @author Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class PokemonSeeder extends Seeder
 {
     /**

@@ -9,19 +9,41 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Auth;
 
+/**
+ * TournamentController – klasa za implementaciju metoda vezanih za turnire 
+ *
+ * @author Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class TournamentController extends Controller
 {
+    /**
+     * Kreira novi TournamentController objekat
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * Prikazivanje stranice svih aktivnih turnira 
+     * 
+     * @return \Illuminate\View\View
+     */
     public function index() 
     {
         $tournaments = Tournament::all();
         return view('tournaments.index', compact('tournaments'));
     }
 
+    /**
+     * Funkcija za registrovanje korisnika na turnir 
+     * 
+     * @param  App\Tournament  $tournament
+     * 
+     * @return \Illuminate\Routing\Redirector
+     */
     public function store(Tournament $tournament)  
     {   
         $user = Auth::user();
@@ -43,14 +65,28 @@ class TournamentController extends Controller
         return redirect()->back()->with('message_success', 'You have successfully registered for this tournament');
     }
 
+    /**
+     * Prikazivanje stranice zadatog turnira
+     * 
+     * @param  App\Tournament  $tournament
+     * 
+     * @return \Illuminate\Routing\Redirector
+     */
     public function show(Tournament $tournament) 
     {
-        if (DB::table('participates')->where([['user_id', Auth::id()], ['tournament_id', $tournament->id]])->first() == null && Auth::user()->bAdmin==0) 
+        if (Auth::user()->bAdmin==0 && DB::table('participates')->where([['user_id', Auth::id()], ['tournament_id', $tournament->id]])->first() == null) 
             abort(404);
         Session::put("tournament", $tournament->id);
         return view('tournaments.show', compact('tournament'));
     }
 
+    /**
+     * Funkcija za napuštanje turnira od strane korisnika 
+     * 
+     * @param  App\Tournament  $tournament
+     * 
+     * @return \Illuminate\Routing\Redirector
+     */
     public function delete(Tournament $tournament) 
     {
         $user = Auth::user();

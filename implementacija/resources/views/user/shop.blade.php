@@ -1,3 +1,13 @@
+<?php
+/**
+ * View za prikazivanje kupovine u prodavnici
+ *
+ * @author Anja Marković 0420/17, Natalija Mitić 0085/17
+ *
+ * @version 1.0
+ */
+?>
+
 @extends('layouts.master')
 
 @section('title')

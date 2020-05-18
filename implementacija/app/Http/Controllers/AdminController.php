@@ -14,6 +14,13 @@ use App\Mail\TournamentDeleted;
 use \Auth;
 use \DB;
 
+/**
+ * AdminController – klasa za funkcionalnosti administratora
+ *
+ * @author Marko Divjak 0084/17, Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class AdminController extends Controller
 {
     /**
@@ -26,6 +33,12 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Kreiranje novog turnira u bazi podataka
+     *
+     * @param  Illuminate\Http\Request $request
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function store(Request $request) {
         
         $this->validate($request, [
@@ -58,7 +71,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Prikaz index strane administratora
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -71,11 +84,23 @@ class AdminController extends Controller
         return view('admin.adminindex')->with('tournaments', $tournaments);
     }
 
+    /**
+    * Prikaz svih prijava na nekom turniru
+    *
+    * @param  Illuminate\Http\Request $request
+    * @return \Illuminate\Contracts\Support\Renderable
+    */
     public function listRegistrations(Request $request) {
         $registrations = Tournament::find($request->id)->registeredUsers()->paginate(10);
         return view('admin.registrations')->with('registrations', $registrations);
     }
 
+    /**
+    * Prihvatanje prijave na turniru
+    *
+    * @param  Illuminate\Http\Request $request
+    * @return Illuminate\Contracts\Support\Renderable
+    */
     public function accept(Request $request) {
         if(!auth()->user()->bAdmin)
             return redirect()->route('user.show', [auth()->user()->name]);
@@ -110,6 +135,12 @@ class AdminController extends Controller
         return redirect()->back()->with('accept-message', 'Participant successfully registered for tournament');
     }
 
+    /**
+    * Odbijanje prijave na turniru
+    *
+    * @param  Illuminate\Http\Request $request
+    * @return Illuminate\Contracts\Support\Renderable
+    */
     public function decline(Request $request) {
         if(!auth()->user()->bAdmin)
             return redirect()->route('user.show', [auth()->user()->name]);
@@ -137,6 +168,12 @@ class AdminController extends Controller
         return redirect()->back()->with('decline-message', 'Registration declined');
     }
 
+    /**
+     * Slanje mejla o završetku turnira svim učesnicima
+     *
+     * @param  App\Tournament  $tournament
+     *
+     */
     public function sendMail(Tournament $tournament){
         $participants = $tournament->allParticipants;
 
@@ -160,12 +197,17 @@ class AdminController extends Controller
             else $message = 'You are '. ($index + 1) .'. on the list of all participants!';
             
             Mail::to($participant->email)->queue(new TournamentDeleted($participant, $tournament, $message));
-            
-          //  Mail::to($participant->email)->send(new TournamentDeleted($participant, $tournament, $message));
-          // sleep(1);
         }
     }
 
+    /**
+     * Brisanje turnira
+     *
+     * @param  App\Tournament  $tournament
+     *
+     * @return \Illuminate\Routing\Redirector
+     *
+    */
     public function deleteTournament(Tournament $tournament) {
         $this->sendMail($tournament);
 

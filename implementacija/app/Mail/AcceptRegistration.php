@@ -9,6 +9,14 @@ use Illuminate\Queue\SerializesModels;
 use App\User;
 use App\Tournament;
 
+
+/**
+ * AcceptRegistration - klasa koja predstavlja mejl koji se salje pri prihvatanju prijave za turnir
+ *
+ * @author Marko Divjak 0084/17
+ *
+ * @version 1.0
+ */
 class AcceptRegistration extends Mailable
 {
     use Queueable, SerializesModels;

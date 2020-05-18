@@ -9,6 +9,13 @@ use Illuminate\Queue\SerializesModels;
 use App\User;
 use App\Tournament;
 
+/**
+ * DeclineRegistration - klasa koja predstavlja mejl koji se salje pri odbijanju prijave za turnir
+ *
+ * @author Marko Divjak 0084/17
+ *
+ * @version 1.0
+ */
 class DeclineRegistration extends Mailable
 {
     use Queueable, SerializesModels;

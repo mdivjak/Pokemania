@@ -4,6 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Participates – model ucesca na turniru
+ *
+ * @author ?
+ *
+ * @version 1.0
+ */
 class Participates extends Model
 {
     protected $table = 'participates';

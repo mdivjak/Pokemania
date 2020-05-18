@@ -1,3 +1,12 @@
+<?php
+/**
+ * Sadrzaj mejla za obavestavanje o odbijanju prijave za turnir
+ *
+ * @author Marko Divjak 0084/2017
+ *
+ * @version 1.0
+ */
+?>
 @component('mail::message')
 # Your registration has been declined for the "{{ $tournament->name }}" tournament
 <br>

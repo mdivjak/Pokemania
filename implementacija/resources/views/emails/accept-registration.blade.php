@@ -1,3 +1,12 @@
+<?php
+/**
+ * Sadrzaj mejla za obavestavanje o prihvatanju prijave za turnir
+ *
+ * @author Marko Divjak 0084/2017
+ *
+ * @version 1.0
+ */
+?>
 @component('mail::message')
 
 # You have been accepted to the "{{ $tournament->name }}" tournament

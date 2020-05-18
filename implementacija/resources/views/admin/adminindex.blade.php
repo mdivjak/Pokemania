@@ -1,3 +1,13 @@
+<?php
+/**
+ * Administratorska index stranica
+ *
+ * @author Marko Divjak 0084/2017
+ *
+ * @version 1.0
+ */
+?>
+
 @extends('layouts.master')
 
 @section('scripts')
@@ -47,7 +57,7 @@ Admin Dashboard
                         <tbody>
                             @foreach ($tournaments as $tournament)
                             <tr>
-                                <td>{{$tournament->name}}</td>
+                                <td><a href="{{ route('tournament.show', [$tournament->id]) }}">{{$tournament->name}}</a></td>
                                 <td>{{ $tournament->registrations_count }}</td>
                                 <td>{{$tournament->endDate}}</td>
                                 <td>

@@ -1,4 +1,12 @@
-
+<?php
+/**
+ * Dugme i modalni dijalog sa formom za kreiranje novog turnira
+ *
+ * @author Marko Divjak 0084/2017
+ *
+ * @version 1.0
+ */
+?>
 <div class="row">
   <div class="col-md-4 float-left">
     @if (Route::current()->getName() == 'admin.registrations')

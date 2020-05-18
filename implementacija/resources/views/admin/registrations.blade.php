@@ -1,3 +1,12 @@
+<?php
+/**
+ * Prikaz svih prijava na turniru
+ *
+ * @author Marko Divjak 0084/2017
+ *
+ * @version 1.0
+ */
+?>
 @extends('layouts.master')
 
 @section('scripts')

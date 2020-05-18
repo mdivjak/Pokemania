@@ -2,6 +2,13 @@
 
 use Illuminate\Database\Seeder;
 
+/**
+ * TournamentSeeder - klasa za popunjavanje tournaments, participates i registered tabele, test podacima
+ *
+ * @author Anja Marković 0420/17
+ *
+ * @version 1.0
+ */
 class TournamentSeeder extends Seeder
 {
     /**

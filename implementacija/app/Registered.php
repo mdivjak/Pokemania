@@ -4,13 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Registered - model prijave za turnir
+ *
+ * @author Marko Divjak 0084/2017
+ *
+ * @version 1.0
+ */
 class Registered extends Model
 {
-    //veze izmedju korisnika i turnira (ne znam da li radi mozda)
-    /*public function user() {
-        return $this->belongsTo('App\User');
-    }
-    */
     protected $table = 'registered';
     
     public function tournament() {
