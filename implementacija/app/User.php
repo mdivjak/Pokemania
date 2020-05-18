@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 /**
  * User – model ulogovanog korisnika 
  *
- * @author Anja Marković 0420/17, Marko Divjak 0084/17
+ * @author Anja Marković 0420/17
  *
  * @version 1.0
  */
