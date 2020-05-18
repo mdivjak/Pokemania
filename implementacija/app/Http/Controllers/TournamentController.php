@@ -74,7 +74,7 @@ class TournamentController extends Controller
      */
     public function show(Tournament $tournament) 
     {
-        if (DB::table('participates')->where([['user_id', Auth::id()], ['tournament_id', $tournament->id]])->first() == null && Auth::user()->bAdmin==0) 
+        if (Auth::user()->bAdmin==0 && DB::table('participates')->where([['user_id', Auth::id()], ['tournament_id', $tournament->id]])->first() == null) 
             abort(404);
         Session::put("tournament", $tournament->id);
         return view('tournaments.show', compact('tournament'));
