@@ -1,3 +1,8 @@
+/**
+ * Funkcija kojom se radi pretraživanje pokemona tokom kucanja/brisanja
+ *
+ * @author Natalija Mitić 0084/2017
+ */
 function search() {
   var input = document.getElementById('searchPokedex');
   var cards = document.getElementsByClassName("pokemon-card");
@@ -18,6 +23,12 @@ function search() {
 
 var mybutton, display;
 
+/**
+ * Funkcija kojom se aktivira animacija učitavanja, dohvataju informacije za pokedeks
+ * i deaktivira animacija učitavanja
+ *
+ * @author Natalija Mitić 0084/2017
+ */
 $(document).ready(() => {
   mybutton = document.getElementById("myBtn")
   display = document.getElementById("pokedexDisplay")
@@ -76,7 +87,11 @@ $(document).ready(() => {
   })
 });
 
-
+/**
+ * Funkcija kojom se prikazuje dugme za odlazak na vrh
+ *
+ * @author Natalija Mitić 0084/2017
+ */
 function scrollFunction() {
   if (display.scrollTop > 20) {
     mybutton.style.display = "block";
@@ -85,6 +100,11 @@ function scrollFunction() {
   }
 }
 
+/**
+ * Funkcija kojom se obezbeđuje rad dugmeta za odlazak na vrh
+ *
+ * @author Natalija Mitić 0084/2017
+ */
 function topFunction() {
   $("#pokedexDisplay").animate({ scrollTop: 0 }, "fast");
 }

@@ -4,20 +4,43 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * GuestController – klasa za funkcionalnosti gosta
+ *
+ * @author Natalija Mitić 0085/17
+ *
+ * @version 1.0
+ */
 class GuestController extends Controller
 {
-    
+    /**
+     * Prikaz index (početne) strane gosta
+     *
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function show()
     {
         return view("home.welcome");
     }
 
+    /**
+     * Prikaz pokedeksa
+     *
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function pokedex()
     {
-        return view("home.pokedex");//, ["pokemons" => $pokemons]);
+        return view("home.pokedex");
     }
 
-    public function pokemon($id)
+    /**
+     * Prikaz pojedinačnog pokemona iz pokedeksa
+     * 
+     * @param int $id
+     *
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     */
+    public function pokemon(int $id)
     {
         if ($id > env("MAX_POKEMONS"))
             abort(404);
@@ -27,6 +50,11 @@ class GuestController extends Controller
         ]);
     }
 
+    /**
+     * Prikaz stranice za pogađanje pokemona
+     *
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function quiz()
     {
         $pokeId =  random_int(1, 251);
@@ -40,6 +68,13 @@ class GuestController extends Controller
         return view("home.quiz", ["pokeImg" => $pokeImg]);
     }
 
+    /**
+     * Pogađanje pokemona (provera tačnosti odgovara)
+     * 
+     * @param  Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Routing\Redirector
+     */
     public function quizGuess(Request $request)
     {
 

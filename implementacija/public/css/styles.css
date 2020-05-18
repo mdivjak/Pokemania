@@ -1,4 +1,12 @@
-.container {
+/**
+ * Stilizovanje stranica gosta, registracionih stranica, stranica za borbu
+ *
+ * @author Natalija Mitić 0085/2017, Vukašin Drašković  0455/2017
+ *
+ * @version 1.0
+ */
+ 
+ .container {
   margin: auto;
   text-align: center;
 }

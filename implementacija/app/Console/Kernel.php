@@ -32,10 +32,8 @@ class Kernel extends ConsoleKernel
      * @return void
      */
     protected function schedule(Schedule $schedule)
-    {
-        
-        $schedule->command('tournament:delete')->dailyAt('13:13')->sendOutputTo('deleteTournament.log');
-
+    {   
+        $schedule->command('tournament:delete')->dailyAt('16:19')->sendOutputTo('deleteTournament.log');
         //u cmd pokrenuti php artisan schedule:run za manuelno
     }
 
