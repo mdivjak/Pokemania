@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="end-date" class="col-form-label">End Date:</label>
-                    <input type="date" id="end-date" class="form-control" name="end-date">
+                    <input type="date" id="end-date" class="form-control" name="end-date" min="<?php echo date("Y-m-d"); ?>">
                 </div>
                 <div class="form-group">
                     <label for="prize-amount" class="col-form-label">Prize Amount:</label>

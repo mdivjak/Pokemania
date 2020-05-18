@@ -1,3 +1,13 @@
+<?php
+/**
+ * View za prikazivanje određenog turnira
+ *
+ * @author Anja Marković 0420/17, Natalija Mitić 0085/17
+ *
+ * @version 1.0
+ */
+?>
+
 @extends('layouts.master')
 
 @section('title')
@@ -105,7 +115,7 @@ Tournaments
                 </form>
                 @else
                 <div class="tooltip-wrapper disabled" data-title="You do not meet the tournament criteria.">
-                    <button class="btn btn-default btn-lg disabled" style='margin: 1em'>
+                    <button class="btn btn-default btn-lg disabled btnFightDisabled" style='margin: 1em'>
                         <img src="{{ asset('images/boxing.png') }}" height="65" />
                     </button>
                 </div>
