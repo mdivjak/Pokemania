@@ -16160,7 +16160,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="8Pszo3FN20u/HG6yWSI24QAA">
 <XPD:ATTR name="Alpha" type="real">0.588001933217825</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25.2388589282479</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">13 : porukaNeispravniPodaci</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">13 : porukaNeuspeh</XPD:ATTR>
 <XPD:REF name="Model">WCdGFwKhmEe52utHVVe05wAA</XPD:REF>
 <XPD:REF name="HostEdge">IpEmaw0aCkuCSZQo+mvw7AAA</XPD:REF>
 </XPD:OBJ>
@@ -16358,7 +16358,7 @@
 <XPD:REF name="Views[3]">kXiJkFouKUerTMT0YQpTGwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[12]" type="UMLStimulus" guid="WCdGFwKhmEe52utHVVe05wAA">
-<XPD:ATTR name="Name" type="string">porukaNeispravniPodaci</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">porukaNeuspeh</XPD:ATTR>
 <XPD:REF name="Sender">HbS2GK/gFUihgSk7FvfFZwAA</XPD:REF>
 <XPD:REF name="Receiver">HbS2GK/gFUihgSk7FvfFZwAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLSendAction" guid="4pqfgNyTT0SzQI332qXfnAAA">
