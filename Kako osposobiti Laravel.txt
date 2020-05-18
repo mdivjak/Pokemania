@@ -42,6 +42,13 @@ Definisani su defaultni stilovi i struktura mejlova u resources/vendor/mail/html
 Za testiranje izgleda mejla moze da se napravi ruta koja vraca objekat te klase, da se ne bi slao stalno mejl.
 Primer rute je u web.php
 
+MEJLOVI U POZADINI
+da bi se slali mejlovi u pozadini potrebno je pokrenuti
+php artisan queue:listen
+php artisan queue:work
+kao i pokrenuti migraciju da se napravi jobs tabela
+u .env je podesen gmail pokemania.dev (postoji i pokemania.office moze da se promeni) treba samo upisati sifru
+
 
 BRISANJE TURNIRA NA DNEVNOM NIVOU:
 - manuelno:
