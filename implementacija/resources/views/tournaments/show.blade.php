@@ -44,7 +44,7 @@ Tournaments
     </div>
     @endif
 
-    <div class="row"">
+    <div class="row">
         <div class=" col-lg-2 col-sm-12 ">
             <div class=" tournaments container">
         <div class="pokemon-card ultraShadow" style="width: 20rem; height: 22rem;">
@@ -59,7 +59,7 @@ Tournaments
         </div>
     </div>
 
-    @if (!$tournament->ifTop10(Auth::user()))
+    @if (!$tournament->ifTop10(Auth::user()) && Auth::user()->participates($tournament->id))
     <div class="tournaments container">
         <div class="tournament-card" style="width: 20rem; height: 5rem;">
             <div class="alert-message">
@@ -101,6 +101,7 @@ Tournaments
 
 </div>
 
+@if (Auth::user()->participates($tournament->id))
 <div class="container" style="padding-top: 2rem">
     <div class="row">
         <div clas="col-sm-12">
@@ -132,6 +133,7 @@ Tournaments
         </div>
     </div>
 </div>
+@endif
 
 </div>
 
