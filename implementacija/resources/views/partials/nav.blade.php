@@ -37,7 +37,7 @@
 							</a>
 						</li>
 						<li class="{{ strpos(Request::segment(1), 'wildBattle') !== false ? 'active' : null }}">
-							<a href="{{ route('wildBattle') }}" class="alignPerfect">
+							<a href="{{ route('wildBattle') }}" class="alignPerfect navHover">
 								<!-- Wild Fight -->
 								<img src="{{ URL::to('images/pokeball.svg') }}" height="20" />
 							</a>
@@ -50,16 +50,17 @@
 						</li>
 
 						<li class="{{ strpos(Request::segment(1), 'trainerBattle') !== false  || Request::segment(1) === 'tournament' ? 'active' : null }}">
-							<a href="{{ route('tournament.index') }}" class="alignPerfect">
+							<a href="{{ route('tournament.index') }}" class="alignPerfect navHover">
 								<!-- Battle Arena -->
 								<img src="{{ URL::to('images/stadium.svg') }}" height="20" />
 							</a>
 						</li>
 						@if (Auth::user()->bAdmin)
 							<li class="{{ Request::segment(1) === 'admin' ? 'active' : null }}">
-								<a href="{{ route('admin') }}">
+								<a href="{{ route('admin') }}" class="alignPerfect navHover noFilter">
 									<!-- Create Tournament -->
-									<i class="fas fa-user-cog"></i>
+									<!-- <i class="fas fa-user-cog"></i> -->
+									<img src="{{URL::to('images/editT.svg')}}" alt="" height="20">
 								</a>
 							</li>
 						@endif

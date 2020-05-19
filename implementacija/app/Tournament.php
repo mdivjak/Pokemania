@@ -73,10 +73,23 @@ class Tournament extends Model
      *
      * @author Marko Divjak 0084/2017
      * @version 1.0
-     * @return bool
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      *
      */
     public function registrations() {
         return $this->hasMany('App\Registered');
+    }
+
+
+    /**
+     * Funkcija koja vraca sve učesnike turnira
+     *
+     * @author Natalija Mitić 0085/2017
+     * @version 1.0
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     *
+     */
+    public function participations() {
+        return $this->hasMany('App\Participates');
     }
 }
