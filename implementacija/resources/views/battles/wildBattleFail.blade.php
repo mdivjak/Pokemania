@@ -1,3 +1,13 @@
+<?php
+/**
+ * View za biranje pokemona u borbi sa divljim pokemonom ako ima 0 pokemona
+ * 
+ * @author Vukašin Drašković 0455/17
+ *
+ * @version 1.0
+ */
+?>
+
 @extends ('battles.layout')
 
 @section('part')

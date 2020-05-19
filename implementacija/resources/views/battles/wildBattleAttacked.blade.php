@@ -1,3 +1,13 @@
+<?php
+/**
+ * View za napadanje u borbi sa divljim pokemonom 
+ * 
+ * @author Vukašin Drašković 0455/17
+ *
+ * @version 1.0
+ */
+?>
+
 @extends ('battles.layout1')
 
 @section('text')

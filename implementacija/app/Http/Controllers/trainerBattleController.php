@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+
+/**
+ * trainerBattleController – klasa za borbu na turniru
+ *
+ * @author Vukašin Drašković 0455/17
+ *
+ * @version 1.0
+ */
 class trainerBattleController extends Controller
 {
     public function __construct()
@@ -11,6 +19,11 @@ class trainerBattleController extends Controller
         $this->middleware('auth');
     }
 
+     /**
+     * Prikazivanje strane za biranje pokemona
+     * 
+     * @return \Illuminate\View\View
+     */
     public function show() {
 
         Session::put("user", auth()->user()->idU);
@@ -90,6 +103,11 @@ class trainerBattleController extends Controller
         ]);
     }
 
+ /**
+     * Postavljanje parametara za sledecu borbu
+     * 
+     * @param  int  $battleNumber
+     */
     public function setParametersForNextBattle($battleNumber) {
 
         $trainerPokemonID=Session::get('trainerPickedPokemonsIDs')[$battleNumber];
@@ -157,6 +175,13 @@ class trainerBattleController extends Controller
 
     } 
 
+     /**
+     * Prikazivanje borbe nakon biranja pokemona
+     * 
+     * @param  Illuminate\Http\Request $request
+     * 
+     * @return \Illuminate\View\View
+     */
     public function pick(Request $request) {
         
         if (Session::get("loadPick")=="0") {
@@ -212,6 +237,11 @@ class trainerBattleController extends Controller
         ]);
     }
 
+    /**
+     * Azuriranje baze u slučaju poraza
+     * 
+     * @return string
+     */
     public function lose() {
         if (Session::get("loadAttack")=="1") Session::put("loadAttack", "0");
 
@@ -226,6 +256,11 @@ class trainerBattleController extends Controller
         return ' -> You lost and dropped '.$lostCash.'₽!';
     }
 
+    /**
+     * Azuriranje baze u slučaju pobede
+     * 
+     * @return string
+     */
     public function win() {
         if (Session::get("loadAttack")=="1") Session::put("loadAttack", "0");
 
@@ -237,12 +272,24 @@ class trainerBattleController extends Controller
     }
 
 
+    /**
+     * Kraj borbe
+     * 
+     * @return string
+     */
     public function endBattle() {
         if (Session::get('trainerWins') > Session::get('opponentWins')) return $this->win();
         else return $this->lose();
     }
 
 
+    /**
+     * Azuriranje baze u slučaju pobede u pojedinačnoj borbi
+     * 
+     *  @param  int  $battleNumber
+     * 
+     * @return string
+     */
     public function gain($battleNumber) {
 
         $trainerPokemonID=Session::get('trainerPickedPokemonsIDs')[$battleNumber];
@@ -285,10 +332,20 @@ class trainerBattleController extends Controller
         return $message.'!';
     }
 
+    /**
+     * Početak poruke na kraju pojedinačne borbe
+     *
+     * @return string
+     */
     public function initialMessage() {
         return Session::get('trainerNick').' '.Session::get('trainerWins').' : '.Session::get('opponentWins').' '.Session::get('opponentNick');
     }
 
+    /**
+     * Prikaz novog stanja borbe pri napadu
+     * 
+     * @return \Illuminate\View\View
+     */
     public function attack() {
         if (Session::get("loadAttack")=="0") {
             return $this->show();
