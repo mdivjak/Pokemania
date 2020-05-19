@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Prikaz svih prijava na turniru
  *
@@ -11,6 +12,7 @@
 
 @section('scripts')
 <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/admin.js') }}" defer></script>
 @endsection
 
 @section('css')
@@ -49,10 +51,9 @@ Tournament Registrations View
                                 <th width="20%" style="text-align: center">User Name</th>
                                 <th width="20%" style="text-align: center">e-mail</th>
                                 <th width="20%" style="text-align: center">Number of pokemons</th>
-                                <th width="18%" style="text-align: center">Pokecash</th>
-                                <th width="20%">&nbsp;</th>
-                                <th width="2%">&nbsp;</th>
-                                <th width="20%">&nbsp;</th>
+                                <th width="20%" style="text-align: center">Pokecash</th>
+                                <th width="10%">&nbsp;</th>
+                                <th width="10%">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,21 +62,24 @@ Tournament Registrations View
                                 <td width="20%">{{$registration->name}}</td>
                                 <td width="20%">{{$registration->email}}</td>
                                 <td width="20%">{{$registration->cntPokemons}}</td>
-                                <td width="18%">{{$registration->cntCash}}</td>
-                                <td width="20%">
+                                <td width="20%">{{$registration->cntCash}}</td>
+                                <td width="10%" class = "float-right">
                                     <form method='POST' action='{{ route('admin.accept', [$registration->pivot->tournament_id])}}'>
                                         @csrf
                                         @method('PUT')
                                         <input type="hidden" name="idU" value="{{ $registration->idU }}">
-                                        <button type="submit" class="btn btn-success">Accept</a>
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fas fa-check"></i>
+                                        </button>
                                     </form>
                                 </td>
-                                <td width="1%">&nbsp;</td>
-                                <td width="20%">
+                                <td width="10%" class="float-left">
                                     <form method='POST' action='{{ route('admin.decline', [$registration->pivot->tournament_id])}}'>
                                         @csrf
                                         <input type="hidden" name="idU" value="{{ $registration->idU }}">
-                                        <button type="submit" class="btn btn-danger">Decline</a>
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

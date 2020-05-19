@@ -48,27 +48,37 @@ Admin Dashboard
                     <table class="table scrollable" width="100%">
                         <thead>
                             <tr width="100%">
-                                <th width="20%" style="text-align: center">Tournament Name</th>
-                                <th width="20%" style="text-align: center">Number of Registrations</th>
-                                <th width="20%" style="text-align: center">End Date</th>
-                                <th width="20%">&nbsp;</th>
-                                <td width="1%">&nbsp;</td>
-                                <th width="20%">&nbsp;</th>
+                                <th width="30%" style="text-align: center">Tournament Name</th>
+                                <th width="15%" style="text-align: center">End Date</th>
+                                <th width="15%" style="text-align: center">Contestants</th>
+                                <th width="15%" style="text-align: center">Submissions</th>
+                                <th width="10%">&nbsp;</th>
+                                <th width="1%">&nbsp;</th>
+                                <th width="10%">&nbsp;</th>
+                                <th width="4%">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tournaments as $tournament)
+                            @foreach ($tournaments as $index => $tournament)
                             <tr width="100%">
-                                <td width="20%"><a href="{{ route('tournament.show', [$tournament->id]) }}">{{$tournament->name}}</a></td>
-                                <td width="20%">{{ $tournament->registrations_count }}</td>
-                                <td width="18%">{{$tournament->endDate}}</td>
-                                <td width="20%">
-                                    <a style="width:100%; white-space:normal;" href="{{ route('admin.registrations', [$tournament->id]) }}" class="float-right btn btn-primary">Check Pending Registrations</a>
+                                <td width="30%"><a class="tour-name" href="{{ route('tournament.show', [$tournament->id]) }}">{{$tournament->name}}</a></td>
+                                <td width="25%">{{$tournament->endDate}}</td>
+                                <td width="10%">{{ $tournament->participations_count }}</td>
+                                <td width="10%">{{ $tournament->registrations_count }}</td>
+                                <td width="10%">
+                                    @if ($tournament->registrations_count > 0)
+                                    <a onclick="saveLink('{{$tournaments->url($tournaments->currentPage())}}')" href="{{ route('admin.registrations', [$tournament->id]) }}" class="float-right btn btn-primary check-registrations-button">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    @endif
                                 </td>
                                 <td width="1%">&nbsp;</td>
-                                <td width="20%">
-                                    <input style="width:100%; white-space:normal;" type="button" class="float-left btn btn-danger delete-tournament-button" data-delete-link="{{ route('admin.delete', $tournament) }}" data-toggle="modal" data-target="#avatar-picker" data-tournament="{{ $tournament }}" value="Delete Tournament">
+                                <td width="10%">
+                                    <button type="button" class="float-left btn btn-danger delete-tournament-button" data-delete-link="{{ route('admin.delete', $tournament) }}" data-toggle="modal" data-target="#avatar-picker" data-tournament="{{ $tournament }}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
                                 </td>
+                                <td width="4%">&nbsp;</td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -70,8 +70,18 @@ hr.styled {
   padding-top: 13px;
 }
 
-.nav img:hover {
+.noFilter img {
+  opacity: 0.7;
   filter: none;
+}
+
+.active .noFilter img {
+  opacity: 1;
+}
+
+.nav img:hover, .nav .navHover:hover img, .active img, .noFilter:hover img {
+  filter: none;
+  opacity: 1;
 }
 
 .nav li a {
@@ -1167,4 +1177,38 @@ hr.styled {
 }
 .scrollMain::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+
+.delete-tournament-button, .check-registrations-button, .new-tournament-button {
+  width: 50px;
+  height: 30px;
+  white-space: normal;
+  background-color: transparent;
+  color: black;
+  padding: 0;
+  text-align: center;
+}
+
+.check-registrations-button {
+  padding-top: 3px;
+}
+
+.new-tournament-button img {
+  width: 30px;
+  margin: 0;
+}
+
+.new-tournament-button:hover img {
+  filter: invert(1);
+}
+
+.tour-name {
+  font-weight: 700;
+  font-family: 'Kanit', sans-serif;
+  font-size: 20px;
+}
+
+.alignRight {
+  text-align: right;
 }
