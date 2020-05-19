@@ -73,6 +73,6 @@ $(document).ready(() => {
     if (backBtn.length == 1) {
         prevUrl = getCookie("tournamentPage");
         if (prevUrl)
-            backBtn.attr("href", getCookie("tournamentPage"));
+            backBtn.attr("href", prevUrl);
     }
 })
