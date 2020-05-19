@@ -71,6 +71,8 @@ function eraseCookie(name) {
 $(document).ready(() => {
     backBtn = $("#backButton");
     if (backBtn.length == 1) {
-        backBtn.attr("href", getCookie("tournamentPage"));
+        prevUrl = getCookie("tournamentPage");
+        if (prevUrl)
+            backBtn.attr("href", prevUrl);
     }
 })

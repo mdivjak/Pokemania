@@ -11,8 +11,7 @@
 <div class="row">
   <div class="col-sm-4 float-left">
     @if (Route::current()->getName() == 'admin.registrations')
-    <!-- {{ route('admin') }} -->
-    <a id="backButton" href="" class="btn btn-default float-left" style="float:left;">
+    <a id="backButton" href="{{ route('admin') }}" class="btn btn-default float-left" style="float:left;">
       <i class="fas fa-arrow-left"></i>
     </a>
     @endif
