@@ -47,6 +47,11 @@ Route::get('/pokedex/{id}', 'GuestController@pokemon')->name('home.pokemon');
 Route::get('/quiz', 'GuestController@quiz')->name('home.quiz');
 
 Route::post('/quiz', 'GuestController@quizGuess')->name('home.quizGuess');
+
+Route::fallback(function(){
+    return view('errors.404');
+});
+
 //------------------------------KRAJ NATALIJINOG------------------------------------
 
 //----------------------------------ANJINE RUTE-------------------------------------
