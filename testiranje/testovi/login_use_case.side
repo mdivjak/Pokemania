@@ -1,0 +1,329 @@
+{
+  "id": "1d28b2b4-42b8-42d7-b1ce-c837f46706b6",
+  "version": "2.0",
+  "name": "login_use_case",
+  "url": "http://127.0.0.1:8000/",
+  "tests": [{
+    "id": "7d00da52-8cac-4640-9528-58a84d120ada",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "2344cd98-9da0-4bec-9948-c063cfdfdf82",
+    "name": "login_uspesno",
+    "commands": [{
+      "id": "430fe3bc-564a-485b-9ee5-40152a62a4dc",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:8000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "565ede70-c8d0-4e95-96c0-6cd06ec7fd93",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "976x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "301fc909-b20f-414a-bad7-d7d1921390a1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6bdef4f-8d63-4d99-ad07-d3bca6bd27d0",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dac2fd0f-9a93-47fb-a101-f7ce4715ef78",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "2400a835-bf6f-4b96-a9f1-d07b281b1c30",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "f7a3c848-f6b6-4822-b2e7-9b30887b9859",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c14d4682-d495-4b43-941e-dd7b42228332",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=banana",
+      "targets": [
+        ["linkText=banana", "linkText"],
+        ["css=.navbar-right > li:nth-child(1) > a", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/profile/banana']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'banana ')]", "xpath:innerText"]
+      ],
+      "value": "banana"
+    }]
+  }, {
+    "id": "10118f49-90ed-4b84-8123-3aa3ea583f59",
+    "name": "login_pogresni_podaci",
+    "commands": [{
+      "id": "63828e33-2622-49ce-8162-acb1a29097fb",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:8000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d7c30d5-b089-46d3-8ef1-285f7a0fa7b0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "976x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48d53f5b-e645-4a7d-8a3d-b5ebfc716dcf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c99c06d-ffac-48de-8d20-e27455c882f4",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "926c54d4-8da7-4f2c-ae21-f54026459d94",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "b"
+    }, {
+      "id": "69e37252-78e3-4093-8aed-7346b9edb280",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "935c9419-7823-44f5-bc6e-b1aa46fd419a",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "f2c04d8a-60a4-45ed-a265-9ba470656b3a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cccac3ad-f75d-4d0e-ba7d-18f1537a699e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert li",
+      "targets": [
+        ["css=.alert li", "css:finder"],
+        ["xpath=//body/div/div/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'These credentials do not match our records.')]", "xpath:innerText"]
+      ],
+      "value": "These credentials do not match our records."
+    }]
+  }, {
+    "id": "fc74dde0-6651-4a11-b915-3910d44769bd",
+    "name": "forgot_pass_neuspesno",
+    "commands": [{
+      "id": "33ed738f-b868-4be4-b225-3e7907d5d611",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:8000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91fb4078-c17f-48f5-aaca-27c49caf75f3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "976x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4326ca41-4af1-49b4-959e-37684fd3b1f7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "173213f7-312b-41bd-883f-eb08de8e12c6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Forgot Your Password?",
+      "targets": [
+        ["linkText=Forgot Your Password?", "linkText"],
+        ["css=.btn-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Forgot Your Password?')]", "xpath:link"],
+        ["xpath=//div[@id='formFooter']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/password/reset']", "xpath:href"],
+        ["xpath=//div[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Forgot Your Password?')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f438fb3c-7b9b-413f-be56-e6a1db347127",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af9091cf-3854-490b-aece-89fdcf3a44c8",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "naca@ntec.ch"
+    }, {
+      "id": "98134391-7095-4654-ab6d-e2975d58fb30",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@value='Send Password Reset Link']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f9e246d-ddaa-40f4-b474-d4f8eaaa9b63",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert li",
+      "targets": [
+        ["css=.alert li", "css:finder"],
+        ["xpath=//body/div/div/ul/li", "xpath:position"]
+      ],
+      "value": "We can't find a user with that email address."
+    }]
+  }],
+  "suites": [{
+    "id": "0702a2d8-9b65-434f-93c1-f0155a041220",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7d00da52-8cac-4640-9528-58a84d120ada"]
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}

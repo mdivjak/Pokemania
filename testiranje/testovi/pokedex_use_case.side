@@ -1,0 +1,310 @@
+{
+  "id": "7fc14e5d-51d5-4ef6-90aa-62aa7dc1eec8",
+  "version": "2.0",
+  "name": "pokedex_use_case",
+  "url": "http://127.0.0.1:8000/",
+  "tests": [{
+    "id": "bd67d321-f0c4-43be-9323-da3b62293422",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "f4d2c058-71fd-4aed-90f3-8aabe80c4c62",
+    "name": "pokemon_izbor",
+    "commands": [{
+      "id": "ba6eeb73-e116-4b16-be59-14c0e0fab8f3",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:8000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f3eba99-997d-4a61-a25b-4bc2115f9c9b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a96864f-dae2-42ed-95c1-e907712106b4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Pokedex",
+      "targets": [
+        ["linkText=Pokedex", "linkText"],
+        ["css=.nav:nth-child(1) > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Pokedex')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/pokedex']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Pokedex')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d11ce01-4ea0-4888-8605-595ab7e0dbf1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(2) .image",
+      "targets": [
+        ["css=.col-lg-4:nth-child(2) .image", "css:finder"],
+        ["xpath=//img[contains(@src,'https://pokeres.bastionbot.org/images/pokemon/1.png')]", "xpath:img"],
+        ["xpath=//div[@id='pokedexDisplay']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "243560ad-fc9b-4d4d-842e-f33f1f845f8c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='pokemon']/div[2]/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "#1  Bulbasaur"
+    }]
+  }, {
+    "id": "02132c43-ad13-4b9d-a1ca-7b08935bbf3e",
+    "name": "pokemon_pretraga",
+    "commands": [{
+      "id": "226cc126-58c6-4e38-adf3-6843980b9ffe",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:8000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d315ca1a-9419-45de-a3f3-0dcca0071f38",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7893637d-549d-4374-88e8-879640f7acf9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Pokedex",
+      "targets": [
+        ["linkText=Pokedex", "linkText"],
+        ["css=.nav:nth-child(1) > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Pokedex')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/pokedex']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Pokedex')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "74a175ee-eeb2-42c4-bf88-0968a274504c",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchPokedex",
+      "targets": [
+        ["id=searchPokedex", "id"],
+        ["css=#searchPokedex", "css:finder"],
+        ["xpath=//input[@id='searchPokedex']", "xpath:attributes"],
+        ["xpath=//div[@id='pokedex']/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c3767af-25be-4a39-b3bd-7b3dc2200c8c",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchPokedex",
+      "targets": [
+        ["id=searchPokedex", "id"],
+        ["css=#searchPokedex", "css:finder"],
+        ["xpath=//input[@id='searchPokedex']", "xpath:attributes"],
+        ["xpath=//div[@id='pokedex']/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "di"
+    }, {
+      "id": "88affcbf-6e1a-4055-8872-fe6b31cfea18",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(133) .image",
+      "targets": [
+        ["css=.col-lg-4:nth-child(133) .image", "css:finder"],
+        ["xpath=//img[contains(@src,'https://pokeres.bastionbot.org/images/pokemon/132.png')]", "xpath:img"],
+        ["xpath=//div[@id='pokedexDisplay']/div[132]/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[132]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbcc1eb6-8518-4cd0-86ff-67172db835c5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='pokemon']/div[2]/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "#132  Ditto"
+    }]
+  }, {
+    "id": "69a436d7-182b-45d7-9b4a-ea16a4e68c59",
+    "name": "pokemon_next",
+    "commands": [{
+      "id": "e8de3771-95b4-472f-92b1-bb3046852a18",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:8000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d7f02a6b-b4c5-40b9-afd8-d46117d3187e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "814x854",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "361960e4-5cf8-497a-9064-d16e526202d7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Pokedex",
+      "targets": [
+        ["linkText=Pokedex", "linkText"],
+        ["css=.nav:nth-child(1) > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Pokedex')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/pokedex']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Pokedex')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c64289d-2e93-4518-a5ea-2925f750ae5a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(3) > .pokemon-card",
+      "targets": [
+        ["css=.col-lg-4:nth-child(3) > .pokemon-card", "css:finder"],
+        ["xpath=//div[@id='pokedexDisplay']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "398c7eac-44af-4532-9bc2-f4f1425e370c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(3) .image",
+      "targets": [
+        ["css=.col-lg-4:nth-child(3) .image", "css:finder"],
+        ["xpath=//img[contains(@src,'https://pokeres.bastionbot.org/images/pokemon/2.png')]", "xpath:img"],
+        ["xpath=//div[@id='pokedexDisplay']/div[2]/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "46f4b569-a6d0-4c5e-8b94-78a23b8263a5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Next",
+      "targets": [
+        ["linkText=Next", "linkText"],
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Next')]", "xpath:link"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/pokedex/3']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Next')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9575bf61-7b9d-466c-a319-3c0b638e089d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='pokemon']/div[2]/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "#3  Venusaur"
+    }]
+  }, {
+    "id": "acdc9ee1-2281-4fcc-b4da-51d1f6bd8ef2",
+    "name": "pokemon_back",
+    "commands": [{
+      "id": "25ffbd63-99ca-4061-8e91-012129b411cc",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:8000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd4995c2-f2d8-4b37-b16d-7b85d7a8c5b2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "814x854",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c289cd3d-780e-41f0-b6c3-e4af5917ac4a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Pokedex",
+      "targets": [
+        ["linkText=Pokedex", "linkText"],
+        ["css=.nav:nth-child(1) > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Pokedex')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/pokedex']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Pokedex')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8c0385a-ed04-4b4b-97a3-ca14ee78f0f5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(3) .image",
+      "targets": [
+        ["css=.col-lg-4:nth-child(3) .image", "css:finder"],
+        ["xpath=//img[contains(@src,'https://pokeres.bastionbot.org/images/pokemon/2.png')]", "xpath:img"],
+        ["xpath=//div[@id='pokedexDisplay']/div[2]/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c2d5284-7105-48e5-8f42-504af095bacb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Prev",
+      "targets": [
+        ["linkText=Prev", "linkText"],
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Prev')]", "xpath:link"],
+        ["xpath=//a[@href='http://127.0.0.1:8000/pokedex/1']", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Prev')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f97da803-7766-428a-8c88-0f025ba5bfa0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='pokemon']/div[2]/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "#1  Bulbasaur"
+    }]
+  }],
+  "suites": [{
+    "id": "c0d71669-4869-47c8-9d65-4221067f83f0",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["bd67d321-f0c4-43be-9323-da3b62293422"]
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}
