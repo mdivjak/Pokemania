@@ -1,0 +1,66 @@
+{
+  "id": "1207a826-be65-4f7a-8460-9742ff11e07a",
+  "version": "2.0",
+  "name": "Pustanje pokemona u divljinu",
+  "url": "http://localhost:8000/admin",
+  "tests": [{
+    "id": "6aaaf694-71a9-48f5-b672-9721c1905112",
+    "name": "pustanje_u_divljinu",
+    "commands": [{
+      "id": "0df4b737-d7c9-4f39-bdab-fa39d7b7025e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8000/profile/banana",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5719c444-3a31-48ac-861c-3ccb2710d2e9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "844x646",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a2651a39-49c5-4e9c-aebe-191c7a71fa75",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-3:nth-child(1) form > .btn",
+      "targets": [
+        ["css=.col-md-3:nth-child(1) form > .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='pokemons']/div[3]/div/div/div/a/div/div[2]/div[2]/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Let Go')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a88d6d9e-c2b0-4cd2-b79b-abf95a77e8e0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[@id='pokemons']/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "You have released your Pokemon!"
+    }, {
+      "id": "b29d242f-6d76-49ff-b0b1-3f4b4b807552",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ac10296a-8755-4e03-b424-73c42c6365d3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8000/", "http://localhost:8000/profile/banana", "http://localhost:8000/admin"],
+  "plugins": []
+}

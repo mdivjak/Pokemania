@@ -31,7 +31,7 @@ class PokemonSeeder extends Seeder
                 'id' => '1',
                 'user_id' => '1',
                 'pokemon_id' => '1',
-                'xp' => '12',
+                'xp' => '22',
                 'level' => '5',
                 'created_at' => null,
                 'updated_at' => null
