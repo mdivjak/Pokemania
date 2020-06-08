@@ -1,0 +1,2348 @@
+{
+  "id": "4f771cc9-8311-48db-9b5e-41ea25d50262",
+  "version": "2.0",
+  "name": "pokemania",
+  "url": "http://localhost/pokemania/public/",
+  "tests": [{
+    "id": "c1e11914-0204-43d5-899c-8a577d76b39c",
+    "name": "uspesno_kreiranje_turnira",
+    "commands": [{
+      "id": "6211b7cf-1a00-4550-8ed0-e39771b095e5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ad6a57b5-e084-402d-bd7b-014c94d769b8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8671d7e-6619-4b25-9f78-c02d8e8e9bd9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5c07256-468c-4be5-a2a4-419d3f7570d5",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b07091b-f7f7-45e7-87e0-deec356af0dd",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "f0b2ab46-0880-49f4-844a-64b0c9962107",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01cddd02-a7fe-4514-a964-d85113a1fb89",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "8b93246c-56ce-4403-9ca8-a9a4b53b5f0e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5426dad-a45d-404f-9262-eb4828ca7b09",
+      "comment": "",
+      "command": "click",
+      "target": "css=.noFilter > img",
+      "targets": [
+        ["css=.noFilter > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/editT.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[5]/a/img", "xpath:idRelative"],
+        ["xpath=//li[5]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cf8d49f-6f50-4212-af72-915c24bac288",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn > img",
+      "targets": [
+        ["css=.btn > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/newT.svg')]", "xpath:img"],
+        ["xpath=//div[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56bb55d9-6b6f-42e4-a3b0-76f99a80f2de",
+      "comment": "",
+      "command": "click",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8888928a-dc24-4bf0-84b7-bb4450468505",
+      "comment": "",
+      "command": "type",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Test Turnir"
+    }, {
+      "id": "e4a41e29-7636-4f2f-a442-d2b2f316c91f",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "120"
+    }, {
+      "id": "6b5be09e-b4f5-49e4-b1ab-b75fdae48a95",
+      "comment": "",
+      "command": "click",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ac9de21-04f5-4e99-9294-5eda13652b0f",
+      "comment": "",
+      "command": "type",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2020-06-26"
+    }, {
+      "id": "4d086e8e-13ab-4a7b-b833-79887425e139",
+      "comment": "",
+      "command": "click",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e56bf3cc-13a3-490b-9a94-6e9c8e9ca7ad",
+      "comment": "",
+      "command": "type",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "1200"
+    }, {
+      "id": "a4614c34-ca1d-4ead-b32d-891fcbee2001",
+      "comment": "",
+      "command": "click",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59900762-f604-4a0e-b7b5-48879dad6f78",
+      "comment": "",
+      "command": "type",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "f4c7b7ec-127b-431a-a8f3-b977f9a13106",
+      "comment": "",
+      "command": "type",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "16"
+    }, {
+      "id": "5416751e-2421-45ae-81f3-302af404ade6",
+      "comment": "",
+      "command": "click",
+      "target": "name=createTournament",
+      "targets": [
+        ["name=createTournament", "name"],
+        ["css=.modal-footer:nth-child(3) > .btn-primary", "css:finder"],
+        ["xpath=//input[@name='createTournament']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "165956ac-c07c-43cb-a038-a15fd0a0236c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": "Successfully created tournament \"Test Turnir\"!"
+    }, {
+      "id": "b218b3c1-b135-4c3f-85e0-0dc21c9d9e05",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-door-closed",
+      "targets": [
+        ["css=.fa-door-closed", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[6]/a/i", "xpath:idRelative"],
+        ["xpath=//li[6]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "37b0b405-2622-4bcb-9d4c-f3865b8955c0",
+    "name": "nejedinstveno_ime_turnira",
+    "commands": [{
+      "id": "4d0a26a6-9fbe-435f-9f9c-c5b7f56c7bf5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d7b4265-7a8b-4faf-a1b3-6f69178ebf33",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4c282876-7701-4cb7-a114-1915b627a22c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3bcdbfe-f49c-4f8c-97ff-416df3779bef",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8872b384-6cac-4efb-ae55-ef8eb13461ea",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "533e7632-6855-4373-a1fa-15421b0dde66",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "62f2471b-1ccd-4a68-be83-671387ef21db",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "cccb6c84-ef14-4fb2-b767-4b38381383d4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-8",
+      "targets": [
+        ["css=.col-md-8", "css:finder"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "863d1348-97a3-49c6-b5ce-df2bb0e54ebd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53461cc3-04ac-490e-baa3-0eb476556692",
+      "comment": "",
+      "command": "click",
+      "target": "css=.noFilter > img",
+      "targets": [
+        ["css=.noFilter > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/editT.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[5]/a/img", "xpath:idRelative"],
+        ["xpath=//li[5]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb43ff54-2217-4102-861e-1ecf5bfe0d27",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn > img",
+      "targets": [
+        ["css=.btn > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/newT.svg')]", "xpath:img"],
+        ["xpath=//div[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b834527f-caee-4056-8a6a-997b71190426",
+      "comment": "",
+      "command": "click",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9e8984d-5664-4bbe-b347-c610559af28d",
+      "comment": "",
+      "command": "type",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Belgrade Top 10"
+    }, {
+      "id": "ebec9af9-e883-4eec-a4c6-dd434c8f2ec4",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68db745b-c534-40eb-b8ce-b69160573267",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "120"
+    }, {
+      "id": "6e966280-8f2a-4922-b654-c5930330640b",
+      "comment": "",
+      "command": "click",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4ab65b0-bb50-42f3-a810-a20f11db0f57",
+      "comment": "",
+      "command": "type",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2020-06-26"
+    }, {
+      "id": "ad53b07e-1bfc-4f15-a3f4-17d849330e77",
+      "comment": "",
+      "command": "click",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db412d65-4e1b-4517-b62a-f04d3732dd5f",
+      "comment": "",
+      "command": "type",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "2000"
+    }, {
+      "id": "19f0e1ae-d5c1-4e30-b22e-a45a9d68529a",
+      "comment": "",
+      "command": "click",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8b46018-7159-4db8-a413-e0f8977d8cc5",
+      "comment": "",
+      "command": "type",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "15"
+    }, {
+      "id": "95cad6ee-e90a-43d7-8ec8-cb4f9e4f3334",
+      "comment": "",
+      "command": "click",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcaa5e18-4b84-454a-beb7-80ec7261ae46",
+      "comment": "",
+      "command": "type",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "18"
+    }, {
+      "id": "ab7829e5-1fc0-4377-bea9-d3b87155ba66",
+      "comment": "",
+      "command": "click",
+      "target": "name=createTournament",
+      "targets": [
+        ["name=createTournament", "name"],
+        ["css=.modal-footer:nth-child(3) > .btn-primary", "css:finder"],
+        ["xpath=//input[@name='createTournament']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "533a5a9a-d9b2-4c33-9e5b-16ed308533bf",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": "Tournament with name \"Belgrade Top 10\" already exists!"
+    }, {
+      "id": "6d4caa0e-c366-4ad5-8e6f-b5b0a3b21266",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(6) > a",
+      "targets": [
+        ["css=li:nth-child(6) > a", "css:finder"],
+        ["xpath=//a[@onclick=\"event.preventDefault(); document.getElementById('logout-form').submit();\"]", "xpath:attributes"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/logout']", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0a491b3a-b2d4-4177-86cc-c8ea9b9d2913",
+    "name": "min_nivo_veci_od_max_nivoa",
+    "commands": [{
+      "id": "992c5d64-b3b6-4cc0-8a87-a0a90adb6f17",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65de8491-b6da-48cd-a091-b10381c46d06",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aaa5847a-c70c-4c6f-80c8-1866051eada0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "904e89ff-e381-4f03-9ec2-1bf2147bc37a",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f43ff65-41d9-4057-8726-59057d350567",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "4f2442f1-1878-48f8-87a3-c2fb51bf8f08",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ffdc014d-daf8-4e03-9fbe-e64cde9357f5",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "7d8e1ba9-60ea-471d-9542-f6f9680065a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ff6142c-ad98-42d7-80e5-e06ee6fa6825",
+      "comment": "",
+      "command": "click",
+      "target": "css=.noFilter > img",
+      "targets": [
+        ["css=.noFilter > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/editT.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[5]/a/img", "xpath:idRelative"],
+        ["xpath=//li[5]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06450031-aee4-4927-8370-edc56051a3f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn > img",
+      "targets": [
+        ["css=.btn > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/newT.svg')]", "xpath:img"],
+        ["xpath=//div[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74c9bd0b-9b3e-4fa7-9cc8-d679a7649e07",
+      "comment": "",
+      "command": "click",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b0fa87c-d417-4d91-a4b2-30d17d658b38",
+      "comment": "",
+      "command": "type",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "iturnir"
+    }, {
+      "id": "60399867-5a1e-4986-8b5a-b86580c1f003",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "582598e9-5591-4c62-9c92-581335514399",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "150"
+    }, {
+      "id": "9c7a8e1d-d1bd-47a4-9f1f-2a8b25ed9a2a",
+      "comment": "",
+      "command": "click",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ca1f78f-72dd-43f3-970e-ceef42275755",
+      "comment": "",
+      "command": "type",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2020-06-19"
+    }, {
+      "id": "23500832-27d2-450e-870f-60137e3c7d61",
+      "comment": "",
+      "command": "click",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77a687da-0580-44a0-a832-cfc53a9327ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "2000"
+    }, {
+      "id": "58efdf30-a7d6-460e-b780-fc0bf5a26914",
+      "comment": "",
+      "command": "click",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4efd67db-6f06-4df7-88c6-d2c1a3bb0611",
+      "comment": "",
+      "command": "type",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "6"
+    }, {
+      "id": "aedb2333-c3b8-4969-a27a-926ffbab086d",
+      "comment": "",
+      "command": "click",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "113b548e-0426-42b6-88b4-daf1fb449790",
+      "comment": "",
+      "command": "type",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "6857ea3c-fc25-4373-b057-5c73e6372c74",
+      "comment": "",
+      "command": "click",
+      "target": "name=createTournament",
+      "targets": [
+        ["name=createTournament", "name"],
+        ["css=.modal-footer:nth-child(3) > .btn-primary", "css:finder"],
+        ["xpath=//input[@name='createTournament']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cf3a555-3fc2-4ac7-8855-b249752d8433",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert li:nth-child(1)",
+      "targets": [
+        ["css=.alert li:nth-child(1)", "css:finder"],
+        ["xpath=//body/div/div/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'The min-level must be less than or equal 2.')]", "xpath:innerText"]
+      ],
+      "value": "The min-level must be less than or equal 2."
+    }, {
+      "id": "b2a30867-ce3d-4b87-b388-b258173d7c31",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-door-closed",
+      "targets": [
+        ["css=.fa-door-closed", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[6]/a/i", "xpath:idRelative"],
+        ["xpath=//li[6]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "869848c6-7f11-4ee5-8eb7-00a8887a0ca8",
+    "name": "negativna_cena_prijave",
+    "commands": [{
+      "id": "f267edea-fa57-4c83-bb8a-bd7a420425f3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5dfa247-2b8d-422b-a6bf-6df78a797a4d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a566cfd-70f9-429b-be6c-e946de315629",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4074f8b-4271-4e58-8191-d4103ab9e9b4",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd407ed8-30ef-420f-8fd1-5e5679a8a245",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "6ea8684a-7b98-4769-96b9-266c6efe5752",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8351acd-adf8-4e5c-9d03-9326e5d5fc52",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "681a88e4-ca7f-4331-915a-f20ba3707201",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "764fefd0-0e0a-4df1-88a9-1885235e8482",
+      "comment": "",
+      "command": "click",
+      "target": "css=.noFilter > img",
+      "targets": [
+        ["css=.noFilter > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/editT.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[5]/a/img", "xpath:idRelative"],
+        ["xpath=//li[5]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "81864076-91e3-4909-b9d9-e016f9fea331",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn > img",
+      "targets": [
+        ["css=.btn > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/newT.svg')]", "xpath:img"],
+        ["xpath=//div[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "591445bb-45b3-4486-8026-4f9713f02b7d",
+      "comment": "",
+      "command": "click",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "372c85df-cbb7-427a-adb4-a4005668e256",
+      "comment": "",
+      "command": "type",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "turnirsamopoz"
+    }, {
+      "id": "048223fe-4de0-4767-9dc2-4d9a373fe4d8",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "600ba254-5ce0-482c-a77c-239ad3dae044",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "-150"
+    }, {
+      "id": "41a5519a-3dce-4ec1-9295-1b0578486d0d",
+      "comment": "",
+      "command": "click",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7144d98-94a4-49cc-8aba-25dcd89c44e9",
+      "comment": "",
+      "command": "type",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2020-06-20"
+    }, {
+      "id": "3de0858c-a830-4e19-93b5-4776ea35d9b4",
+      "comment": "",
+      "command": "click",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d973d34e-fa2d-4862-aff1-a83f25527892",
+      "comment": "",
+      "command": "type",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "5000"
+    }, {
+      "id": "f74bae81-de03-48c2-8791-2038602c5f0b",
+      "comment": "",
+      "command": "click",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73a2793d-b09c-4f0b-b19f-0c26b8b2f925",
+      "comment": "",
+      "command": "type",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "a3806730-bd94-4ce7-adbd-768283f35fe2",
+      "comment": "",
+      "command": "click",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb87a47a-829a-489c-b33d-1e9c3d6595f1",
+      "comment": "",
+      "command": "type",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "4"
+    }, {
+      "id": "e7459cb4-34fd-4ec3-9c9e-04b8d8872cc1",
+      "comment": "",
+      "command": "click",
+      "target": "name=createTournament",
+      "targets": [
+        ["name=createTournament", "name"],
+        ["css=.modal-footer:nth-child(3) > .btn-primary", "css:finder"],
+        ["xpath=//input[@name='createTournament']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd18edfb-8b2e-4a6a-b8c5-1f53e58c0dbd",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=#newTournamentFormTitle",
+      "targets": [
+        ["id=#newTournamentFormTitle", "id"],
+        ["css=#\\#newTournamentFormTitle", "css:finder"],
+        ["xpath=//h3[@id='#newTournamentFormTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Create New Tournament')]", "xpath:innerText"]
+      ],
+      "value": "Create New Tournament"
+    }, {
+      "id": "7bd2ee08-dfb5-4dda-81c1-2d87ca49ee5d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-secondary",
+      "targets": [
+        ["css=.btn-secondary", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Close')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb785469-51cc-465d-94e8-64b888be942e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-door-closed",
+      "targets": [
+        ["css=.fa-door-closed", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[6]/a/i", "xpath:idRelative"],
+        ["xpath=//li[6]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8fb17966-2104-4cf5-a78b-e744468cadfe",
+    "name": "negativna_nagrada",
+    "commands": [{
+      "id": "685571cf-580e-4894-9064-1fedbfeff997",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cabaa5ce-2dda-4d76-abf7-5d11f43553dc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af5235b0-b230-4d6c-9b36-adbc6b880f5e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d36883d-9ac8-4b74-9cf5-954617a18843",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b49eae50-89a6-46e8-8141-7599213a99d5",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "d82917f7-d9e3-4fef-a45a-d1d2e7330375",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71caf4f2-0fe2-4892-bd06-2582c5d789c2",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "4738cb8b-db9c-4f17-9558-785bd72cc6ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b16e32e-9994-497b-b0f9-09cb3d5aa547",
+      "comment": "",
+      "command": "click",
+      "target": "css=.noFilter > img",
+      "targets": [
+        ["css=.noFilter > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/editT.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[5]/a/img", "xpath:idRelative"],
+        ["xpath=//li[5]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2855b8c5-c2d2-4adb-bd5e-b870c483a8bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn > img",
+      "targets": [
+        ["css=.btn > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/newT.svg')]", "xpath:img"],
+        ["xpath=//div[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1c9d9fb-fd24-43fc-b245-4707831354c8",
+      "comment": "",
+      "command": "click",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f254939-5add-45a5-9184-408f5fa9b426",
+      "comment": "",
+      "command": "type",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Test Turnir"
+    }, {
+      "id": "186e0506-607f-41b6-abbc-eddf9c113af1",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "905d9a92-d1cb-486e-ba3d-48fcf1df2b37",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "344"
+    }, {
+      "id": "007c879e-1281-48d8-b72c-0029cd7b080d",
+      "comment": "",
+      "command": "click",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b6b87f2-2dbf-4054-89a1-4472b4346f28",
+      "comment": "",
+      "command": "type",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2020-07-24"
+    }, {
+      "id": "07af939b-ca05-411d-b7c7-9375c6cb2f45",
+      "comment": "",
+      "command": "click",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41d20078-83b8-4360-b7fc-c79f7c17d424",
+      "comment": "",
+      "command": "type",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "-600"
+    }, {
+      "id": "10aa0038-63ca-4cd3-a512-3a6f5b69dfb0",
+      "comment": "",
+      "command": "click",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "524209d6-e4cb-4b39-8a44-946eab59392b",
+      "comment": "",
+      "command": "type",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "8510aabd-4c22-4b90-a4d2-4286f799fdc7",
+      "comment": "",
+      "command": "click",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f717c8a-4375-41a6-865c-63eb6a99fa3a",
+      "comment": "",
+      "command": "type",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "4313b080-0458-4b90-9fe4-c71935dfb90c",
+      "comment": "",
+      "command": "click",
+      "target": "name=createTournament",
+      "targets": [
+        ["name=createTournament", "name"],
+        ["css=.modal-footer:nth-child(3) > .btn-primary", "css:finder"],
+        ["xpath=//input[@name='createTournament']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "27f6fd1b-d97f-4536-85f4-61544afeb84a",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=#newTournamentFormTitle",
+      "targets": [
+        ["id=#newTournamentFormTitle", "id"],
+        ["css=#\\#newTournamentFormTitle", "css:finder"],
+        ["xpath=//h3[@id='#newTournamentFormTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Create New Tournament')]", "xpath:innerText"]
+      ],
+      "value": "Create New Tournament"
+    }, {
+      "id": "6004f59d-63cb-46dd-a15a-872776ef04ab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-secondary",
+      "targets": [
+        ["css=.btn-secondary", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Close')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "754ad3e0-1e35-4ee2-9307-fdcac7e95b78",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-door-closed",
+      "targets": [
+        ["css=.fa-door-closed", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[6]/a/i", "xpath:idRelative"],
+        ["xpath=//li[6]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "34f814b4-b635-4b94-9fa0-320b1541a888",
+    "name": "negativan_min_nivo",
+    "commands": [{
+      "id": "4eafb227-c866-46e6-903b-b74e68ed84d4",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ad4be0ef-b8ad-4771-98f4-a18d41c89a42",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07a634d0-2ba2-4142-84ca-c528053aadb4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cabcb3fc-0dba-4fdc-a03a-971cc411ff45",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "93695819-99a9-4265-8b71-e3a3a7610b94",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "4c5a2af6-6f61-4b0a-a0c0-178a2af6e80f",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7dee3530-cab9-4fe8-92ca-749b95887004",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "13401176-69c9-43bc-bc49-123992faebb6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ccafd55-9d12-4de8-a471-63a16e8875a6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.noFilter > img",
+      "targets": [
+        ["css=.noFilter > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/editT.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[5]/a/img", "xpath:idRelative"],
+        ["xpath=//li[5]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df472fc0-a882-48c7-acbb-eca14a036507",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn > img",
+      "targets": [
+        ["css=.btn > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/newT.svg')]", "xpath:img"],
+        ["xpath=//div[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac0be737-fdef-4164-9351-52944e76cb68",
+      "comment": "",
+      "command": "click",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab316511-6fd7-47a9-8f3f-e83b6a90f7ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Test Turnir"
+    }, {
+      "id": "aac1ff4e-8675-4ba9-90cc-257b824094c6",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "831e4e53-88a6-45ad-874a-1122133ebae0",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "23"
+    }, {
+      "id": "3b1e19c2-384e-437e-bb4f-def407785459",
+      "comment": "",
+      "command": "click",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff9213e8-2ed4-4caa-ab63-ed4d0b6f34a8",
+      "comment": "",
+      "command": "type",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2020-07-24"
+    }, {
+      "id": "6d1cfc5a-2ce0-4476-bc34-78800aea44ae",
+      "comment": "",
+      "command": "click",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc531738-6edb-40be-ae75-0543f8b5f8e3",
+      "comment": "",
+      "command": "type",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "2000"
+    }, {
+      "id": "5a5042e2-e6b4-4bf5-beee-74c2e0c82d30",
+      "comment": "",
+      "command": "click",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fdc43986-8af7-4f28-a543-599975a20fc2",
+      "comment": "",
+      "command": "type",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "-4"
+    }, {
+      "id": "b6be8eec-7f18-434a-8012-a677338aa1c2",
+      "comment": "",
+      "command": "click",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "935ddc4a-bf68-4e53-83e8-11a734b37957",
+      "comment": "",
+      "command": "type",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "fefd7e98-6d1e-4c8b-9a32-cbca4fc32983",
+      "comment": "",
+      "command": "click",
+      "target": "name=createTournament",
+      "targets": [
+        ["name=createTournament", "name"],
+        ["css=.modal-footer:nth-child(3) > .btn-primary", "css:finder"],
+        ["xpath=//input[@name='createTournament']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "242a9ac9-d9e0-4165-b1ac-8a61d3207bfc",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=#newTournamentFormTitle",
+      "targets": [
+        ["id=#newTournamentFormTitle", "id"],
+        ["css=#\\#newTournamentFormTitle", "css:finder"],
+        ["xpath=//h3[@id='#newTournamentFormTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Create New Tournament')]", "xpath:innerText"]
+      ],
+      "value": "Create New Tournament"
+    }, {
+      "id": "a15795e0-db5e-49ae-9e2d-067743cb3988",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-secondary",
+      "targets": [
+        ["css=.btn-secondary", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Close')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "79f9543a-b8eb-4c05-8a4a-c60b05674fc8",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(6) > a",
+      "targets": [
+        ["css=li:nth-child(6) > a", "css:finder"],
+        ["xpath=//a[@onclick=\"event.preventDefault(); document.getElementById('logout-form').submit();\"]", "xpath:attributes"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/logout']", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f536a76a-87e6-4dd6-88ce-fae9c42fdb86",
+    "name": "negativan_max_nivo",
+    "commands": [{
+      "id": "f1bb6ca3-27f0-44fc-94ed-53d1871a2fca",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e507b471-aa1f-4d81-883c-2c3573d2a386",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64d6b3a5-e250-4e4c-9858-960552b59874",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d765ac07-56aa-4814-9ce8-ca42ddc0fd38",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0baae94-488c-43dc-a242-dad99f227146",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "943711e6-0085-4b44-af6f-7fde1d52797e",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "982ce339-155a-4fa8-91ca-fc171554c436",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "d845e7f2-e166-413a-a150-30b3fcdab335",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "349c8499-2468-4f81-94f2-89147916b439",
+      "comment": "",
+      "command": "click",
+      "target": "css=.noFilter",
+      "targets": [
+        ["css=.noFilter", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/admin']", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3596fd1a-9105-4902-9e2a-ab91d42ab1c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn > img",
+      "targets": [
+        ["css=.btn > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/newT.svg')]", "xpath:img"],
+        ["xpath=//div[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5f53798-eee1-4379-9531-2d7794fec50f",
+      "comment": "",
+      "command": "click",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4294b5cc-c50d-4762-b5a4-4fef4a6ef367",
+      "comment": "",
+      "command": "type",
+      "target": "id=tournament-name",
+      "targets": [
+        ["id=tournament-name", "id"],
+        ["name=tournament-name", "name"],
+        ["css=#tournament-name", "css:finder"],
+        ["xpath=//input[@id='tournament-name']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Test Turnir"
+    }, {
+      "id": "d1a43509-5850-4555-b606-d292799b5e79",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80780654-07ac-4c54-b857-56a8400b8854",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-price",
+      "targets": [
+        ["id=registration-price", "id"],
+        ["name=registration-price", "name"],
+        ["css=#registration-price", "css:finder"],
+        ["xpath=//input[@id='registration-price']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "234"
+    }, {
+      "id": "c49bbdc4-9439-4708-a9e8-01f9be338e36",
+      "comment": "",
+      "command": "click",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13b8bc02-80e0-470e-9c9c-7f4344a7c728",
+      "comment": "",
+      "command": "type",
+      "target": "id=end-date",
+      "targets": [
+        ["id=end-date", "id"],
+        ["name=end-date", "name"],
+        ["css=#end-date", "css:finder"],
+        ["xpath=//input[@id='end-date']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2020-08-13"
+    }, {
+      "id": "076599e4-4e4f-440f-9a93-61e35038e9d3",
+      "comment": "",
+      "command": "click",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c1c7ce7-63c9-4a2c-989e-2414fb0136e5",
+      "comment": "",
+      "command": "type",
+      "target": "id=prize-amount",
+      "targets": [
+        ["id=prize-amount", "id"],
+        ["name=prize-amount", "name"],
+        ["css=#prize-amount", "css:finder"],
+        ["xpath=//input[@id='prize-amount']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "60000"
+    }, {
+      "id": "f669f638-6c4b-4574-a7b0-abb7b1fba098",
+      "comment": "",
+      "command": "click",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1acf3b1-3183-4b24-8b7e-76c0992ec48b",
+      "comment": "",
+      "command": "type",
+      "target": "id=min-level",
+      "targets": [
+        ["id=min-level", "id"],
+        ["name=min-level", "name"],
+        ["css=#min-level", "css:finder"],
+        ["xpath=//input[@id='min-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "ee57fb59-45b4-4737-a878-dcfbf67717d8",
+      "comment": "",
+      "command": "click",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "950cabb3-6463-452c-a83e-57aeb1199c8b",
+      "comment": "",
+      "command": "type",
+      "target": "id=max-level",
+      "targets": [
+        ["id=max-level", "id"],
+        ["name=max-level", "name"],
+        ["css=#max-level", "css:finder"],
+        ["xpath=//input[@id='max-level']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div/div[5]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "-5"
+    }, {
+      "id": "d50eaea4-670b-4f69-b6ac-4cb4482a2902",
+      "comment": "",
+      "command": "click",
+      "target": "name=createTournament",
+      "targets": [
+        ["name=createTournament", "name"],
+        ["css=.modal-footer:nth-child(3) > .btn-primary", "css:finder"],
+        ["xpath=//input[@name='createTournament']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11b3c9c7-a651-4d8f-92cf-69ed028823db",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=#newTournamentFormTitle",
+      "targets": [
+        ["id=#newTournamentFormTitle", "id"],
+        ["css=#\\#newTournamentFormTitle", "css:finder"],
+        ["xpath=//h3[@id='#newTournamentFormTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Create New Tournament')]", "xpath:innerText"]
+      ],
+      "value": "Create New Tournament"
+    }, {
+      "id": "6f329ccf-ea26-493e-b26c-33d6eb0eb71b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-secondary",
+      "targets": [
+        ["css=.btn-secondary", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='newTournamentForm']/div/div/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Close')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d9acd87-ff3d-4da8-b1a4-cc0c72aa5b21",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-door-closed",
+      "targets": [
+        ["css=.fa-door-closed", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[6]/a/i", "xpath:idRelative"],
+        ["xpath=//li[6]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8956ac87-17c6-4d0a-8f57-17c2da0d8db3",
+    "name": "kreiranje_turnira",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0a491b3a-b2d4-4177-86cc-c8ea9b9d2913", "f536a76a-87e6-4dd6-88ce-fae9c42fdb86", "34f814b4-b635-4b94-9fa0-320b1541a888", "8fb17966-2104-4cf5-a78b-e744468cadfe", "869848c6-7f11-4ee5-8eb7-00a8887a0ca8", "37b0b405-2622-4bcb-9d4c-f3865b8955c0", "c1e11914-0204-43d5-899c-8a577d76b39c"]
+  }],
+  "urls": ["http://localhost/pokemania/public/"],
+  "plugins": []
+}
