@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Participates – model učešća na turniru
  *
- * @author ?
+ * @author Anja Marković 0420/17
  *
  * @version 1.0
  */
