@@ -30,7 +30,7 @@ class TournamentSeeder extends Seeder
             array(
                 'name' => 'Belgrade Top 10',
                 'prize' => 10000,
-                'minLevel' => 71,
+                'minLevel' => 1,
                 'maxLevel' => 100,
                 'entryFee' => 500,
                 'endDate' => '2020-7-10'
@@ -38,8 +38,8 @@ class TournamentSeeder extends Seeder
             array(
                 'name' => 'AR Top 10',
                 'prize' => 34300,
-                'minLevel' => 34,
-                'maxLevel' => 43,
+                'minLevel' => 1,
+                'maxLevel' => 100,
                 'entryFee' => 300,
                 'endDate' => '2020-01-02'
             ),
@@ -118,52 +118,7 @@ class TournamentSeeder extends Seeder
                 'user_id' => 1,
                 'tournament_id' => 1,
                 'cntWin' => 5,
-            ),
-            array(
-                'user_id' => 4,
-                'tournament_id' => 1,
-                'cntWin' => 7,
-            ),
-            array(
-                'user_id' => 5,
-                'tournament_id' => 1,
-                'cntWin' => 5,
-            ),
-            array(
-                'user_id' => 6,
-                'tournament_id' => 1,
-                'cntWin' => 7,
-            ),
-            array(
-                'user_id' => 7,
-                'tournament_id' => 1,
-                'cntWin' => 5,
-            ),
-            array(
-                'user_id' => 8,
-                'tournament_id' => 1,
-                'cntWin' => 7,
-            ),
-            array(
-                'user_id' => 9,
-                'tournament_id' => 1,
-                'cntWin' => 5,
-            ),
-            array(
-                'user_id' => 10,
-                'tournament_id' => 1,
-                'cntWin' => 7,
-            ),
-            array(
-                'user_id' => 11,
-                'tournament_id' => 1,
-                'cntWin' => 5,
-            ),
-            array(
-                'user_id' => 12,
-                'tournament_id' => 1,
-                'cntWin' => 7,
-            ),
+            )
         ));
 
         DB::table('registered')->insert(array(
@@ -178,15 +133,7 @@ class TournamentSeeder extends Seeder
             array(
                 'user_id' => 1,
                 'tournament_id' => 3,
-            ),
-            array(
-                'user_id' => 4,
-                'tournament_id' => 3,
-            ),
-            array(
-                'user_id' => 5,
-                'tournament_id' => 3,
-            )            
+            )         
         ));
     }
 }

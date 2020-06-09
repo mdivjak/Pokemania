@@ -95,7 +95,7 @@ Register
                 <div class="container-fluid">
                     <div class="row">
                         @for ($i = 1; $i <= 9; $i++)
-                            <div class="col-md-4" style="margin-top:10px;">
+                            <div class="col-xs-4" style="margin-top:10px;">
                                 <img src="{{ asset('images/avatars/avatar'.$i.'.png') }}" class="img-fluid img-thumbnail" id="avatar{{$i}}" onclick="pickedAvatar(this)">
                             </div>
                         @endfor
