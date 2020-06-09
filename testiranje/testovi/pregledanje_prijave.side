@@ -1,0 +1,156 @@
+{
+  "id": "5c960529-a93c-43d2-ade9-d15699a664c7",
+  "version": "2.0",
+  "name": "Pregledanje prijave",
+  "url": "http://localhost:8000/admin",
+  "tests": [{
+    "id": "95c753a2-5869-4e73-81c3-f0c7ff16ca83",
+    "name": "prihvatanje_prijave",
+    "commands": [{
+      "id": "c5775cef-8360-470a-a551-8c499ddd1153",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8000/admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "92b715c9-bcd0-408c-9cf3-39df0691f551",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "844x646",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "229af55e-de45-4d0a-bbea-270002b27b76",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .float-right",
+      "targets": [
+        ["css=tr:nth-child(1) .float-right", "css:finder"],
+        ["xpath=//a[@onclick=\"saveLink('http://localhost:8000/admin?page=1')\"]", "xpath:attributes"],
+        ["xpath=//a[@href='http://localhost:8000/admin/tournament/3']", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa29c30a-46c9-4c34-8fe0-fda23bd1d2fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > .float-right .btn",
+      "targets": [
+        ["css=tr:nth-child(1) > .float-right .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fe6ae8b-89a9-4217-a3f2-19ff8b147f19",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .float-right",
+      "targets": [
+        ["css=tr:nth-child(1) .float-right", "css:finder"],
+        ["xpath=//a[@onclick=\"saveLink('http://localhost:8000/admin?page=1')\"]", "xpath:attributes"],
+        ["xpath=//a[@href='http://localhost:8000/admin/tournament/3']", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33323680-4817-4791-883f-a3acd7f0369c",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > .float-right .btn",
+      "targets": [
+        ["css=tr:nth-child(1) > .float-right .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "225b71c5-515d-4d72-86b9-8ab9c6d28a28",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": "Participant successfully registered for tournament"
+    }, {
+      "id": "0674b94c-9a58-443b-a50d-c3a2019b9851",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d9d684e1-63c7-4d9d-8813-9b62afb0065f",
+    "name": "odbijanje_prijave",
+    "commands": [{
+      "id": "e46048e4-71a9-4be1-a66d-7a307a436170",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8000/admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd8caa6c-176a-41ff-8308-29a29a7afd70",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "844x646",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0eafa440-f5e0-469e-8db2-a8d3823d29df",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .float-right",
+      "targets": [
+        ["css=tr:nth-child(1) .float-right", "css:finder"],
+        ["xpath=//a[@onclick=\"saveLink('http://localhost:8000/admin?page=1')\"]", "xpath:attributes"],
+        ["xpath=//a[@href='http://localhost:8000/admin/tournament/3']", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f63f0c8-65eb-4b7a-b3d6-2b3fc68ae9ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > .float-left .btn",
+      "targets": [
+        ["css=tr:nth-child(1) > .float-left .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//td[6]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f82cc14-5b65-422b-9b5b-ffa394714d9b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": "Registration declined"
+    }, {
+      "id": "2645410d-67f7-4e60-b4b6-63c69a0dc8ce",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "7b357566-8611-47ec-8d2e-302786a42110",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8000/admin"],
+  "plugins": []
+}

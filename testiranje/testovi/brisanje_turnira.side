@@ -1,0 +1,76 @@
+{
+  "id": "1207a826-be65-4f7a-8460-9742ff11e07a",
+  "version": "2.0",
+  "name": "Brisanje turnira",
+  "url": "http://localhost:8000/admin",
+  "tests": [{
+    "id": "8bfb2b18-f2c8-4752-b3e5-02721c37bf7a",
+    "name": "brisanje_turnira",
+    "commands": [{
+      "id": "da4c6463-c038-4b07-a1f3-28fdbbb4ab2d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8000/admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30879d4d-9dce-4b73-af05-c4fcf9c40239",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "844x646",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "778b4681-0112-42a0-be9e-9caf746bfa39",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .float-left",
+      "targets": [
+        ["css=tr:nth-child(1) .float-left", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//td[7]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ddadccd-d86d-4989-a467-b1506a5cb773",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-footer > .btn-danger",
+      "targets": [
+        ["css=.modal-footer > .btn-danger", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='avatar-picker']/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Delete')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "93b9f463-3f6e-432c-9463-7e7cd7cca1a1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": "Successfully deleted tournament \"AR Top 10\"!"
+    }, {
+      "id": "c059bcf9-1435-4f4a-862d-8f96064f6551",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ac10296a-8755-4e03-b424-73c42c6365d3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8000/", "http://localhost:8000/profile/banana", "http://localhost:8000/admin"],
+  "plugins": []
+}

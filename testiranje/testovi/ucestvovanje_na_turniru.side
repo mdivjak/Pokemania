@@ -1,0 +1,384 @@
+{
+  "id": "4f771cc9-8311-48db-9b5e-41ea25d50262",
+  "version": "2.0",
+  "name": "pokemania",
+  "url": "http://localhost/pokemania/public/",
+  "tests": [{
+    "id": "d3fd6707-c6f3-44bf-a0ed-a727007d185e",
+    "name": "uspesna_prijava_na_turnir",
+    "commands": [{
+      "id": "c6dcfd50-c43a-42c8-806b-d56b4ba46471",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3202fa66-1e40-4e27-af6d-f5aaa24cd7f9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "039c329f-1a60-4ff3-842a-198342ab37fd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d381b505-1405-44fc-b1b9-bf2e94f8d563",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "28bb349d-6edc-4bd7-bc0f-ba5d546aa021",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "2c5ee399-9db8-44f8-b653-f3d80820ecf9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb4db55e-ca9b-44c8-881f-8b5daaa8c5a2",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(4) img",
+      "targets": [
+        ["css=li:nth-child(4) img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/stadium.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[4]/a/img", "xpath:idRelative"],
+        ["xpath=//li[4]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37985dda-8edb-484c-836b-5ee70b98cd3b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-3:nth-child(4) .btn",
+      "targets": [
+        ["css=.col-lg-3:nth-child(4) .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='tournament']/div[2]/div[4]/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Register for 50 ₽')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eab1a3a9-ff14-47ad-9c89-c6afd7cff6aa",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[@id='tournament']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": "You have successfully registered for this tournament"
+    }]
+  }, {
+    "id": "37722f6f-79da-4766-be89-504d711d11f4",
+    "name": "nedovoljno_para_za_prijavu_na_turnir",
+    "commands": [{
+      "id": "37265b5e-2e58-4e7e-82a2-d87d1df31acd",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f7ff35ba-b2b4-4b3e-892f-10ac4fbc4486",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e3d110c5-acff-4b76-8a54-be277bbf8278",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3ce13a7-4468-41cf-9e6e-0d2fabd9008b",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "586a14e2-eb76-4c9c-9705-216ba21893e1",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "jabuka"
+    }, {
+      "id": "5cb43be8-c8a1-4aef-833b-5495579a8116",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "aaf86341-5153-459a-9b24-bb64ed0e9d48",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ed92ede-7936-4c9d-99b0-56696c6f6548",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(4) img",
+      "targets": [
+        ["css=li:nth-child(4) img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/stadium.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[4]/a/img", "xpath:idRelative"],
+        ["xpath=//li[4]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4158a37f-747e-4782-9a37-e7402aa2fc00",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-3:nth-child(4) .btn",
+      "targets": [
+        ["css=.col-lg-3:nth-child(4) .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='tournament']/div[2]/div[4]/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Register for 50 ₽')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8ff3ed5-b1ab-4de7-baf7-f1b6ec9e0299",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[@id='tournament']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": "You don't have enough money for registration!"
+    }]
+  }, {
+    "id": "3f61aa6a-d0d1-4a22-9200-a8c5e9070160",
+    "name": "nedovoljno_pokemona_za_turnir",
+    "commands": [{
+      "id": "c219cb7f-3d29-4662-bccb-0a0191f42548",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0de7baaa-6074-4cc7-abc4-30599dd63e7e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70b58b2f-ab32-418a-8995-78342addf376",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c65e7ab-922c-4099-9064-75f580caa1df",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0e1bfc8-7f8a-4b62-ab87-273ee41e7a8a",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "e11e58c9-bd0a-4ab3-9f72-6137a1725889",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca01feae-949c-4850-b597-ebcb7dd9be0d",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "e92d018e-6d0a-4b52-828d-3b5872a38ae5",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "bff7c49f-fbaf-4dfb-a920-d5da4d2da6cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(4) img",
+      "targets": [
+        ["css=li:nth-child(4) img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost/pokemania/public/images/stadium.svg')]", "xpath:img"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[4]/a/img", "xpath:idRelative"],
+        ["xpath=//li[4]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff2d9f0a-fb2a-4967-b956-f9bd8639f123",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-3:nth-child(5) .btn",
+      "targets": [
+        ["css=.col-lg-3:nth-child(5) .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='tournament']/div[2]/div[5]/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "20a23d4a-7fbc-409e-9054-71c746b2952e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[@id='tournament']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": "You don't have enough pokemons for this tournament!"
+    }]
+  }],
+  "suites": [{
+    "id": "187b5259-5bd4-4a77-9f48-d30ad5727920",
+    "name": "ucestvovanje_na_turniru",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["37722f6f-79da-4766-be89-504d711d11f4", "3f61aa6a-d0d1-4a22-9200-a8c5e9070160", "d3fd6707-c6f3-44bf-a0ed-a727007d185e"]
+  }],
+  "urls": ["http://localhost/pokemania/public/"],
+  "plugins": []
+}

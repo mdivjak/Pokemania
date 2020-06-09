@@ -1,0 +1,485 @@
+{
+  "id": "4f771cc9-8311-48db-9b5e-41ea25d50262",
+  "version": "2.0",
+  "name": "pokemania",
+  "url": "http://localhost/pokemania/public/",
+  "tests": [{
+    "id": "b9aaee20-7d2f-434b-af36-f602c85b41dd",
+    "name": "uspesna_kupovina_pokelopte",
+    "commands": [{
+      "id": "2e27b577-149c-47c9-9705-7a206dad56b5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "77fb64d2-cf05-4a7d-aae3-90cfa54b993d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5af66866-5a7b-424c-860a-7f188e50f24f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b705f43f-8f57-49f8-8556-e6c7fb288b81",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "3cbc478f-21bc-42b6-971e-0a0b9e9cf2e0",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "ac04fb9e-b44c-484f-9263-d127c55b9e0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a338cd4-1e36-4cdd-969c-545690f4c7df",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-shopping-cart",
+      "targets": [
+        ["css=.fa-shopping-cart", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[3]/a/i", "xpath:idRelative"],
+        ["xpath=//li[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0835704-8081-4f4e-81dc-425d4c3aa084",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-6:nth-child(1) .btn",
+      "targets": [
+        ["css=.col-lg-6:nth-child(1) .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='shop']/div[3]/div/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buy for 50₽')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ca800c3-6468-4c20-a01c-7acbb398af30",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[@id='shop']/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "You have successfully completed your purchase!"
+    }]
+  }, {
+    "id": "a046ee9d-1ac8-41f7-8e08-56d8b3df84e5",
+    "name": "neuspesna_kupovina_vockice",
+    "commands": [{
+      "id": "5eed5509-9ba6-4f8a-9784-09d27db9f965",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4a639ef-f829-4ed8-a736-aa24485f2479",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14089c84-e8e5-456f-bde1-779e53cdd07e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48a88cfc-06de-48f1-b957-cee8827bee03",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "jabuka"
+    }, {
+      "id": "bdb79744-7d25-450b-ab00-7fc022ae184e",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "0d6b0697-bef6-4330-8cb9-a6d156c5e7cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc7e47e8-6048-47f0-8ccd-0719d1962aab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-shopping-cart",
+      "targets": [
+        ["css=.fa-shopping-cart", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[3]/a/i", "xpath:idRelative"],
+        ["xpath=//li[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85d173e7-67a0-4876-bd8c-b36ade09e698",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-6:nth-child(2) .btn",
+      "targets": [
+        ["css=.col-lg-6:nth-child(2) .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='shop']/div[3]/div[2]/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef56d732-16e9-4eb4-8b54-217e7a2c3b8a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[@id='shop']/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "You don't have enough pokecash for shopping!"
+    }]
+  }, {
+    "id": "d8b70169-a51d-4736-ab4a-67916b12d092",
+    "name": "neuspesna_kupovina_pokelopte",
+    "commands": [{
+      "id": "4c55ee84-3389-4cd2-badc-a7bf4663d217",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "35274220-1546-4a0f-b9aa-3fd179ecb507",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37ff0e3e-ecf5-468f-85ab-cf9dc35c8fc8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a52528c5-9c95-4517-91f0-08ff7f7ae476",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c416904-87d6-4b81-ad24-946760eab234",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "jabuka"
+    }, {
+      "id": "5fc31fac-68bc-46a0-a287-68e4997c35de",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02953a74-a85a-467d-8e2f-c85a08186266",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "22ce4859-38aa-4351-a1ba-6109a5cc90c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a64e743-6a5c-48be-b732-3f25dc1ad120",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-shopping-cart",
+      "targets": [
+        ["css=.fa-shopping-cart", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[3]/a/i", "xpath:idRelative"],
+        ["xpath=//li[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41e04390-1dfd-4eb1-ac17-1c655ace447a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-6:nth-child(1) .btn",
+      "targets": [
+        ["css=.col-lg-6:nth-child(1) .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='shop']/div[3]/div/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buy for 50₽')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c44d0bc-922d-4d7a-bee4-f15ec4bf98f4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[@id='shop']/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "You don't have enough pokecash for shopping!"
+    }]
+  }, {
+    "id": "17a0b2f1-cf04-490d-bd9e-ee1b9182d3b3",
+    "name": "uspesna_kupovina_vockice",
+    "commands": [{
+      "id": "ce5e8bd5-d068-4c1c-80c2-6de6bda62604",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/pokemania/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b460b4c6-047b-4997-87fb-0265e61f6289",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b6b6b87-0ed3-4ced-af0f-cbe3737c4695",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/pokemania/public/login']", "xpath:href"],
+        ["xpath=//ul[2]/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b677b11f-e9bf-4e7d-9e07-126f268116fb",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c13f525f-e29f-4d1f-bca4-9d3803a88f91",
+      "comment": "",
+      "command": "type",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["name=login", "name"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "banana"
+    }, {
+      "id": "ee6de114-6ca6-4021-9d04-432d93a2602e",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "f63b7181-14fc-4d07-ba8a-cd632d50215d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//div[@id='formContent']/form/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ffc7fbe-0fe5-4cd7-b2cb-307ec7fd85d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-shopping-cart",
+      "targets": [
+        ["css=.fa-shopping-cart", "css:finder"],
+        ["xpath=//div[@id='bs-nav']/ul[2]/li[3]/a/i", "xpath:idRelative"],
+        ["xpath=//li[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6edf025a-ab51-4e97-82f1-18f7c3b24c95",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-6:nth-child(2) .btn",
+      "targets": [
+        ["css=.col-lg-6:nth-child(2) .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='shop']/div[3]/div[2]/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8c0c5e1-6015-4708-857d-5c069c95b2c9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[@id='shop']/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "You have successfully completed your purchase!"
+    }]
+  }],
+  "suites": [{
+    "id": "ebd21989-0f5d-4629-938f-8856b5eb9a8f",
+    "name": "kupovina_u_prodavnici",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["17a0b2f1-cf04-490d-bd9e-ee1b9182d3b3", "b9aaee20-7d2f-434b-af36-f602c85b41dd", "a046ee9d-1ac8-41f7-8e08-56d8b3df84e5", "d8b70169-a51d-4736-ab4a-67916b12d092"]
+  }],
+  "urls": ["http://localhost/pokemania/public/"],
+  "plugins": []
+}
