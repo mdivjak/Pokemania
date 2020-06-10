@@ -28,7 +28,7 @@ Reset Password
             <form  class="loginForm" method="POST" action="{{ route('password.update') }}" style="color:red;">
                 @csrf
                 
-                <input type="hidden" name="token" value=" $token ">
+                <input type="hidden" name="token" value="{{$token}}">
                 
                 <div class="form-group row">
                     <input id="email" placeholder="Email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
