@@ -2,7 +2,7 @@
   "id": "4f771cc9-8311-48db-9b5e-41ea25d50262",
   "version": "2.0",
   "name": "pokemania",
-  "url": "http://localhost/pokemania/public/",
+  "url": "localhost:8000",
   "tests": [{
     "id": "d3fd6707-c6f3-44bf-a0ed-a727007d185e",
     "name": "uspesna_prijava_na_turnir",
@@ -10,7 +10,7 @@
       "id": "c6dcfd50-c43a-42c8-806b-d56b4ba46471",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/pokemania/public/",
+      "target": "http://localhost:8000",
       "targets": [],
       "value": ""
     }, {
@@ -118,7 +118,7 @@
       "id": "37265b5e-2e58-4e7e-82a2-d87d1df31acd",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/pokemania/public/",
+      "target": "http://localhost:8000",
       "targets": [],
       "value": ""
     }, {
@@ -212,12 +212,12 @@
       "id": "4158a37f-747e-4782-9a37-e7402aa2fc00",
       "comment": "",
       "command": "click",
-      "target": "css=.col-lg-3:nth-child(4) .btn",
+      "target": "css=.col-lg-3:nth-child(3) .btn",
       "targets": [
-        ["css=.col-lg-3:nth-child(4) .btn", "css:finder"],
-        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
-        ["xpath=//div[@id='tournament']/div[2]/div[4]/div/div/div/div/form/button", "xpath:idRelative"],
-        ["xpath=//div[4]/div/div/div/div/form/button", "xpath:position"],
+        ["css=.col-lg-3:nth-child(3) .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='tournament']/div[3]/div[3]/div/div/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div/form/button", "xpath:position"],
         ["xpath=//button[contains(.,'Register for 50 ₽')]", "xpath:innerText"]
       ],
       "value": ""
@@ -240,7 +240,7 @@
       "id": "c219cb7f-3d29-4662-bccb-0a0191f42548",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/pokemania/public/",
+      "target": "http://localhost:8000",
       "targets": [],
       "value": ""
     }, {
@@ -379,6 +379,6 @@
     "timeout": 300,
     "tests": ["37722f6f-79da-4766-be89-504d711d11f4", "3f61aa6a-d0d1-4a22-9200-a8c5e9070160", "d3fd6707-c6f3-44bf-a0ed-a727007d185e"]
   }],
-  "urls": ["http://localhost/pokemania/public/"],
+  "urls": ["http://localhost/pokemania/public/", "localhost:8000"],
   "plugins": []
 }
