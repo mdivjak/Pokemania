@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `cntCash` int(11) NOT NULL DEFAULT '500',
   `cntFruits` int(11) NOT NULL DEFAULT '0',
   `cntPokemons` int(11) NOT NULL DEFAULT '1',
-  `trainer` int(11) NOT NULL DEFAULT '1',
+  `avatar` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`idU`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `nickname` (`nickname`)
